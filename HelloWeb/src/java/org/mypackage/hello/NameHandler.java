@@ -9,11 +9,11 @@ package org.mypackage.hello;
  *
  * @author Administrator
  */
-public class NameHandler {
+public class Namehandler {
 
-    private String name;
+    String name;
 
-    public NameHandler() {
+    public Namehandler() {
         name = null;
     }
 
