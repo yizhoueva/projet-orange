@@ -38,8 +38,8 @@ public class MyApplet extends java.applet.Applet {
         jCheckBox1 = new javax.swing.JCheckBox();
         jButton2 = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane3 = new javax.swing.JTabbedPane();
 
         setLayout(new java.awt.BorderLayout());
@@ -61,10 +61,10 @@ public class MyApplet extends java.applet.Applet {
         jRadioButton1.setLabel("fff");
         add(jRadioButton1, java.awt.BorderLayout.WEST);
 
-        jTabbedPane2.addTab("tab1", jTabbedPane1);
-        jTabbedPane2.addTab("tab1", jTabbedPane3);
+        jTabbedPane1.addTab("tab1", jTabbedPane2);
+        jTabbedPane1.addTab("tab1", jTabbedPane3);
 
-        add(jTabbedPane2, java.awt.BorderLayout.CENTER);
+        add(jTabbedPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
