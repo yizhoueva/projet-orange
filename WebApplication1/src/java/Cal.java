@@ -307,7 +307,5 @@ public class Cal extends JPanel {
         activeDay = newDay;
     }
 
-    /**
-     * La méthode principale
-     */
+
 }
