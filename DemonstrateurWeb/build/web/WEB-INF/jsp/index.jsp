@@ -26,6 +26,12 @@
     </head>
 
     <body>
+        <jsp:useBean id="test" scope="session" class="noyaufonctionnel.NameHandler" />
+        <h1> Enter your name :</h1>
+        <form name="Name Input Form" action="response.jsp">
+            <input type="submit" value="OK" name="okButton" />
+            <input type="text" name="name" />
+        </form>
         <h1>Bienvenue</h1>
 
         <div id="tabs">
@@ -36,16 +42,16 @@
             </ul>
             <div id="tabs-1">
                 <div>
-                <p><img src = "<%=request.getContextPath()%>/images/profil_p.png" alt="" /> Jean Dupond</p>
-                <p><img src = "<%=request.getContextPath()%>/images/balance_p.png" alt="" /> 80 Kg</p>
-                <p><img src = "<%=request.getContextPath()%>/images/taille_p.png" alt="" /> 180 cm</p>
-                <p><img src = "<%=request.getContextPath()%>/images/silhouette_p.png" alt="" /> 24.7</p>
-                <p><img src = "<%=request.getContextPath()%>/images/coeur_p.png" alt="" /> 70 bpm</p>
-                <p><img src = "<%=request.getContextPath()%>/images/pression_p.png" alt="" /> 12 / 9 cmHg</p>
-                <p><img src = "<%=request.getContextPath()%>/images/oxygene_p.png" alt="" /> 95%</p>
-                <p><img src = "<%=request.getContextPath()%>/images/sucre_p.png" alt="" /> 0.83 g/L</p>
-                <p><img src = "<%=request.getContextPath()%>/images/activité_p.png" alt="" /></p>
-                <p><img src = "<%=request.getContextPath()%>/images/sommeil_p.png" alt="" /></p>
+                    <p><img src = "<%=request.getContextPath()%>/images/profil_p.png" alt="" /> Jean Dupond <jsp:getProperty name="test" property="name" /></p>
+                    <p><img src = "<%=request.getContextPath()%>/images/balance_p.png" alt="" /> 80 Kg</p>
+                    <p><img src = "<%=request.getContextPath()%>/images/taille_p.png" alt="" /> 180 cm</p>
+                    <p><img src = "<%=request.getContextPath()%>/images/silhouette_p.png" alt="" /> 24.7</p>
+                    <p><img src = "<%=request.getContextPath()%>/images/coeur_p.png" alt="" /> 70 bpm</p>
+                    <p><img src = "<%=request.getContextPath()%>/images/pression_p.png" alt="" /> 12 / 9 cmHg</p>
+                    <p><img src = "<%=request.getContextPath()%>/images/oxygene_p.png" alt="" /> 95%</p>
+                    <p><img src = "<%=request.getContextPath()%>/images/sucre_p.png" alt="" /> 0.83 g/L</p>
+                    <p><img src = "<%=request.getContextPath()%>/images/activité_p.png" alt="" /></p>
+                    <p><img src = "<%=request.getContextPath()%>/images/sommeil_p.png" alt="" /></p>
                 </div>
                 <div>
                     <h1>Bijour</h1>

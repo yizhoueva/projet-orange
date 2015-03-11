@@ -7,6 +7,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javax.management.Query.value;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /*
@@ -41,11 +43,30 @@ public class Parser {
         }
     }
 
-    public String getValue(String name) {
+    public String getValueString(String name) {
 //Cherche dans le texte la valeur dénommée "name" et la retourne dans "value"
         JSONObject obj = new JSONObject(this.texte);
         String value = obj.getString(name);
         return value;
     }
 
+    public String getValueArray(String name) {
+//Cherche dans le texte la valeur dénommée "name" et la retourne dans "value"
+String str = this.texte;
+JSONObject obj = new JSONObject(str);
+JSONArray arr = obj.getJSONArray(name);
+String value = "";
+for (int i = 0; i < arr.length(); i++){
+    int s = arr.getInt(i);
+    value = value + arr.getInt(i);
+    System.out.println(arr.getInt(i));
+}
+        return value;
+    }
+      public int getValueInt(String name) {
+//Cherche dans le texte la valeur dénommée "name" et la retourne dans "value"
+        JSONObject obj = new JSONObject(this.texte);
+        int value = obj.getInt(name);
+        return value;
+    }
 }

@@ -22,11 +22,12 @@ public class Test {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
 
-        URL url = new URL("https://api.humanapi.co/v1/human?access_token=demo");
+        URL url = new URL("https://api.humanapi.co/v1/human/blood_glucose?access_token=demo");
         Parser test = new Parser(url);
-        String a = test.getValue("gender");
+        String a = test.getValueString("source");
         System.out.println(a);
-
+        int b = test.getValueInt("value");
+        System.out.println(b);
     }
 
 }
