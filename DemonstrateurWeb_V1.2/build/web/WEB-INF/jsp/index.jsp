@@ -108,7 +108,14 @@
 
             </div>
             <div id="tabs-2">
-                <div id="chartdiv" style="height:100%;width:100%; "></div>
+                <table>
+                    <tr>
+                        <td>
+                            <div id="chartdiv" style="height:100%;width:100%; "></div>
+                        </td>
+                    </tr>
+                </table>
+                
 
             </div>
 
