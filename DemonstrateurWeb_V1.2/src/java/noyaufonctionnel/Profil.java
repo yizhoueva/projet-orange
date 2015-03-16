@@ -29,17 +29,20 @@ public class Profil implements Serializable {
     //Constructeur
     public Profil() throws MalformedURLException, IOException {
 
-        // Configure Gson
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.registerTypeAdapter(Profil.class, new ProfilDeserialiseur());
-        Gson gson = gsonBuilder.create();
-
-        // The JSON data
+//        // Configure Gson
+//        GsonBuilder gsonBuilder = new GsonBuilder();
+//        gsonBuilder.registerTypeAdapter(Profil.class, new ProfilDeserialiseur());
+//        Gson gson = gsonBuilder.create();
+//
+//        // The JSON data
+//        String input = new URL("https://api.humanapi.co/v1/human/Profil?access_token=demo").openStream().toString();
+//        
+//            // Parse JSON to Java
+//            Profil profil = gson.fromJson(input, Profil.class);
+//            System.out.println(profil);
+        
         String input = new URL("https://api.humanapi.co/v1/human/Profil?access_token=demo").openStream().toString();
         
-            // Parse JSON to Java
-            Profil profil = gson.fromJson(input, Profil.class);
-            System.out.println(profil);
 
         }
 
