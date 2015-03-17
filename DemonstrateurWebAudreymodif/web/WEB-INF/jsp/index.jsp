@@ -17,16 +17,6 @@
         <script language="javascript" type="text/javascript" src="jquery.jqplot.min.js"></script>
         <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
 
-
-
-
-
-
-
-
-
-
-
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker();
@@ -37,7 +27,7 @@
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-            var plot1 = $.jqplot('chart1', [[[1, 2], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
+                var plot1 = $.jqplot('chart1', [[[1, 2], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
@@ -49,10 +39,23 @@
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
+                var plot4 = $.jqplot('chart4', [[[1, 2], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
+                    axes: {yaxis: {min: -10, max: 240}},
+                    series: [{color: '#5FAB78'}]
+                });
+                var plot5 = $.jqplot('chart5', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
+                    axes: {yaxis: {min: -10, max: 240}},
+                    series: [{color: '#5FAB78'}]
+                });
+                var plot6 = $.jqplot('chart6', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
+                    axes: {yaxis: {min: -10, max: 240}},
+                    series: [{color: '#5FAB78'}]
+                });
 
                 $("#tabs").tabs();
                 $("#table").tabs();
-                $("#onglet").tabs();
+                $("#onglet1").tabs();
+                $("#onglet2").tabs();
             });</script>
         <script>
             $(document).tooltip();</script>
@@ -209,10 +212,7 @@
                         </td>
                         <td valign="top">
                             <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> 70 bpm<br>
-                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> 12 / 9 cmHg<br>                         
-                        </td>
-                        <td valign="top">
-                            <div id="onglet" >
+                            <div id="onglet1" >
                                 <ul>
                                     <li><a href="#onglet-1">Aujourd'hui</a></li>
                                     <li><a href="#onglet-2">Semaine</a></li>
@@ -238,6 +238,41 @@
                                     <table><tr>
                                             <td>
                                                 <div id="chart3" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top">
+                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> 12 / 9 cmHg<br> 
+                            <div id="onglet2" >
+                                <ul>
+                                    <li><a href="#onglet-1">Aujourd'hui</a></li>
+                                    <li><a href="#onglet-2">Semaine</a></li>
+                                    <li><a href="#onglet-3">Mois</a></li>
+                                </ul>
+                                <div id="onglet-1">
+                                    <table><tr>
+                                            <td>
+                                                <div id="chart4" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="onglet-2">
+                                    <table><tr>
+                                            <td>
+                                                <div id="chart5" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="onglet-3">
+                                    <table><tr>
+                                            <td>
+                                                <div id="chart6" style="height:100%;width:100%; display: inline-block"></div>
                                             </td>
                                         </tr>
                                     </table>
