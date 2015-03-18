@@ -305,24 +305,7 @@
                             <li><a href="#table4-1">Aujourd'hui</a></li>
                             <li><a href="#table4-2">Semaine</a></li>
                             <li><a href="#table4-3">Mois</a></li></ul>
-                        <div id="table4-1">
-                            <table><tr>
-                                    <td>
 
-                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
-                                    </td></tr></table></div>
-                        <div id="table4-2">
-                            <table><tr>
-                                    <td>
-
-                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
-                                    </td></tr></table></div>
-                        <div id="table4-3">
-                            <table><tr>
-                                    <td>
-
-                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
-                                    </td></tr></table></div>
 
                     </div> </td>
                     </tr>
