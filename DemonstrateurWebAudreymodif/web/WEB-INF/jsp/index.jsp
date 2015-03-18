@@ -56,6 +56,7 @@
                 $("#table").tabs();
                 $("#onglet1").tabs();
                 $("#onglet2").tabs();
+                $("#table4").tabs();
             });</script>
         <script>
             $(document).tooltip();</script>
@@ -145,16 +146,7 @@
                                     <li><INPUT type="checkbox" name="buttonSource3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
-                            <ul style="list-style-type:none">
-                                <FORM>Type d'activités :
-                                    <li><INPUT type="radio" name="buttonActivite" value="1" CHECKED="CHECKED">Repos</li>
-                                    <li><INPUT type="radio" name="buttonActivite" value="2">Course</li>
-                                    <li><INPUT type="radio" name="buttonActivite" value="3">Marche</li>
-                                    <li><INPUT type="radio" name="buttonActivite" value="4">Vélo</li>
-                                    <li><INPUT type="radio" name="buttonActivite" value="5">Nage</li>
-                                    <li><INPUT type="radio" name="buttonActivite" value="6">Autre</li>
-                                </FORM>
-                            </ul></td>
+                        </td>
                         <td valign="top">
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
@@ -166,27 +158,32 @@
                             </ul>
 
 
-                            <ul style="list-style-type:none ">
-                                <FORM>
-                                    <li><INPUT type="radio" name="buttonDatee" value="1" CHECKED="CHECKED">Aujourd'hui</li>
-                                    <li><INPUT type="radio" name="buttonDatee" value="2">Semaine</li>
-                                    <li><INPUT type="radio" name="buttonDatee" value="3">Mois</li>
-                                </FORM>
-                            </ul></td>
+
                         <td valign="top"><div id="table" >
                                 <ul>
 
-                                    <li><a href="#table-1">Durée</a></li>
-                                    <li><a href="#table-2">Calories</a></li>
-                                    <li><a href="#table-3">Distance</a></li>
-                                    <li><a href="#table-4">Pas</a></li>
-                                </ul>
+                                    <li><a href="#table-1">Aujourd'hui</a></li>
+                                    <li><a href="#table-2">Semaine</a></li>
+                                    <li><a href="#table-3">Mois</a></li></ul>
                                 <div id="table-1">
                                     <table><tr>
                                             <td>
 
                                                 <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
                                             </td></tr></table></div>
+                                <div id="table-2">
+                                    <table><tr>
+                                            <td>
+
+                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td></tr></table></div>
+                                <div id="table-3">
+                                    <table><tr>
+                                            <td>
+
+                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td></tr></table></div>
+
                             </div> </td>
                     </tr>
                 </table>
@@ -292,17 +289,41 @@
                         <td valign="top">
                             <ul style="list-style-type:none">
                                 <FORM>
-                                    <li><INPUT type="checkbox" name="choix1" value="1">Glycémie : <jsp:getProperty name="onglet4" property="glycemie" /> g/L</li>
-                                    <li><INPUT type="checkbox" name="choix2" value="2">Saturation O² : <jsp:getProperty name="onglet4" property="sat" />%</li>
-                                    <li><INPUT type="checkbox" name="choix3" value="3">Tension : <jsp:getProperty name="onglet4" property="tensionS" />/<jsp:getProperty name="onglet4" property="tensionD" />cm/Hg</li>
-                                    <li><INPUT type="checkbox" name="choix4" value="3">IMC : <jsp:getProperty name="onglet4" property="imc" /> kg/cm²</li>
-                                    <li><INPUT type="checkbox" name="choix5" value="3">Poids : <jsp:getProperty name="onglet4" property="poids" /> kg</li>
-                                    <li><INPUT type="checkbox" name="choix6" value="3">Taille : <jsp:getProperty name="onglet4" property="taille" /> mm</li>
-                                    <li><INPUT type="checkbox" name="choix7" value="3">Masse graisseuse : <jsp:getProperty name="onglet4" property="graisse" />%</li>
+                                    <li><INPUT type="radio" name="choix1" value="1">Glycémie : <jsp:getProperty name="onglet4" property="glycemie" /> g/L</li>
+                                    <li><INPUT type="radio" name="choix1" value="2">Saturation O² : <jsp:getProperty name="onglet4" property="sat" />%</li>
+                                    <li><INPUT type="radio" name="choix1" value="3">IMC : <jsp:getProperty name="onglet4" property="imc" /> kg/cm²</li>
+                                    <li><INPUT type="radio" name="choix1" value="4">Poids : <jsp:getProperty name="onglet4" property="poids" /> kg</li>
+                                    <li><INPUT type="radio" name="choix1" value="5">Taille : <jsp:getProperty name="onglet4" property="taille" /> mm</li>
+                                    <li><INPUT type="radio" name="choix1" value="6">Masse graisseuse : <jsp:getProperty name="onglet4" property="graisse" />%</li>
                                 </FORM>
                             </ul>
                         </td>
+                        <td valign="top"><div id="table4" >
+                        <ul>
 
+                            <li><a href="#table4-1">Aujourd'hui</a></li>
+                            <li><a href="#table4-2">Semaine</a></li>
+                            <li><a href="#table4-3">Mois</a></li></ul>
+                        <div id="table4-1">
+                            <table><tr>
+                                    <td>
+
+                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                    </td></tr></table></div>
+                        <div id="table4-2">
+                            <table><tr>
+                                    <td>
+
+                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                    </td></tr></table></div>
+                        <div id="table4-3">
+                            <table><tr>
+                                    <td>
+
+                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                    </td></tr></table></div>
+
+                    </div> </td>
                     </tr>
                 </table>
             </div>
@@ -315,12 +336,7 @@
 
             <div id="tabs-6" class="tabcontent">
 
-                <div id="table" >
-                    <ul>
-                        <li><a href="#table-1">test1</a></li>
-                        <li><a href="#table-2">test2</a></li>
-                        <li><a href="#table-3">test3</a></li>
-                    </ul></div>
+                
 
             </div>
 
