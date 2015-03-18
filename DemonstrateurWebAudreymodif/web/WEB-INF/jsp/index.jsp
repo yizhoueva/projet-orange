@@ -20,6 +20,7 @@
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker();
+                $("#datepickerCoeur").datepicker();
             });</script>
         <script>
             $(function () {
@@ -209,7 +210,7 @@
                             </ul>
                             <br>
                             Selectionner une date :<br>
-                            <input type="text" id="datepicker">
+                            <input type="text" id="datepickerCoeur">
                         </td>
                         <td valign="top">
                             <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="coeur" property="freqcardio" /><jsp:getProperty name="coeur" property="unitHR" /><br>
