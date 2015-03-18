@@ -212,7 +212,7 @@
                             <input type="text" id="datepicker">
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="coeur" property="freqcardio" /> bpm<br>
+                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="coeur" property="freqcardio" /><jsp:getProperty name="coeur" property="unitHR" /><br>
                             <div id="onglet1" >
                                 <ul>
                                     <li><a href="#onglet-1">Aujourd'hui</a></li>
@@ -247,7 +247,7 @@
 
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><jsp:getProperty name="coeur" property="systolic" />/<jsp:getProperty name="coeur" property="diastolic" />cmHg<br> 
+                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><jsp:getProperty name="coeur" property="systolic" />/<jsp:getProperty name="coeur" property="diastolic" /><jsp:getProperty name="coeur" property="unitTen" /><br> 
                             <div id="onglet2" >
                                 <ul>
                                     <li><a href="#onglet-1">Aujourd'hui</a></li>

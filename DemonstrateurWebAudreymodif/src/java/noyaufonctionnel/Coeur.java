@@ -28,11 +28,17 @@ public class Coeur implements Serializable {
     private int freqcardio;
     private int systolic;
     private int diastolic;
+    private String unitHR;
+    private String unitTen;
 
     public Coeur() throws MalformedURLException {
         URL url1 = new URL("https://api.humanapi.co/v1/human/heart_rate?access_token=demo");
         Parser p1 = new Parser(url1);
         this.freqcardio = p1.getValueInt("value");
+
+        URL urlUnitHR = new URL("https://api.humanapi.co/v1/human/heart_rate?access_token=demo");
+        Parser pUnitHR = new Parser(urlUnitHR);
+        this.unitHR = pUnitHR.getValueString("unit");
 
         URL url2 = new URL("https://api.humanapi.co/v1/human/blood_pressure?access_token=demo");
         Parser p2 = new Parser(url2);
@@ -41,6 +47,10 @@ public class Coeur implements Serializable {
         URL url3 = new URL("https://api.humanapi.co/v1/human/blood_pressure?access_token=demo");
         Parser p3 = new Parser(url3);
         this.diastolic = p2.getValueInt("diastolic");
+        
+        URL urlUnitTen = new URL("https://api.humanapi.co/v1/human/blood_pressure?access_token=demo");
+        Parser pUnitTen = new Parser(urlUnitTen);
+        this.unitTen = pUnitTen.getValueString("unit");
     }
 
     public int getFreqcardio() {
@@ -55,6 +65,12 @@ public class Coeur implements Serializable {
         return diastolic;
     }
 
+    public String getUnitHR() {
+        return unitHR;
+    }
 
+    public String getUnitTen() {
+        return unitTen;
+    }
 
 }
