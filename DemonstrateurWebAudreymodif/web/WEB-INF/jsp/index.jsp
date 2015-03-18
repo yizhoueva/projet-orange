@@ -77,6 +77,7 @@
         <jsp:useBean id="test" scope="session" class="noyaufonctionnel.Utilisateur"/> 
         <jsp:useBean id="onglet2" scope="session" class="noyaufonctionnel.Activités"/>
         <jsp:useBean id="onglet4" scope="session" class="noyaufonctionnel.Physiologie"/>
+        <jsp:useBean id="coeur" scope="session" class="noyaufonctionnel.Coeur"/>
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h1>Bienvenue Chachou </h1>
                     <p>
@@ -211,7 +212,7 @@
                             <input type="text" id="datepicker">
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> 70 bpm<br>
+                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="coeur" property="freqcardio" /> bpm<br>
                             <div id="onglet1" >
                                 <ul>
                                     <li><a href="#onglet-1">Aujourd'hui</a></li>
@@ -246,7 +247,7 @@
 
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> 12 / 9 cmHg<br> 
+                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><jsp:getProperty name="coeur" property="systolic" />/<jsp:getProperty name="coeur" property="diastolic" />cmHg<br> 
                             <div id="onglet2" >
                                 <ul>
                                     <li><a href="#onglet-1">Aujourd'hui</a></li>
