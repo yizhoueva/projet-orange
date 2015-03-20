@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:useBean id="mybean" scope="session" class="noyaufonctionnel.NameHandler" />
+        <jsp:useBean id="mybean" scope="session" class="Application.Utilisateur" />
         <jsp:setProperty name="request" property="name"/>
         <h1> <jsp:getProperty name="mybean" property="name" /> </h1>
 </body>
