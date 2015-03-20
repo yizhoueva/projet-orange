@@ -24,11 +24,11 @@
             });</script>
         <script>
             $(function () {
-                var plot0 = $.jqplot('chart0', [[[1, <jsp:getProperty name="coeur" property="freqcardio" />], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
+                var plot0 = $.jqplot('chart0', [[[1, 66], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-                var plot1 = $.jqplot('chart1', [[[1, <jsp:getProperty name="coeur" property="freqcardio" />], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
+                var plot1 = $.jqplot('chart1', [[[1, 77], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
