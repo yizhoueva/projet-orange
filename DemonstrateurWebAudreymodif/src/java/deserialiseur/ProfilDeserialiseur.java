@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import noyaufonctionnel.Profil;
+import Application.Profil;
 
 /**
  *
