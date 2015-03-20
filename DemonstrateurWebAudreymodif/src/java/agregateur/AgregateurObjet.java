@@ -23,16 +23,17 @@ import java.nio.charset.Charset;
  */
 public class AgregateurObjet {
     
+    
+    private String requete = null;
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    
      //Deserialiseur
-    public Gson deserialiser(AgregateurObjet obj, String requete) throws MalformedURLException, IOException {
+    public void deserialiser() throws MalformedURLException, IOException {
         
-        System.out.println("intialisation de la deserialisation de : "+obj.getClass());
+        System.out.println("intialisation de la deserialisation de : "+this.getClass());
 
         // Configure Gson
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.registerTypeAdapter(BloodPressure.class, new BloodPressureDeserialiseur());
-        Gson gson = gsonBuilder.create();
-
+        
         URL url = new URL(requete);
 
         URLConnection con = url.openConnection();
@@ -43,7 +44,7 @@ public class AgregateurObjet {
         while ((line = reader.readLine()) != null) {
             results += line;
         }
-        System.out.println("Chaine de caractère récupérée : "+results);
+        System.out.println("Chaine de caractère récupérée pour "+this.getClass()+" : "+results);
         
         reader.close();
         input.close();
@@ -51,12 +52,14 @@ public class AgregateurObjet {
         
         
         
-        return gson;
-        
     }
     
     public void update(Gson gson){
         
+    }
+
+    public void setRequete(String requete) {
+        this.requete = requete;
     }
     
 }

@@ -23,6 +23,7 @@ public class BloodPressureDeserialiseur implements JsonDeserializer<BloodPressur
 
     @Override
     public BloodPressure deserialize(JsonElement json, Type type, JsonDeserializationContext jdc) throws JsonParseException {
+        
         final JsonObject jsonObject = json.getAsJsonObject();
         
         final String id = jsonObject.get("id").getAsString();
@@ -37,15 +38,16 @@ public class BloodPressureDeserialiseur implements JsonDeserializer<BloodPressur
         final String createdAt = jsonObject.get("createdAt").getAsString();
         final String updatedAt = jsonObject.get("updatedAt").getAsString();
         
-        BloodPressure bp = new BloodPressure();
-        bp.setUserId(userId);
-        bp.setCreatedAt(createdAt);
-        bp.setDiastolic(diastolic);
-        bp.setHeartRate(heartRate);
-        bp.setHumanId(humanId);
+//        BloodPressure bp = new BloodPressure();
+//        bp.setUserId(userId);
+//        bp.setCreatedAt(createdAt);
+//        bp.setDiastolic(diastolic);
+//        bp.setHeartRate(heartRate);
+//        bp.setHumanId(humanId);
         
         
-        return bp;
+        //return bp;
+        return null;
     }
     
 }

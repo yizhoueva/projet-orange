@@ -21,22 +21,22 @@ import java.nio.charset.Charset;
  *
  * @author Romeo
  */
-public class BloodPressure extends AgregateurObjet{
+public class BloodPressure extends AgregateurObjet {
 
-    public BloodPressure() throws IOException{
-       String requete = "https://api.humanapi.co/v1/human/blood_pressure?access_token=demo";
-       
-       Gson gson = this.deserialiser(this, requete);
+    public BloodPressure() throws IOException, MalformedURLException {
+        this.setRequete("https://api.humanapi.co/v1/human/blood_pressure?access_token=demo");
+        gsonBuilder.registerTypeAdapter(BloodPressure.class, new BloodPressureDeserialiseur());
+        Gson gson = gsonBuilder.create();
+        //Gson gson = this.deserialiser();
         this.update(gson);
         //BloodPressure bp  = gson.fromJson(results, BloodPressure.class);
     }
-    
-    
+
     @Override
     public void update(Gson gson) {
-        
+
     }
-    
+
     private String id;
     private String userId;
     private String humanId;
@@ -48,8 +48,6 @@ public class BloodPressure extends AgregateurObjet{
     private String heartRate;
     private String createdAt;
     private String updatedAt;
-
-   
 
     public String getId() {
         return id;
