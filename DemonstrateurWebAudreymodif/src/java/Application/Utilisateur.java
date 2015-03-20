@@ -15,8 +15,12 @@ import java.net.MalformedURLException;
  */
 public class Utilisateur implements Serializable {
 
-    public String name;
-    public String email;
+    private String name;
+    private String email;
+    private int poids;
+    private String unitPoids;
+    private int taille;
+    private String unitTaille;
 
     public String getEmail() {
         return email;
@@ -25,12 +29,22 @@ public class Utilisateur implements Serializable {
     public Utilisateur() throws MalformedURLException {
         URL url = new URL("https://api.humanapi.co/v1/human?access_token=demo");
         Parser p = new Parser(url);
+        
+        URL url1 = new URL("https://api.humanapi.co/v1/human/weight?access_token=demo");
+        Parser p1 = new Parser(url1);
+        
+        URL url2 = new URL("https://api.humanapi.co/v1/human/height?access_token=demo");
+        Parser p2 = new Parser(url2);
 
       //  this.name = p.getValueString("name");
         //this.email = p.getValueString("email");
         
         this.name="UserId";
         this.email="demo@humanapi.co";
+        this.poids=p1.getValueInt("value");
+        this.unitPoids=p1.getValueString("unit");
+        this.taille=p2.getValueInt("value");
+        this.unitTaille=p2.getValueString("unit");
 
     }
 
@@ -49,6 +63,34 @@ public class Utilisateur implements Serializable {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the poids
+     */
+    public int getPoids() {
+        return poids;
+    }
+
+    /**
+     * @return the unitPoids
+     */
+    public String getUnitPoids() {
+        return unitPoids;
+    }
+
+    /**
+     * @return the taille
+     */
+    public int getTaille() {
+        return taille;
+    }
+
+    /**
+     * @return the unitTaille
+     */
+    public String getUnitTaille() {
+        return unitTaille;
     }
 
 }

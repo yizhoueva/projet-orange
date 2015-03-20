@@ -28,6 +28,12 @@ public class Test {
         System.out.println(a);
         int b = test.getValueInt("value");
         System.out.println(b);
+        URL url1 = new URL("https://api.humanapi.co/v1/human/weight?access_token=demo");
+        Parser p1 = new Parser(url1);
+        System.out.println(p1.getValueInt("value"));
+        System.out.println(p1.getValueString("unit"));
+        URL url2 = new URL("https://api.humanapi.co/v1/human/height?access_token=demo");
+        Parser p2 = new Parser(url2);
         
 //        URL url1 = new URL("https://api.humanapi.co/v1/human/activities/summaries?access_token=demo");
 //        Parser p1 = new Parser(url1);

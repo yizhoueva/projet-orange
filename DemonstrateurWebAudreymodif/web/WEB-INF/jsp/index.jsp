@@ -166,6 +166,10 @@
         <jsp:useBean id="test" scope="session" class="Application.Utilisateur"/> 
         <jsp:useBean id="onglet4" scope="session" class="Application.Physiologie"/>
         <jsp:useBean id="coeur" scope="session" class="Application.Coeur"/>
+        <jsp:useBean id="poids" scope="session" class="Application.Utilisateur" />
+        <jsp:useBean id="unitPoids" scope="session" class="Application.Utilisateur" />
+        <jsp:useBean id="taille" scope="session" class="Application.Utilisateur" />
+        <jsp:useBean id="unitTaille" scope="session" class="Application.Utilisateur" />
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h1>Bienvenue</h1>
                     <p>
@@ -191,8 +195,8 @@
                     <tr>
                         <td>
                             <img src = "<%=request.getContextPath()%>/images/profil_p.png" align="middle" /> email : <jsp:getProperty name="test" property="email" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/balance_p.png" align="middle" title="Poids" /> 80 Kg<br>
-                            <img src = "<%=request.getContextPath()%>/images/taille_p.png" align="middle" title="Taille" /> 180 cm<br>
+                            <img src = "<%=request.getContextPath()%>/images/balance_p.png" align="middle" title="Poids" /> <jsp:getProperty name="poids" property="poids" /> <jsp:getProperty name="unitPoids" property="unitPoids" /><br>
+                            <img src = "<%=request.getContextPath()%>/images/taille_p.png" align="middle" title="Taille" /> <jsp:getProperty name="taille" property="taille" /> <jsp:getProperty name="unitTaille" property="unitTaille" /><br>
                             <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /> 24.7<br>
                             <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> 70 bpm<br>
                             <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> 12 / 9 cmHg<br>
