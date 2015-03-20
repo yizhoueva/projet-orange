@@ -23,6 +23,7 @@ public class TestGson {
         
             BloodPressure bp1 = new BloodPressure();
             bp1.deserialiser();
+            System.out.println("ok la caille");
         
     }
     
