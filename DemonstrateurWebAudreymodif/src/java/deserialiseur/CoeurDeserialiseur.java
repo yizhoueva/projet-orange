@@ -36,13 +36,13 @@ public class CoeurDeserialiseur implements JsonDeserializer<Coeur2> {
 //            values[i] = value;
 //            
         }
+//        
+//       Coeur2 coeur = new Coeur2();
+//        coeur.setHeartRates(values);
+//        
         
-        Coeur2 coeur = new Coeur2();
-        coeur.setHeartRates(values);
         
-        
-        
-        return coeur;
+        return null;
 
     }
 }

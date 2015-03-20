@@ -5,8 +5,10 @@
  */
 package Application;
 
+import agregateur.BloodPressure;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import deserialiseur.BloodPressureDeserialiseur;
 import deserialiseur.CoeurDeserialiseur;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,14 +37,15 @@ public class Coeur2 {
     private int tension;
     private int[] tensions;
     private String stringTensions;
+    
+    private String systolique;
 
-    public void deserialiser() throws MalformedURLException, IOException {
+    public Coeur2() throws MalformedURLException, IOException {
 
         // Configure Gson
         GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.registerTypeAdapter(Coeur2.class, new CoeurDeserialiseur());
+        gsonBuilder.registerTypeAdapter(BloodPressure.class, new BloodPressureDeserialiseur());
         Gson gson = gsonBuilder.create();
-
         URL url = new URL("https://api.humanapi.co/v1/human/heart_rate/readings?access_token=demo");
 
         URLConnection con = url.openConnection();
@@ -61,35 +64,9 @@ public class Coeur2 {
         System.out.println("results : " + results);
         System.out.println("longueur de results : " + results.length());
 
-        Coeur2 coeur = gson.fromJson(results, Coeur2.class);
+        BloodPressure bp = gson.fromJson(results, BloodPressure.class);
         //this.diastolic=coeur.diastolic;
-        this.freqcardio = coeur.getFreqcardio();
-        //this.systolic=coeur.freqcardio;
-        //this.unitHR=coeur.unitHR;
-        //this.unitTen=coeur.unitTen;
-        this.heartRates = coeur.heartRates;
-        this.stringHeartRates=getStringHeartRates();
-        
-        this.tension = coeur.tension;
-        this.tensions = coeur.getTensions();
-        this.stringTensions = getStringTensions();
-        
-        url = new URL("https://api.humanapi.co/v1/human/blood_pressure/readings?access_token=demo");
-
-        con = url.openConnection();
-        input = con.getInputStream();
-
-        reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
-        line=""; results = "";
-        while ((line = reader.readLine()) != null) {
-            results += line;
-        }
-        reader.close();
-        input.close();
-        
-        coeur = gson.fromJson(results, Coeur2.class);
-        
-        
+        this.systolique = bp.getSystolic();
         
     }
 
