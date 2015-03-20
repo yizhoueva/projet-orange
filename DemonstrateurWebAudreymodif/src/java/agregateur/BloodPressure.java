@@ -21,8 +21,22 @@ import java.nio.charset.Charset;
  *
  * @author Romeo
  */
-public class BloodPressure {
+public class BloodPressure extends AgregateurObjet{
 
+    public BloodPressure() throws IOException{
+       String requete = "https://api.humanapi.co/v1/human/blood_pressure?access_token=demo";
+       
+       Gson gson = this.deserialiser(this, requete);
+        this.update(gson);
+        //BloodPressure bp  = gson.fromJson(results, BloodPressure.class);
+    }
+    
+    
+    @Override
+    public void update(Gson gson) {
+        
+    }
+    
     private String id;
     private String userId;
     private String humanId;
@@ -35,35 +49,7 @@ public class BloodPressure {
     private String createdAt;
     private String updatedAt;
 
-    //Deserialiseur
-    public BloodPressure deserialiser() throws MalformedURLException, IOException {
-        
-        System.out.println("intialisation de la deserialisation de BloodPressure");
-
-        // Configure Gson
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.registerTypeAdapter(BloodPressure.class, new BloodPressureDeserialiseur());
-        Gson gson = gsonBuilder.create();
-
-        URL url = new URL("https://api.humanapi.co/v1/human/blood_pressure?access_token=demo");
-
-        URLConnection con = url.openConnection();
-        InputStream input = con.getInputStream();
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
-        String line, results = "";
-        while ((line = reader.readLine()) != null) {
-            results += line;
-        }
-        System.out.println("Chaine de caractère récupérée : "+results);
-        
-        reader.close();
-        input.close();
-        
-        BloodPressure bp = gson.fromJson(results, BloodPressure.class);
-        System.out.println("created at : "+bp.getCreatedAt());
-        return bp;
-    }
+   
 
     public String getId() {
         return id;
