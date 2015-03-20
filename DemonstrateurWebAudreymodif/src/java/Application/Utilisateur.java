@@ -25,6 +25,13 @@ public class Utilisateur implements Serializable {
     private String unitIMC;
     private int BPM;
     private String unitBPM;
+    private int systolic;
+    private int diastolic;
+    private String tensionUnit;
+    private int BO;
+    private String unitBO;
+    private int BG;
+    private String unitBG;
     
 
     public String getEmail() {
@@ -46,6 +53,15 @@ public class Utilisateur implements Serializable {
         
         URL url4 = new URL("https://api.humanapi.co/v1/human/heart_rate?access_token=demo");
         Parser p4 = new Parser(url4);
+        
+        URL url5 = new URL("https://api.humanapi.co/v1/human/blood_pressure?access_token=demo");
+        Parser p5 = new Parser(url5);
+        
+        URL url6 = new URL("https://api.humanapi.co/v1/human/blood_oxygen?access_token=demo");
+        Parser p6 = new Parser(url6);
+        
+        URL url7 = new URL("https://api.humanapi.co/v1/human/blood_glucose?access_token=demo");
+        Parser p7 = new Parser(url7);
       //  this.name = p.getValueString("name");
         //this.email = p.getValueString("email");
         
@@ -59,7 +75,14 @@ public class Utilisateur implements Serializable {
         this.unitIMC=p3.getValueString("unit");
         this.BPM=p4.getValueInt("value");
         this.unitBPM=p4.getValueString("unit");
-
+        this.systolic=p5.getValueInt("systolic");
+        this.diastolic=p5.getValueInt("diastolic");
+        this.tensionUnit=p5.getValueString("unit");
+        this.BO=p6.getValueInt("value");
+        this.unitBO=p6.getValueString("unit");
+        this.BG=p7.getValueInt("value");
+        this.unitBG=p7.getValueString("unit");
+        
     }
 
     /**
@@ -133,6 +156,55 @@ public class Utilisateur implements Serializable {
      */
     public String getUnitBPM() {
         return unitBPM;
+    }
+
+    /**
+     * @return the systolic
+     */
+    public int getSystolic() {
+        return systolic;
+    }
+
+    /**
+     * @return the diastolic
+     */
+    public int getDiastolic() {
+        return diastolic;
+    }
+
+    /**
+     * @return the tensionUnit
+     */
+    public String getTensionUnit() {
+        return tensionUnit;
+    }
+
+    /**
+     * @return the BO
+     */
+    public int getBO() {
+        return BO;
+    }
+
+    /**
+     * @return the unitBO
+     */
+    public String getUnitBO() {
+        return unitBO;
+    }
+
+    /**
+     * @return the BG
+     */
+    public int getBG() {
+        return BG;
+    }
+
+    /**
+     * @return the unitBG
+     */
+    public String getUnitBG() {
+        return unitBG;
     }
 
 }
