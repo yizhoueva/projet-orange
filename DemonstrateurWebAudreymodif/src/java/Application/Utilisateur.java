@@ -21,6 +21,11 @@ public class Utilisateur implements Serializable {
     private String unitPoids;
     private int taille;
     private String unitTaille;
+    private int IMC;
+    private String unitIMC;
+    private int BPM;
+    private String unitBPM;
+    
 
     public String getEmail() {
         return email;
@@ -36,6 +41,11 @@ public class Utilisateur implements Serializable {
         URL url2 = new URL("https://api.humanapi.co/v1/human/height?access_token=demo");
         Parser p2 = new Parser(url2);
 
+        URL url3 = new URL("https://api.humanapi.co/v1/human/BMI?access_token=demo");
+        Parser p3 = new Parser(url3);
+        
+        URL url4 = new URL("https://api.humanapi.co/v1/human/heart_rate?access_token=demo");
+        Parser p4 = new Parser(url4);
       //  this.name = p.getValueString("name");
         //this.email = p.getValueString("email");
         
@@ -45,6 +55,10 @@ public class Utilisateur implements Serializable {
         this.unitPoids=p1.getValueString("unit");
         this.taille=p2.getValueInt("value");
         this.unitTaille=p2.getValueString("unit");
+        this.IMC=p3.getValueInt("value");
+        this.unitIMC=p3.getValueString("unit");
+        this.BPM=p4.getValueInt("value");
+        this.unitBPM=p4.getValueString("unit");
 
     }
 
@@ -91,6 +105,34 @@ public class Utilisateur implements Serializable {
      */
     public String getUnitTaille() {
         return unitTaille;
+    }
+
+    /**
+     * @return the IMC
+     */
+    public int getIMC() {
+        return IMC;
+    }
+
+    /**
+     * @return the unitIMC
+     */
+    public String getUnitIMC() {
+        return unitIMC;
+    }
+
+    /**
+     * @return the BPM
+     */
+    public int getBPM() {
+        return BPM;
+    }
+
+    /**
+     * @return the unitBPM
+     */
+    public String getUnitBPM() {
+        return unitBPM;
     }
 
 }

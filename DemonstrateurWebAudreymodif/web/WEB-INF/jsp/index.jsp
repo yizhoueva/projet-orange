@@ -170,6 +170,10 @@
         <jsp:useBean id="unitPoids" scope="session" class="Application.Utilisateur" />
         <jsp:useBean id="taille" scope="session" class="Application.Utilisateur" />
         <jsp:useBean id="unitTaille" scope="session" class="Application.Utilisateur" />
+        <jsp:useBean id="IMC" scope="session" class="Application.Utilisateur" />
+        <jsp:useBean id="unitIMC" scope="session" class="Application.Utilisateur" />
+        <jsp:useBean id="BPM" scope="session" class="Application.Utilisateur" />
+        <jsp:useBean id="unitBPM" scope="session" class="Application.Utilisateur" />
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h1>Bienvenue</h1>
                     <p>
@@ -197,8 +201,8 @@
                             <img src = "<%=request.getContextPath()%>/images/profil_p.png" align="middle" /> email : <jsp:getProperty name="test" property="email" /><br>
                             <img src = "<%=request.getContextPath()%>/images/balance_p.png" align="middle" title="Poids" /> <jsp:getProperty name="poids" property="poids" /> <jsp:getProperty name="unitPoids" property="unitPoids" /><br>
                             <img src = "<%=request.getContextPath()%>/images/taille_p.png" align="middle" title="Taille" /> <jsp:getProperty name="taille" property="taille" /> <jsp:getProperty name="unitTaille" property="unitTaille" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /> 24.7<br>
-                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> 70 bpm<br>
+                            <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /> <jsp:getProperty name="IMC" property="IMC" /> <jsp:getProperty name="unitIMC" property="unitIMC" /><br>
+                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="BPM" property="BPM" /> <jsp:getProperty name="unitBPM" property="unitBPM" /><br>
                             <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> 12 / 9 cmHg<br>
                             <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /> 95%<br>
                             <img src = "<%=request.getContextPath()%>/images/sucre_p.png" align="middle" title="Glycemie" /> 0.83 g/L<br>
