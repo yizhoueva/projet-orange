@@ -30,7 +30,7 @@ public class Utilisateur implements Serializable {
         //this.email = p.getValueString("email");
         
         this.name="UserId";
-        this.email="email";
+        this.email="demo@humanapi.co";
 
     }
 

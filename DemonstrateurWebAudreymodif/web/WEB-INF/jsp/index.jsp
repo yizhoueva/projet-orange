@@ -20,15 +20,14 @@
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker();
-                $("#datepickerCoeur").datepicker();
             });</script>
         <script>
             $(function () {
-                var plot0 = $.jqplot('chart0', [[[1, 66], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
+                var plot0 = $.jqplot('chart0', [[[0, 68],[1, 73],[2, 67],[3, 65],[4, 71],[5, 80],[6, 86],[7, 73],[8, 58],[9, 69],[10, 85],[11, 81],[12, 78],[13, 70],[14, 53]]], {title: 'Heart Rates',
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-                var plot1 = $.jqplot('chart1', [[[1, 77], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
+                var plot1 = $.jqplot('chart1', [[[1, 2], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
@@ -81,7 +80,7 @@
         <jsp:useBean id="onglet4" scope="session" class="noyaufonctionnel.Physiologie"/>
         <jsp:useBean id="coeur" scope="session" class="noyaufonctionnel.Coeur"/>
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
-                    <h1>Bienvenue Chachou </h1>
+                    <h1>Bienvenue</h1>
                     <p>
 
                 </td>
@@ -207,7 +206,7 @@
                             </ul>
                             <br>
                             Selectionner une date :<br>
-                            <input type="text" id="datepickerCoeur">
+                            <input type="text" id="datepicker">
                         </td>
                         <td valign="top">
                             <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="coeur" property="freqcardio" /><jsp:getProperty name="coeur" property="unitHR" /><br>
@@ -305,7 +304,24 @@
                             <li><a href="#table4-1">Aujourd'hui</a></li>
                             <li><a href="#table4-2">Semaine</a></li>
                             <li><a href="#table4-3">Mois</a></li></ul>
+                        <div id="table4-1">
+                            <table><tr>
+                                    <td>
 
+                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                    </td></tr></table></div>
+                        <div id="table4-2">
+                            <table><tr>
+                                    <td>
+
+                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                    </td></tr></table></div>
+                        <div id="table4-3">
+                            <table><tr>
+                                    <td>
+
+                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                    </td></tr></table></div>
 
                     </div> </td>
                     </tr>

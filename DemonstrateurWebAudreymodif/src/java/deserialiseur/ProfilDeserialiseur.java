@@ -28,16 +28,22 @@ public class ProfilDeserialiseur implements JsonDeserializer<Profil> {
         final JsonObject jsonObject = json.getAsJsonObject();
         
         final String userId = jsonObject.get("userId").getAsString();
-
-        Profil profil = null;
-        try {
-            profil = new Profil();
-        } catch (IOException ex) {
-            Logger.getLogger(ProfilDeserialiseur.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        profil.setUserId(userId);
+        final String createdAt = jsonObject.get("createdAt").getAsString();
+        final String email = jsonObject.get("email").getAsString();
+        final String humanId = jsonObject.get("humanId").getAsString();
         
-        return profil;//To change body of generated methods, choose Tools | Templates.
+        final JsonObject defaultTimeZone = jsonObject.get("defaultTimeZone").getAsJsonObject();
+        final String namezone = defaultTimeZone.get("name").getAsString();
+        System.out.println("namezone : "+namezone);
+
+        Profil profil = new Profil();
+        profil.setUserId(userId);
+        profil.setCreatedAt(createdAt);
+        profil.setHumanId(humanId);
+        profil.setEmail(email);
+        profil.setTimezone(namezone);
+        
+        return profil;
     }
 
 }
