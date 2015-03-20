@@ -23,15 +23,12 @@
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker();
-<<<<<<< HEAD
                 $("#datepickerCoeur").datepicker();
                 $("#datepickerSommeil").datepicker();
-=======
->>>>>>> origin
             });</script>
         <script>
             $(function () {
-                var plot0 = $.jqplot('chart0', [[[0, 68],[1, 73],[2, 67],[3, 65],[4, 71],[5, 80],[6, 86],[7, 73],[8, 58],[9, 69],[10, 85],[11, 81],[12, 78],[13, 70],[14, 53]]], {title: 'Heart Rates',
+                var plot0 = $.jqplot('chart0', [[[0, 68], [1, 73], [2, 67], [3, 65], [4, 71], [5, 80], [6, 86], [7, 73], [8, 58], [9, 69], [10, 85], [11, 81], [12, 78], [13, 70], [14, 53]]], {title: 'Heart Rates',
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
@@ -113,6 +110,35 @@
                     }
                 });
 
+
+                var dataSet = {
+                    data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
+                    data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
+                    data3: [[1, 5], [2, 6], [3, 8], [4, 9], [5, 7], [6, 9]],
+                    data4: [[1, 7], [2, 8], [3, 9], [4, 11], [5, 10], [6, 11]]
+                };
+                var options = {
+                    seriesDefaults: {
+                        showMarker: false
+                    },
+                    title: 'Series selection',
+                    axes: {
+                        xaxis: {},
+                        yaxis: {
+                            min: 0,
+                            max: 12
+                        }
+                    }
+                };
+
+                var plotB = $.jqplot('myChart', [dataSet.data1], options);
+                $("input[type=radio][name=dataSeries]").attr("checked", false);
+                $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
+                $("input[type=radio][name=dataSeries]").change(function () {
+                    var val = $(this).val();
+                    plotB.series[0].data = dataSet[val];
+                    plotB.replot();
+                });
                 $("#tabs").tabs();
                 $("#table").tabs();
                 $("#onglet1").tabs();
@@ -212,10 +238,10 @@
                         <td valign="top">
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
-                                    <li><INPUT type="radio" name="buttonDonnee" value="1" CHECKED="CHECKED">Durée</li>
-                                    <li><INPUT type="radio" name="buttonDonnee" value="2">Calories</li>
-                                    <li><INPUT type="radio" name="buttonDonnee" value="3">Distance</li>
-                                    <li><INPUT type="radio" name="buttonDonnee" value="4">Pas</li>
+                                    <li><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Durée</li>
+                                    <li><INPUT name="dataSeries" value="data2" type="radio" >Calories</li>
+                                    <li><INPUT name="dataSeries" value="data3" type="radio" >Distance</li>
+                                    <li><INPUT name="dataSeries" value="data4" type="radio" >Pas</li>
                                 </FORM>
                             </ul>
 
@@ -243,7 +269,7 @@
                                     <table><tr>
                                             <td>
 
-                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="myChart" style="height: 300px; width: 500px;"></div>
                                             </td></tr></table></div>
 
                             </div> </td>
@@ -361,36 +387,30 @@
                             </ul>
                         </td>
                         <td valign="top"><div id="table4" >
-                                <ul>
-
-<<<<<<< HEAD
-                                    <li><a href="#table4-1">Aujourd'hui</a></li>
+                                <ul><li><a href="#table4-1">Aujourd'hui</a></li>
                                     <li><a href="#table4-2">Semaine</a></li>
                                     <li><a href="#table4-3">Mois</a></li></ul>
+                                <li><a href="#table4-1">Aujourd'hui</a></li>
+                                <li><a href="#table4-2">Semaine</a></li>
+                                <li><a href="#table4-3">Mois</a></li></ul>
+                                <div id="table4-1">
+                                    <table><tr>
+                                            <td>
 
-=======
-                            <li><a href="#table4-1">Aujourd'hui</a></li>
-                            <li><a href="#table4-2">Semaine</a></li>
-                            <li><a href="#table4-3">Mois</a></li></ul>
-                        <div id="table4-1">
-                            <table><tr>
-                                    <td>
+                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td></tr></table></div>
+                                <div id="table4-2">
+                                    <table><tr>
+                                            <td>
 
-                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
-                                    </td></tr></table></div>
-                        <div id="table4-2">
-                            <table><tr>
-                                    <td>
+                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td></tr></table></div>
+                                <div id="table4-3">
+                                    <table><tr>
+                                            <td>
 
-                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
-                                    </td></tr></table></div>
-                        <div id="table4-3">
-                            <table><tr>
-                                    <td>
-
-                                        <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
-                                    </td></tr></table></div>
->>>>>>> origin
+                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td></tr></table></div>
 
                             </div> </td>
                     </tr>
