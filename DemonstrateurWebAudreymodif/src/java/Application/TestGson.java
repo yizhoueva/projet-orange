@@ -20,21 +20,8 @@ public class TestGson {
      */
     public static void main(String[] args) throws IOException {
 
-        BloodPressure bp1 = new BloodPressure();
-//        bp1.deserialiser(bp1);
-//        System.out.println("id"+bp1.getId());
-//        System.out.println("userId"+bp1.getUserId());
-//        System.out.println("humanId"+bp1.getHumanId());
-//        System.out.println("timestamp"+bp1.getTimestamp());
-//        System.out.println("source"+bp1.getSource());
-//        System.out.println("systolic"+bp1.getSystolic());
-//        System.out.println("diastolic"+bp1.getDiastolic());
-//        System.out.println("unit"+bp1.getUnit());
-//        System.out.println("heartRate"+bp1.getHeartRate());
-//        System.out.println("createdAt"+bp1.getCreatedAt());
-//        System.out.println("updatedAt"+bp1.getUpdatedAt());
-//            
-
+        Coeur2 c = new Coeur2();
+        System.out.println(c.hr.getCreatedAt());
 }
 
 }

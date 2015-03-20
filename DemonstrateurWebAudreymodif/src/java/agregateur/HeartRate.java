@@ -15,19 +15,82 @@ public class HeartRate {
     private String userId;
     private String humanId;
     private String timestamp;
+    private String source;
     private String value;
-    
-    //Vieilles variables
-    private int systolic;
-    private int diastolic;
-    private String unitHR;
-    private String unitTen;
+    private String unit;
+    private String createdAt;
+    private String updatedAt;
 
-    private int[] heartRates;
-    private String stringHeartRates;
-    
-    private int tension;
-    private int[] tensions;
-    private String stringTensions;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getHumanId() {
+        return humanId;
+    }
+
+    public void setHumanId(String humanId) {
+        this.humanId = humanId;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
     
 }
