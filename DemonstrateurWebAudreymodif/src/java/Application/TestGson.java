@@ -21,7 +21,7 @@ public class TestGson {
     public static void main(String[] args) throws IOException {
 
         Coeur2 c = new Coeur2();
-        System.out.println(c.hr.getCreatedAt());
+        System.out.println(c.hr.getTimestamp());
 }
 
 }

@@ -22,60 +22,12 @@ import java.nio.charset.Charset;
  * @author Romeo
  */
 public class BloodPressure extends AgregateurObjet {
-
-
-    private String id;
-    private String userId;
-    private String humanId;
-    private String timestamp;
-    private String source;
     private String systolic;
     private String diastolic;
     private String unit;
     private String heartRate;
-    private String createdAt;
-    private String updatedAt;
     
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getHumanId() {
-        return humanId;
-    }
-
-    public void setHumanId(String humanId) {
-        this.humanId = humanId;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
 
     public String getSystolic() {
         return systolic;
@@ -107,22 +59,6 @@ public class BloodPressure extends AgregateurObjet {
 
     public void setHeartRate(String heartRate) {
         this.heartRate = heartRate;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
 }

@@ -12,6 +12,17 @@ package agregateur;
 public class HeartRates  {
     
     HeartRate[] heartRates;
+    String plot;
+
+    public void setPlot(String plot) {
+        this.plot = plot;
+    }
     
+    
+    public void plot(int duree){
+        String s="";
+        
+        setPlot(s);
+    }
     
 }
