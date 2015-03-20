@@ -447,9 +447,9 @@
                             <input type="text" id="datepickerGenetique">
                         </td>
                         <td valign="top">
-                            <p>Description : </p>
-                            <p>Trait : </p>
-                            <p>Traits possibles : </p>
+                            <img src = "<%=request.getContextPath()%>/images/Description.png" align="middle" title="Frequence cardiaque" /><br> 
+                            <img src = "<%=request.getContextPath()%>/images/science25.png" align="middle" title="Frequence cardiaque" /><br> 
+                            <img src = "<%=request.getContextPath()%>/images/list.png" align="middle" title="Frequence cardiaque" /><br> 
                         </td>
                     </tr>
                 </table>
