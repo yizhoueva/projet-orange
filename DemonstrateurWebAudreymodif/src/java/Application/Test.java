@@ -28,6 +28,10 @@ public class Test {
         System.out.println(a);
         int b = test.getValueInt("value");
         System.out.println(b);
+     
+        URL url3 = new URL("https://api.humanapi.co/v1/human/BMI?access_token=demo");
+        Parser p3 = new Parser(url3);
+        System.out.println("IMC = "+ p3.getValueInt("value"));
         
 //        URL url1 = new URL("https://api.humanapi.co/v1/human/activities/summaries?access_token=demo");
 //        Parser p1 = new Parser(url1);
