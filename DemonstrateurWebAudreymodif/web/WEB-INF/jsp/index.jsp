@@ -204,6 +204,74 @@
                     plotJ.replot();
                 });
                 
+                
+                //Graphiques Physiologie - Jour
+                
+                 var dataSetPJ = {
+                    data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
+                    data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
+                    data3: [[1, 5],  [6, 9]],
+                    data4: [[1, 7], [2, 8], [3, 9], [4, 11], [5, 10], [6, 11]]
+                };
+                var optionsPJ = {
+                    seriesDefaults: {
+                        showMarker: false
+                    },
+                    title: 'Jour',
+                    axes: {
+                        xaxis: {},
+                        yaxis: {
+                            min: 0,
+                            max: 12
+                        }
+                    }
+                };
+
+                var plotPJ = $.jqplot('myChartPJour', [dataSetPJ.data1], optionsPJ);
+                $("input[type=radio][name=dataSeriesP]").attr("checked", false);
+                $("input[type=radio][name=dataSeriesP][value=data1]").attr("checked", true);
+                $("input[type=radio][name=dataSeriesP]").change(function () {
+                    var valPJ = $(this).val();
+                    plotPJ.series[0].data = dataSet[valPJ];
+                    plotPJ.replot();
+                });
+                
+                //Graphiques Physiologie - Semaine
+                 var dataSetPS = {
+                    data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
+                    data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
+                    data3: [[1, 5],  [6, 9]],
+                    data4: [[1, 7], [2, 8], [3, 9], [4, 11], [5, 10], [6, 11]]
+                };
+                var optionsPS = {
+                    seriesDefaults: {
+                        showMarker: false
+                    },
+                    title: 'Semaine',
+                    axes: {
+                        xaxis: {},
+                        yaxis: {
+                            min: 0,
+                            max: 12
+                        }
+                    }
+                };
+
+                var plotPS = $.jqplot('myChartPSemaine', [dataSetPS.data1], optionsPS);
+                $("input[type=radio][name=dataSeriesP]").attr("checked", false);
+                $("input[type=radio][name=dataSeriesP][value=data1]").attr("checked", true);
+                $("input[type=radio][name=dataSeriesP]").change(function () {
+                    var valPS = $(this).val();
+                    plotPS.series[0].data = dataSet[valPS];
+                    plotPS.replot();
+                });
+                
+                //graphiques physiologie - Mois
+                
+                
+                              
+              
+                
                 $("#tabs").tabs();
                 $("#table").tabs();
                 $("#onglet1").tabs();
@@ -458,12 +526,12 @@
                         <td valign="top">
                             <ul style="list-style-type:none">
                                 <FORM>
-                                    <li><INPUT type="radio" name="choix1" value="1">Glycémie : <jsp:getProperty name="onglet4" property="glycemie" /> g/L</li>
-                                    <li><INPUT type="radio" name="choix1" value="2">Saturation O² : <jsp:getProperty name="onglet4" property="sat" />%</li>
-                                    <li><INPUT type="radio" name="choix1" value="3">IMC : <jsp:getProperty name="onglet4" property="imc" /> kg/cm²</li>
-                                    <li><INPUT type="radio" name="choix1" value="4">Poids : <jsp:getProperty name="onglet4" property="poids" /> kg</li>
-                                    <li><INPUT type="radio" name="choix1" value="5">Taille : <jsp:getProperty name="onglet4" property="taille" /> mm</li>
-                                    <li><INPUT type="radio" name="choix1" value="6">Masse graisseuse : <jsp:getProperty name="onglet4" property="graisse" />%</li>
+                                    <li><INPUT name="dataSeriesP" value="data1" type="radio"   CHECKED>Glycémie : <jsp:getProperty name="onglet4" property="glycemie" /> g/L</li>
+                                    <li><INPUT name="dataSeriesP" value="data3" type="radio">Saturation O² : <jsp:getProperty name="onglet4" property="sat" />%</li>
+                                    <li><INPUT name="dataSeriesP" value="data2" type="radio">IMC : <jsp:getProperty name="onglet4" property="imc" /> kg/cm²</li>
+                                    <li><INPUT name="dataSeriesP" value="data1" type="radio">Poids : <jsp:getProperty name="onglet4" property="poids" /> kg</li>
+                                    <li><INPUT name="dataSeriesP" value="data2" type="radio">Taille : <jsp:getProperty name="onglet4" property="taille" /> mm</li>
+                                    <li><INPUT name="dataSeriesP" value="data1" type="radio">Masse graisseuse : <jsp:getProperty name="onglet4" property="graisse" />%</li>
                                 </FORM>
                             </ul>
                         </td>
@@ -471,26 +539,24 @@
                                 <ul><li><a href="#table4-1">Aujourd'hui</a></li>
                                     <li><a href="#table4-2">Semaine</a></li>
                                     <li><a href="#table4-3">Mois</a></li></ul>
-                                <li><a href="#table4-1">Aujourd'hui</a></li>
-                                <li><a href="#table4-2">Semaine</a></li>
-                                <li><a href="#table4-3">Mois</a></li></ul>
+                                
                                 <div id="table4-1">
                                     <table><tr>
                                             <td>
 
-                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="myChartPJour" style="height: 300px; width: 500px;"></div>
                                             </td></tr></table></div>
                                 <div id="table4-2">
                                     <table><tr>
                                             <td>
 
-                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="myChartPSemaine" style="height: 300px; width: 500px;"></div>
                                             </td></tr></table></div>
                                 <div id="table4-3">
                                     <table><tr>
                                             <td>
 
-                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="chart0" style="height: 300px; width: 500px;"></div>
                                             </td></tr></table></div>
 
                             </div> </td>
