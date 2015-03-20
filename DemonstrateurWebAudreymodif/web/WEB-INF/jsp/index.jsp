@@ -96,6 +96,7 @@
                         }
                     }
                 });
+                
                 var plot9 = $.jqplot('chartSommeil13', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 240}},
                     seriesDefaults: {
@@ -111,7 +112,7 @@
                     }
                 });
 
-
+// graphiques activites - MOIS
                 var dataSet = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
                     data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
@@ -140,6 +141,69 @@
                     plotB.series[0].data = dataSet[val];
                     plotB.replot();
                 });
+                
+                
+                // Graphiques activités - SEMAINE
+                var dataSetS = {
+                    data1: [[1, 1],  [6, 4]],
+                    data2: [[1, 3],  [5, 5], [6, 7]],
+                    data3: [[1, 5],  [4, 9], [5, 7], [6, 9]],
+                    data4: [[1, 7],  [5, 10], [6, 11]]
+                };
+                var optionsS = {
+                    seriesDefaults: {
+                        showMarker: false
+                    },
+                    title: 'Semaine',
+                    axes: {
+                        xaxis: {},
+                        yaxis: {
+                            min: 0,
+                            max: 12
+                        }
+                    }
+                };
+
+                var plotS = $.jqplot('myChartSemaine', [dataSetS.data1], optionsS);
+                $("input[type=radio][name=dataSeries]").attr("checked", false);
+                $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
+                $("input[type=radio][name=dataSeries]").change(function () {
+                    var valS = $(this).val();
+                    plotS.series[0].data = dataSet[valS];
+                    plotS.replot();
+                });
+                
+                
+                // Graphiques activités  - JOUR
+                var dataSetJ = {
+                    data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
+                    data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
+                    data3: [[1, 5],  [6, 9]],
+                    data4: [[1, 7], [2, 8], [3, 9], [4, 11], [5, 10], [6, 11]]
+                };
+                var optionsJ = {
+                    seriesDefaults: {
+                        showMarker: false
+                    },
+                    title: 'Jour',
+                    axes: {
+                        xaxis: {},
+                        yaxis: {
+                            min: 0,
+                            max: 12
+                        }
+                    }
+                };
+
+                var plotJ = $.jqplot('myChartJour', [dataSetJ.data1], optionsJ);
+                $("input[type=radio][name=dataSeries]").attr("checked", false);
+                $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
+                $("input[type=radio][name=dataSeries]").change(function () {
+                    var valJ = $(this).val();
+                    plotJ.series[0].data = dataSet[valJ];
+                    plotJ.replot();
+                });
+                
                 $("#tabs").tabs();
                 $("#table").tabs();
                 $("#onglet1").tabs();
@@ -248,8 +312,7 @@
                                     <li><INPUT type="checkbox" name="buttonSource3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
-                        </td>
-                        <td valign="top">
+                            
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
                                     <li><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Durée</li>
@@ -258,7 +321,8 @@
                                     <li><INPUT name="dataSeries" value="data4" type="radio" >Pas</li>
                                 </FORM>
                             </ul>
-
+                        </td>
+                       
 
 
                         <td valign="top"><div id="table" >
@@ -268,16 +332,18 @@
                                     <li><a href="#table-2">Semaine</a></li>
                                     <li><a href="#table-3">Mois</a></li></ul>
                                 <div id="table-1">
+                                   
+
                                     <table><tr>
                                             <td>
 
-                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="myChartJour" style="height:100%;width:100%; display: inline-block"></div>
                                             </td></tr></table></div>
                                 <div id="table-2">
                                     <table><tr>
                                             <td>
 
-                                                <div id="chart0" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="myChartSemaine" style="height:100%;width:100%; display: inline-block"></div>
                                             </td></tr></table></div>
                                 <div id="table-3">
                                     <table><tr>
@@ -286,7 +352,8 @@
                                                 <div id="myChart" style="height: 300px; width: 500px;"></div>
                                             </td></tr></table></div>
 
-                            </div> </td>
+                            </div>
+                          </td>
                     </tr>
                 </table>
 
