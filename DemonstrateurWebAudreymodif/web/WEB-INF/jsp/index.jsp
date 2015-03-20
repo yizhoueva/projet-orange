@@ -137,10 +137,10 @@
     </head>
 
     <body>
-        <jsp:useBean id="test" scope="session" class="noyaufonctionnel.Utilisateur"/> 
-        <jsp:useBean id="onglet2" scope="session" class="noyaufonctionnel.Activités"/>
-        <jsp:useBean id="onglet4" scope="session" class="noyaufonctionnel.Physiologie"/>
-        <jsp:useBean id="coeur" scope="session" class="noyaufonctionnel.Coeur"/>
+        <jsp:useBean id="test" scope="session" class="Application.Utilisateur"/> 
+        <jsp:useBean id="onglet2" scope="session" class="Application.Activités"/>
+        <jsp:useBean id="onglet4" scope="session" class="Application.Physiologie"/>
+        <jsp:useBean id="coeur" scope="session" class="Application.Coeur"/>
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h1>Bienvenue</h1>
                     <p>

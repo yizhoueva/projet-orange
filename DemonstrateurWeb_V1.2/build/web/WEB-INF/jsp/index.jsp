@@ -13,15 +13,10 @@
         <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         <script language="javascript" type="text/javascript" src="jquery.min.js"></script>
         <script language="javascript" type="text/javascript" src="jquery.jqplot.min.js"></script>
         <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
 
-<<<<<<< Updated upstream
 
 
 
@@ -46,53 +41,24 @@
                 $("#table").tabs();});</script>
         <script>
             $(document).tooltip();</script>
-=======
-        <script type="text/javascript">
-
-            jQuery(document).ready(function ($) {
-                $("#datepicker").datepicker();
-            });
-        </script>
-        <script>
-            $(function () {
-                $("#tabs").tabs();
-            });
-        </script>
-        <script>
-            $(document).tooltip();
-        </script>
->>>>>>> Stashed changes
 
         <style>
             td {
                 border-right: 1px dotted coral;
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
             }
         </style>
 
 
-<<<<<<< Updated upstream
         <script type="text/javascript">
         </script>
-=======
-
->>>>>>> Stashed changes
 
 
     </head>
 
     <body>
-<<<<<<< Updated upstream
         <jsp:useBean id="test" scope="session" class="noyaufonctionnel.Utilisateur"/> 
         <jsp:useBean id="onglet2" scope="session" class="noyaufonctionnel.Activités"/>
         <jsp:useBean id="onglet4" scope="session" class="noyaufonctionnel.Physiologie"/>
-=======
-        <jsp:useBean id="test" scope="session" class="noyaufonctionnel.Utilisateur" />
-
->>>>>>> Stashed changes
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h1>Bienvenue Chachou </h1>
                     <p>
@@ -105,11 +71,7 @@
                     <button id="button">Rafraichir</button>
                 </td></tr></table>
 
-<<<<<<< Updated upstream
         <div id="tabs" >
-=======
-        <div id="tabs">
->>>>>>> Stashed changes
             <ul>
                 <li><a href="#tabs-1">Profil</a></li>
                 <li><a href="#tabs-2">Activités</a></li>
@@ -151,7 +113,6 @@
                     </tr>
                 </table>
 
-<<<<<<< Updated upstream
             </div>
             <div id="tabs-2">
                 <table>
@@ -274,29 +235,3 @@
 
     </body>
 </html>
-=======
-                <div>
-                    <h1>Bijour</h1>
-                </div>
-            </div>
-            <div id="tabs-2">
-                <p>Onglet Fitness</p>
-                <input type="text" id="datepicker"></div>
-
-            <div id="tabs-3"></div>
-
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $.jqplot('chartdiv', [[[1, 2], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]]);
-                });
-            </script>
-            <div id="chartdiv"></div>
-
-
-            <div id="tabs-4"></div>
-            <div id="tabs-5"></div>
-            <div id="tabs-6"></div>
-        </div>
-    </body>
-</html>
->>>>>>> Stashed changes
