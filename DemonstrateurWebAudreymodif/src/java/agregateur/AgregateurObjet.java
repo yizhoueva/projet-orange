@@ -23,43 +23,69 @@ import java.nio.charset.Charset;
  */
 public class AgregateurObjet {
     
-    
-    private String requete = null;
-    GsonBuilder gsonBuilder = new GsonBuilder();
-    
-     //Deserialiseur
-    public void deserialiser() throws MalformedURLException, IOException {
-        
-        System.out.println("intialisation de la deserialisation de : "+this.getClass());
+    private String id;
+    private String userId;
+    private String humanId;
+    private String timestamp;
+    private String source;
+    private String createdAt;
+    private String updatedAt;
 
-        // Configure Gson
-        
-        URL url = new URL(requete);
-
-        URLConnection con = url.openConnection();
-        InputStream input = con.getInputStream();
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
-        String line, results = "";
-        while ((line = reader.readLine()) != null) {
-            results += line;
-        }
-        System.out.println("Chaine de caractère récupérée pour "+this.getClass()+" : "+results);
-        
-        reader.close();
-        input.close();
-        
-        
-        
-        
-    }
-    
-    public void update(Gson gson){
-        
+    public String getId() {
+        return id;
     }
 
-    public void setRequete(String requete) {
-        this.requete = requete;
+    public void setId(String id) {
+        this.id = id;
     }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getHumanId() {
+        return humanId;
+    }
+
+    public void setHumanId(String humanId) {
+        this.humanId = humanId;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+    
     
 }
