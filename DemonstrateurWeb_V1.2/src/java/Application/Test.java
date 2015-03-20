@@ -1,4 +1,4 @@
-package noyaufonctionnel;
+package Application;
 
 
 import java.io.IOException;
@@ -29,12 +29,19 @@ public class Test {
         int b = test.getValueInt("value");
         System.out.println(b);
         
+<<<<<<< Updated upstream
 //        URL url1 = new URL("https://api.humanapi.co/v1/human/activities/summaries?access_token=demo");
 //        Parser p1 = new Parser(url1);
 //        
 //        int duration=p1.getValueInt("duration");
 //        System.out.println(duration);
         
+=======
+        URL url1 = new URL("https://api.humanapi.co/v1/human/activities/summaries?access_token=demo");
+        Parser test1 = new Parser(url1);
+        String t = test1.getValueString("source");
+        System.out.println(t);
+>>>>>>> Stashed changes
     }
 
 }

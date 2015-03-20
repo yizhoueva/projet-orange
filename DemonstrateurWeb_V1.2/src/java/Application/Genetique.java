@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package noyaufonctionnel;
-
-import java.io.Serializable;
-import java.net.URL;
-import java.net.MalformedURLException;
+package Application;
 
 /**
  *
  * @author Romeo
  */
-public class Sommeil implements Serializable {
+
+import java.io.Serializable;
+import java.net.URL;
+import java.net.MalformedURLException;
+
+public class Genetique implements Serializable {
     
 }

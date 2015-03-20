@@ -1,4 +1,4 @@
-package noyaufonctionnel;
+package Application;
 
 
 import java.io.IOException;
@@ -7,7 +7,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static javax.management.Query.value;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -53,8 +52,12 @@ public class Parser {
     public String getValueArray(String name) {
 //Cherche dans le texte la valeur dénommée "name" et la retourne dans "value"
 String str = this.texte;
-JSONObject obj = new JSONObject(str);
-JSONArray arr = obj.getJSONArray(name);
+        System.out.println(str.charAt(6649));
+System.out.println(str.charAt(6650));
+JSONArray arr = new JSONArray(str);
+//JSONObject obj = new JSONObject(str);
+//JSONArray jsonMainArr = mainJSON.getJSONArray("source");
+//JSONArray arr = obj.getJSONArray(name);
 String value = "";
 for (int i = 0; i < arr.length(); i++){
     int s = arr.getInt(i);
