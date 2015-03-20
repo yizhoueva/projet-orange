@@ -144,7 +144,6 @@
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h1>Bienvenue</h1>
                     <p>
-
                 </td>
                 <td>
                     Dernière synchronisation le 10/03/2015 à 9h05
