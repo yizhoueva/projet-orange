@@ -3,7 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/Administrator/projet-orange/projet-orange/DemonstrateurWeb_V1.2/web/WEB-INF/jsp/index.jsp</file>
+=======
+            <file>file:/Users/nicolascapon/Desktop/AMO2/Git/projet-orange/DemonstrateurWeb_V1.2/src/java/noyaufonctionnel/Test.java</file>
+            <file>file:/Users/nicolascapon/Desktop/AMO2/Git/projet-orange/DemonstrateurWeb_V1.2/src/java/JSon/JSONArray.java</file>
+            <file>file:/Users/nicolascapon/Desktop/AMO2/Git/projet-orange/DemonstrateurWeb_V1.2/src/java/noyaufonctionnel/Utilisateur.java</file>
+            <file>file:/Users/nicolascapon/Desktop/AMO2/Git/projet-orange/DemonstrateurWeb_V1.2/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/Users/nicolascapon/Desktop/AMO2/Git/projet-orange/DemonstrateurWeb_V1.2/src/java/JSon/JSONObject.java</file>
+            <file>file:/Users/nicolascapon/Desktop/AMO2/Git/projet-orange/DemonstrateurWeb_V1.2/src/java/JSon/JSONException.java</file>
+            <file>file:/Users/nicolascapon/Desktop/AMO2/Git/projet-orange/DemonstrateurWeb_V1.2/web/WEB-INF/jsp/response.jsp</file>
+            <file>file:/Users/nicolascapon/Desktop/AMO2/Git/projet-orange/DemonstrateurWeb_V1.2/src/java/noyaufonctionnel/Parser.java</file>
+            <file>file:/Users/nicolascapon/Desktop/AMO2/Git/projet-orange/DemonstrateurWeb_V1.2/nbproject/build-impl.xml</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
