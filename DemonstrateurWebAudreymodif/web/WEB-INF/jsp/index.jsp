@@ -15,12 +15,16 @@
 
         <script language="javascript" type="text/javascript" src="jquery.min.js"></script>
         <script language="javascript" type="text/javascript" src="jquery.jqplot.min.js"></script>
+        <script type="text/javascript" src="jqplot.barRenderer.min.js"></script>
+        <script type="text/javascript" src="jqplot.categoryAxisRenderer.min.js"></script>
+        <script type="text/javascript" src="jqplot.pointLabels.min.js"></script>
         <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
 
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker();
                 $("#datepickerCoeur").datepicker();
+                $("#datepickerSommeil").datepicker();
             });</script>
         <script>
             $(function () {
@@ -52,12 +56,66 @@
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
+                var plot7 = $.jqplot('chartSommeil1', [[[1, 6], [3, 7], [5, 8], [7, 5], [9, 9], [11, 10]]], {title: 'Hours Asleep Per Day',
+                    axes: {yaxis: {min: -10, max: 20}},
+                    seriesDefaults: {
+                        renderer: $.jqplot.BarRenderer,
+                        rendererOptions: {
+                            // Put a 30 pixel margin between bars.
+                            barMargin: 30,
+                            // Highlight bars when mouse button pressed.
+                            // Disables default highlighting on mouse over.
+                            highlightMouseDown: true
+                        },
+                        pointLabels: {show: true}
+                    }
+                });
+                var plot8 = $.jqplot('chartSommeil12', [[[1, 7], [3, 8], [5, 5], [7, 12], [9, 6], [11, 8]]], {title: 'Hours Asleep Per Day',
+                    seriesDefaults: {
+                        renderer: $.jqplot.BarRenderer,
+                        rendererOptions: {
+                            // Put a 30 pixel margin between bars.
+                            barMargin: 30,
+                            // Highlight bars when mouse button pressed.
+                            // Disables default highlighting on mouse over.
+                            highlightMouseDown: true
+                        },
+                        pointLabels: {show: true}
+                    },
+                    axes: {
+                        xaxis: {
+                            renderer: $.jqplot.CategoryAxisRenderer
+                        },
+                        yaxis: {
+                            // Don't pad out the bottom of the data range.  By default,
+                            // axes scaled as if data extended 10% above and below the
+                            // actual range to prevent data points right on grid boundaries.
+                            // Don't want to do that here.
+                            padMin: 0
+                        }
+                    }
+                });
+                var plot9 = $.jqplot('chartSommeil13', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Hours Asleep Per Day',
+                    axes: {yaxis: {min: -10, max: 240}},
+                    seriesDefaults: {
+                        renderer: $.jqplot.BarRenderer,
+                        rendererOptions: {
+                            // Put a 30 pixel margin between bars.
+                            barMargin: 30,
+                            // Highlight bars when mouse button pressed.
+                            // Disables default highlighting on mouse over.
+                            highlightMouseDown: true
+                        },
+                        pointLabels: {show: true}
+                    }
+                });
 
                 $("#tabs").tabs();
                 $("#table").tabs();
                 $("#onglet1").tabs();
                 $("#onglet2").tabs();
                 $("#table4").tabs();
+                $("#tableSommeil").tabs();
             });</script>
         <script>
             $(document).tooltip();</script>
@@ -300,14 +358,14 @@
                             </ul>
                         </td>
                         <td valign="top"><div id="table4" >
-                        <ul>
+                                <ul>
 
-                            <li><a href="#table4-1">Aujourd'hui</a></li>
-                            <li><a href="#table4-2">Semaine</a></li>
-                            <li><a href="#table4-3">Mois</a></li></ul>
+                                    <li><a href="#table4-1">Aujourd'hui</a></li>
+                                    <li><a href="#table4-2">Semaine</a></li>
+                                    <li><a href="#table4-3">Mois</a></li></ul>
 
 
-                    </div> </td>
+                            </div> </td>
                     </tr>
                 </table>
             </div>
@@ -320,8 +378,56 @@
 
             <div id="tabs-6" class="tabcontent">
 
-                
-
+                <table cellpadding="15">
+                    <tr>
+                        <td valign="top">
+                            Montrer les données de :
+                            <ul style="list-style-type:none">
+                                <FORM>
+                                    <li><INPUT type="checkbox" name="choix1" value="1">FitBit</li>
+                                    <li><INPUT type="checkbox" name="choix2" value="2">RunKeeper</li>
+                                    <li><INPUT type="checkbox" name="choix3" value="3">Garmin Connect</li>
+                                </FORM>
+                            </ul>
+                            <br>
+                            Selectionner une date :<br>
+                            <input type="text" id="datepickerSommeil">
+                        </td>
+                        <td valign="top">
+                            <div id="tableSommeil" >
+                                <ul>
+                                    <li><a href="#onglet-1">Aujourd'hui</a></li>
+                                    <li><a href="#onglet-2">Semaine</a></li>
+                                    <li><a href="#onglet-3">Mois</a></li>
+                                </ul>
+                                <div id="onglet-1">
+                                    <table><tr>
+                                            <td>
+                                                <div id="chartSommeil1" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="onglet-2">
+                                    <table><tr>
+                                            <td>
+                                                <div id="chartSommeil12" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="onglet-3">
+                                    <table><tr>
+                                            <td>
+                                                <div id="chartSommeil13" style="height:100%;width:100%; display: inline-block"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
         </div>
