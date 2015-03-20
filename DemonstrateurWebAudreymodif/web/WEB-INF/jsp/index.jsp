@@ -446,11 +446,13 @@
                             Selectionner une date :<br>
                             <input type="text" id="datepickerGenetique">
                         </td>
+                        <td valign="top">
+                            <p>Description : </p>
+                            <p>Trait : </p>
+                            <p>Traits possibles : </p>
+                        </td>
                     </tr>
                 </table>
-
-
-
             </div>
 
             <div id="tabs-6" class="tabcontent">
