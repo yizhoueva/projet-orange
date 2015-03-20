@@ -25,6 +25,7 @@
                 $("#datepicker").datepicker();
                 $("#datepickerCoeur").datepicker();
                 $("#datepickerSommeil").datepicker();
+                $("#datepickerGenetique").datepicker();
             });</script>
         <script>
             $(function () {
@@ -423,7 +424,23 @@
                 </table>
             </div>
             <div id="tabs-5">
-
+                <table cellpadding="15">
+                    <tr>
+                        <td valign="top">
+                            Montrer les données de :
+                            <ul style="list-style-type:none">
+                                <FORM>
+                                    <li><INPUT type="checkbox" name="choix1" value="1">FitBit</li>
+                                    <li><INPUT type="checkbox" name="choix2" value="2">RunKeeper</li>
+                                    <li><INPUT type="checkbox" name="choix3" value="3">Garmin Connect</li>
+                                </FORM>
+                            </ul>
+                            <br>
+                            Selectionner une date :<br>
+                            <input type="text" id="datepickerGenetique">
+                        </td>
+                    </tr>
+                </table>
 
 
 
