@@ -24,5 +24,4 @@ public class HeartRates  {
         
         setPlot(s);
     }
-    
 }

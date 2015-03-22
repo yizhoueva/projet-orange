@@ -9,9 +9,9 @@ package agregateur;
  *
  * @author Romeo
  */
-public class BloodOxygen extends AgregateurObjet {
-    private String value;
-    private String unit;
+public class Weight extends AgregateurObjet{
+    String value;
+    String unit;
 
     public String getValue() {
         return value;
@@ -28,4 +28,5 @@ public class BloodOxygen extends AgregateurObjet {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+    
 }

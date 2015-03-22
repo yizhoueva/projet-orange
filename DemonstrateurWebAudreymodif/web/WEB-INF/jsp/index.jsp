@@ -315,7 +315,7 @@
         <jsp:useBean id="BG" scope="session" class="Application.Utilisateur" />
         <jsp:useBean id="unitBG" scope="session" class="Application.Utilisateur" />
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
-                    <h1>Bienvenue</h1>
+                    <h2>Bienvenue</h2>
                     <p>
                 </td>
                 <td>
@@ -443,7 +443,7 @@
                             </ul>
                             <br>
                             Selectionner une date :<br>
-                            <input type="text" id="datepicker">
+                            <input type="text" id="datepickerCoeur">
                         </td>
                         <td valign="top">
                             <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="coeur" property="freqcardio" /><jsp:getProperty name="coeur" property="unitHR" /><br>

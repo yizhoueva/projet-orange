@@ -31,7 +31,7 @@ public class Coeur2 {
 
     BloodPressure bp;
     HeartRate hr;
-    BloodGlucose bg;
+    HeartRate[] hrs;
     
     private int freqcardio;
     private int systolic;
@@ -48,6 +48,11 @@ public class Coeur2 {
     
     private String systolique;
 
+    /**
+     *
+     * @throws MalformedURLException
+     * @throws IOException
+     */
     public Coeur2() throws MalformedURLException, IOException {
 
         // Configuration de Gson
@@ -96,29 +101,6 @@ public class Coeur2 {
         HeartRate hr = gson.fromJson(results, HeartRate.class);
         this.hr=hr;
         
-        
-        // Configuration de Gson
-        gsonBuilder.registerTypeAdapter(BloodGlucose.class, new BloodGlucoseDeserialiseur());
-        gson = gsonBuilder.create();
-        
-        //Connexion à l'agregateur
-        url = new URL("https://api.humanapi.co/v1/human/blood_glucose?access_token=demo");
-        con = url.openConnection();
-        input = con.getInputStream();
-
-        //lecture de la réponse
-        reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
-        line=""; results = "";
-        while ((line = reader.readLine()) != null) {
-            results += line;
-        }
-        System.out.println("Glucose? "+results);
-        reader.close();
-        input.close();
-        
-        //création de l'objet BloodPressure
-        BloodGlucose bg = gson.fromJson(results, BloodGlucose.class);
-        this.bg=bg;
         
     }
 
