@@ -26,6 +26,8 @@
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker();
+                $("#datepickerActivite").datepicker();
+                $("#datepickerPhysiologie").datepicker();
                 $("#datepickerCoeur").datepicker();
                 $("#datepickerSommeil").datepicker();
                 $("#datepickerGenetique").datepicker();
@@ -352,7 +354,7 @@
                             <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /> <jsp:getProperty name="IMC" property="IMC" /> <jsp:getProperty name="unitIMC" property="unitIMC" /><br>
                             <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="BPM" property="BPM" /> <jsp:getProperty name="unitBPM" property="unitBPM" /><br>
                             <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> <jsp:getProperty name="systolic" property="systolic" /> / <jsp:getProperty name="diastolic" property="diastolic" /> <jsp:getProperty name="tensionUnit" property="tensionUnit" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /><jsp:getProperty name="BO" property="BO" /> <jsp:getProperty name="unitBO" property="unitBO" /><br>
+                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /> <jsp:getProperty name="BO" property="BO" /> <jsp:getProperty name="unitBO" property="unitBO" /><br>
                             <img src = "<%=request.getContextPath()%>/images/sucre_p.png" align="middle" title="Glycemie" /> <jsp:getProperty name="BG" property="BG" /> <jsp:getProperty name="unitBG" property="unitBG" /><br>
                             <img src = "<%=request.getContextPath()%>/images/activité_p.png" align="middle" title="Activité sportive" /><br>
                             <img src = "<%=request.getContextPath()%>/images/sommeil_p.png" align="middle" title="Sommeil" /><br>
@@ -388,7 +390,16 @@
                                     <li><INPUT type="checkbox" name="buttonSource3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
+<<<<<<< HEAD
 
+=======
+                            <br>
+                            Selectionner une date :<br>
+                            <input type="text" id="datepickerActivite">
+                        </td>
+                        <td valign="top">
+                            
+>>>>>>> d8285f9192b9cc4b4f4e1dc96d36ac1b04843509
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
                                     <li><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Durée</li>
@@ -541,6 +552,10 @@
                                     <li><INPUT name="dataSeriesP" value="data1" type="radio">Masse graisseuse : <jsp:getProperty name="onglet4" property="graisse" />%</li>
                                 </FORM>
                             </ul>
+                                <br>
+                            Selectionner une date :<br>
+                            <input type="text" id="datepickerPhysiologie">
+
                         </td>
                         <td valign="top"><div id="table4" >
                                 <ul><li><a href="#table4-1">Aujourd'hui</a></li>
