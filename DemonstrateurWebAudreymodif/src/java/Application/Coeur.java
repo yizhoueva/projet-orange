@@ -66,7 +66,7 @@ public class Coeur extends ApplicationObjet implements Serializable {
         for (int i = 0; i < bps.length; i++) {
             BloodPressure bp = bps[i];
             int pressionMoyenne = (bp.getSystolic() + 2 * bp.getDiastolic()) / 3;
-            s += "[" +"'"+ bp.convertDateToPlottable(bps.getTimestamp())+"'" + ", " + pressionMoyenne + "]";
+            s += "[" +"'"+ bp.convertDateToPlottable(bp.getTimestamp())+"'" + ", " + pressionMoyenne + "]";
             if (i != bps.length - 1) {
                 s += ",";
             }
