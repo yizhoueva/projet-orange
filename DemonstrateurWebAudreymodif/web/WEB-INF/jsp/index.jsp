@@ -254,15 +254,48 @@
                     }
                 };
 
-                var plotJ = $.jqplot('myChartJour', [dataSetJ.data1], optionsJ);
+                var plotJ = $.jqplot('myChartJour', [dataSet.data1,dataSetJ.data1, dataSetS.data1], optionsJ);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
+                $("input[type=checkbox][name=buttonSource1]").attr("checked", true);
+                $("input[type=checkbox][name=buttonSource2]").attr("checked", true);
+                $("input[type=checkbox][name=buttonSource3]").attr("checked", true);
+                
                 $("input[type=radio][name=dataSeries]").change(function () {
                     var valJ = $(this).val();
                     plotJ.series[0].data = dataSet[valJ];
+                    plotJ.series[1].data = dataSetJ[valJ];
+                    plotJ.series[2].data = dataSetS[valJ];
                     plotJ.replot();
                 });
-
+$("input[type=checkbox][name=buttonSource1]").change(function(){
+        if(this.checked){
+       plotJ.series[0].data = dataSet.data1;
+       plotJ.replot();
+    } else {
+       plotJ.series[0].data = [];
+       plotJ.replot();
+    }
+    });
+    
+    $("input[type=checkbox][name=buttonSource2]").change(function(){
+        if(this.checked){
+       plotJ.series[1].data = dataSetJ.data1;
+       plotJ.replot();
+    } else {
+       plotJ.series[1].data = [];
+       plotJ.replot();
+    }
+    });
+    
+    $("input[type=checkbox][name=buttonSource3]").change(function(){
+        if(this.checked){
+       plotJ.series[2].data = dataSetS.data1;
+       plotJ.replot();
+    } else {
+       plotJ.series[2].data = [];
+       plotJ.replot();
+    }  });
 
                 //Graphiques Physiologie - Jour
 
