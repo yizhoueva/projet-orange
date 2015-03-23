@@ -35,23 +35,18 @@ public class TestGson {
 
 //
         Coeur c = new Coeur();
+        BloodPressure[] bps = c.getBps();
         HeartRate[] hrs = c.getHrs();
-        for (int i = 0; i < hrs.length; i++) {
-            HeartRate hr = hrs[i];
+        for (int i = 0; i < bps.length; i++) {
+            BloodPressure bp = bps[i];
 //            System.out.println("Valeur n° " + (i + 1) + " :");
 //            System.out.println("  >userId : " + hr.getUserId());
 //            System.out.println("  >humanId : " + hr.getHumanId());
-            DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-            String string1 = hr.getTimestamp();
-            Date result1 = df1.parse(string1);
 //          Calendar rightNow = Calendar.getInstance();
 
-
-            String lala = new SimpleDateFormat( "yyyy-MM-dd", Locale.FRANCE).format(result1);
     
-                    //2008-09-30 4:00PM
-            System.out.println(lala);
-            //System.out.println("  >timestamp : " + hr.getTimestamp().parse(string1);
+             //2008-09-30 4:00PM
+            System.out.println("  >timestamp : " + bp.convertDateToPlottable(bp.getTimestamp()));
 
 
 //        Coeur c = new Coeur();

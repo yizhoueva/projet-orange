@@ -54,7 +54,7 @@
                 //granphique Coeur jour 
                 var dataSetCoeurJour = {
                     data1: ${Coeur.hrPlot},
-                    data2: ${Coeur.hrPlot}
+                    data2: ${Coeur.bpPlot}
                 };
                 var optionsCoeurJour = {
                     axes: {xaxis: {renderer: $.jqplot.DateAxisRenderer}},
@@ -68,6 +68,7 @@
                     plotCoeurJour.series[0].data = dataSet[valCoeurJour];
                     plotCoeurJour.replot();
                 });
+                
                 // Graphiques Coeur Semaine
                 var dataSetCoeurSemaine = {
                     data1: [[1, 1], [6, 4]],

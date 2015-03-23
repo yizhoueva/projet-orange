@@ -61,19 +61,19 @@ public class Coeur extends ApplicationObjet implements Serializable {
 
     }
 
-    public String getBpPlot() {
-        String s = "[[";
+    public String getBpPlot() throws ParseException{
+        String s = "[";
         for (int i = 0; i < bps.length; i++) {
             BloodPressure bp = bps[i];
             int pressionMoyenne = (bp.getSystolic() + 2 * bp.getDiastolic()) / 3;
-            s += "[" + i + ", " + pressionMoyenne + "]";
-            if (i != hrs.length - 1) {
+            s += "[" +"'"+ bp.convertDateToPlottable(bps.getTimestamp())+"'" + ", " + pressionMoyenne + "]";
+            if (i != bps.length - 1) {
                 s += ",";
             }
 
         }
-        s += "]]";
-        System.out.println(s);
+        s += "]";
+        System.out.println("aaaaaaaa"+s);
 
         return s;
 
