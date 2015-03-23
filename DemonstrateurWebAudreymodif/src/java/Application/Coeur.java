@@ -36,6 +36,7 @@ public class Coeur extends ApplicationObjet implements Serializable {
     String bpPlot;
 
 
+
     /**
      *
      * @return

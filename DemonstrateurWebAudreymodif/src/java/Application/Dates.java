@@ -29,4 +29,16 @@ public class Dates implements Serializable {
     public String getDate() {
         return date;
     }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(String date) {
+        if(date.equals("now")){
+            Calendar c = Calendar.getInstance(); // date du jour 
+        Date d = c.getTime();
+        date = d.toString();
+        }
+        this.date = date;
+    }
 }
