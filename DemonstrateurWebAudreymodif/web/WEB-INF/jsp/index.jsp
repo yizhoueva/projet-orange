@@ -28,10 +28,6 @@
         <jsp:useBean id="coeur" scope="session" class="Application.Coeur" />
         <jsp:useBean id="physiologie" scope="session" class="Application.Physiologie" />
         
-        <script>var test="essaye moi"</script>
-        <script>
-            var test = "Essaye moi"
-            </script>
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker({
@@ -345,11 +341,6 @@
         <script>
             $(document).tooltip();</script>
 
-        <style>
-            td {
-                border-right: 1px dotted coral;
-            }
-        </style>
 
     </head>
 
@@ -416,7 +407,7 @@
 
             </div>
             <div id="tabs-2">
-                <table>
+                <table cellpadding="15">
                     <tr>
                         <td valign="top">
                             Montrer les données de :
