@@ -56,9 +56,8 @@
     </head>
 
     <body>
-        <jsp:useBean id="test" scope="session" class="noyaufonctionnel.Utilisateur"/> 
-        <jsp:useBean id="onglet2" scope="session" class="noyaufonctionnel.Activités"/>
-        <jsp:useBean id="onglet4" scope="session" class="noyaufonctionnel.Physiologie"/>
+       
+
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h1>Bienvenue Chachou </h1>
                     <p>
@@ -104,6 +103,7 @@
                                     <li><INPUT type="checkbox" name="choix3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
+                            
                             <br>
                             Selectionner une date :<br>
                             <input type="text" id="datepicker">
