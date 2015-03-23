@@ -3,7 +3,7 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-    
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Demonstrateur</title>
 
@@ -18,6 +18,7 @@
         <script type="text/javascript" src="jqplot.barRenderer.min.js"></script>
         <script type="text/javascript" src="jqplot.categoryAxisRenderer.min.js"></script>
         <script type="text/javascript" src="jqplot.pointLabels.min.js"></script>
+        <script type="text/javascript" src="jqplot.dateAxisRenderer.min.js"></script>
         <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
 
 
@@ -48,29 +49,83 @@
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-                var plot1 = $.jqplot('chart1', ${coeur.hrPlot}, {title: 'Frequences cardiaques',
-                    series: [{color: '#5FAB78'}]
+
+                //granphique Coeur jour 
+                var dataSetCoeurJour = {
+                    data1: ${Coeur.hrPlot},
+                    data2: ${Coeur.hrPlot}
+                };
+                var optionsCoeurJour = {
+                    series: [{lineWidth: 4, markerOptions: {style: 'square'}}],
+                    axes: {xaxis: {renderer: $.jqplot.DateAxisRenderer}}
+                };
+
+                var plotCoeurJour = $.jqplot('CoeurJour', [dataSetCoeurJour.data1], optionsCoeurJour);
+                $("input[type=radio][name=dataSeries]").attr("checked", false);
+                $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
+                $("input[type=radio][name=dataSeries]").change(function () {
+                    var valCoeurJour = $(this).val();
+                    plotCoeurJour.series[0].data = dataSet[valCoeurJour];
+                    plotCoeurJour.replot();
                 });
-                var plot2 = $.jqplot('chart2', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
-                    axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
+
+                // Graphiques Coeur Semaine
+                var dataSetCoeurSemaine = {
+                    data1: [[1, 1], [6, 4]],
+                    data2: [[1, 3], [5, 5], [6, 7]]
+                };
+                var optionsCoeurSemaine = {
+                    seriesDefaults: {
+                        showMarker: false
+                    },
+                    title: 'Semaine',
+                    axes: {
+                        xaxis: {},
+                        yaxis: {
+                            min: 0,
+                            max: 12
+                        }
+                    }
+                };
+
+                var plotCoeurSemaine = $.jqplot('CoeurSemaine', [dataSetCoeurSemaine.data1], optionsCoeurSemaine);
+                $("input[type=radio][name=dataSeries]").attr("checked", false);
+                $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
+                $("input[type=radio][name=dataSeries]").change(function () {
+                    var valCoeurSemaine = $(this).val();
+                    plotCoeurSemaine.series[0].data = dataSet[valCoeurSemaine];
+                    plotCoeurSemaine.replot();
                 });
-                var plot3 = $.jqplot('chart3', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
-                    axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
+
+
+                // Graphiques Coeur Mois
+                var dataSetCoeurMois = {
+                    data1: [[1, 1], [6, 4]],
+                    data2: [[1, 3], [5, 5], [6, 7]]
+                };
+                var optionsCoeurMois = {
+                    seriesDefaults: {
+                        showMarker: false
+                    },
+                    title: 'Semaine',
+                    axes: {
+                        xaxis: {},
+                        yaxis: {
+                            min: 0,
+                            max: 12
+                        }
+                    }
+                };
+                var plotCoeurMois = $.jqplot('CoeurMois', [dataSetCoeurMois.data1], optionsCoeurMois);
+                $("input[type=radio][name=dataSeries]").attr("checked", false);
+                $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
+                $("input[type=radio][name=dataSeries]").change(function () {
+                    var valCoeurMois = $(this).val();
+                    plotCoeurMois.series[0].data = dataSet[valCoeurMois];
+                    plotCoeurMois.replot();
                 });
-                var plot4 = $.jqplot('chart4', [[[1, 2], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
-                    axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
-                });
-                var plot5 = $.jqplot('chart5', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
-                    axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
-                });
-                var plot6 = $.jqplot('chart6', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
-                    axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
-                });
+
+
                 var plot7 = $.jqplot('chartSommeil1', [[[1, 6], [3, 7], [5, 8], [7, 5], [9, 9], [11, 10]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 20}},
                     seriesDefaults: {
@@ -110,6 +165,7 @@
                         }
                     }
                 });
+
                 var plot9 = $.jqplot('chartSommeil13', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 240}},
                     seriesDefaults: {
@@ -124,6 +180,7 @@
                         pointLabels: {show: true}
                     }
                 });
+
 // graphiques activites - MOIS
                 var dataSet = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
@@ -144,6 +201,7 @@
                         }
                     }
                 };
+
                 var plotB = $.jqplot('myChart', [dataSet.data1], options);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -152,6 +210,8 @@
                     plotB.series[0].data = dataSet[val];
                     plotB.replot();
                 });
+
+
                 // Graphiques activités - SEMAINE
                 var dataSetS = {
                     data1: [[1, 1], [6, 4]],
@@ -172,6 +232,7 @@
                         }
                     }
                 };
+
                 var plotS = $.jqplot('myChartSemaine', [dataSetS.data1], optionsS);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -180,6 +241,8 @@
                     plotS.series[0].data = dataSet[valS];
                     plotS.replot();
                 });
+
+
                 // Graphiques activités  - JOUR
                 var dataSetJ = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
@@ -200,6 +263,7 @@
                         }
                     }
                 };
+
                 var plotJ = $.jqplot('myChartJour', [dataSetJ.data1], optionsJ);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -208,6 +272,8 @@
                     plotJ.series[0].data = dataSet[valJ];
                     plotJ.replot();
                 });
+
+
                 //Graphiques Physiologie - Jour
 
                 var dataSetPJ = {
@@ -270,7 +336,6 @@
                 $("#tabs").tabs();
                 $("#table").tabs();
                 $("#onglet1").tabs();
-                $("#onglet2").tabs();
                 $("#table4").tabs();
                 $("#tableSommeil").tabs();
             });</script>
@@ -283,7 +348,7 @@
             }
         </style>
 
-
+    </head>
 
 
 
@@ -426,9 +491,16 @@
                                     <li><INPUT type="checkbox" name="choix3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
+                            <ul style="list-style-type:none ; display: inline-block">
+                                <FORM>
+                                    <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Frequence cardiaque<br>
+
+                                    <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><INPUT name="dataSeries" value="data2" type="radio" >Tension
+
+                                </FORM>
+                            </ul>
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> 
                             <div id="onglet1" >
                                 <ul>
                                     <li><a href="#onglet-1">1 jour</a></li>
@@ -438,9 +510,9 @@
                                 <div id="onglet-1">
                                     Selectionner une date :<br>
                                     <input type="text" id="datepickerCoeur">
-                                    <table ><tr>
+                                    <table><tr>
                                             <td>
-                                                <div id="chart1" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="CoeurJour" style="height:300px;width:800px; display: inline-block"></div>
                                             </td>
                                         </tr>
                                     </table>
@@ -448,7 +520,7 @@
                                 <div id="onglet-2">
                                     <table><tr>
                                             <td>
-                                                <div id="chart2" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="CoeurSemaine" style="height:300px;width:800px; display: inline-block"></div>
                                             </td>
                                         </tr>
                                     </table>
@@ -456,47 +528,13 @@
                                 <div id="onglet-3">
                                     <table><tr>
                                             <td>
-                                                <div id="chart3" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="CoeurMois" style="height:300px;width:800px; display: inline-block"></div>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
 
-                        </td>
-                        <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><br> 
-                            <div id="onglet2" >
-                                <ul>
-                                    <li><a href="#onglet-1">Aujourd'hui</a></li>
-                                    <li><a href="#onglet-2">Semaine</a></li>
-                                    <li><a href="#onglet-3">Mois</a></li>
-                                </ul>
-                                <div id="onglet-1">
-                                    <table><tr>
-                                            <td>
-                                                <div id="chart4" style="height:100%;width:100%; display: inline-block"></div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div id="onglet-2">
-                                    <table><tr>
-                                            <td>
-                                                <div id="chart5" style="height:100%;width:100%; display: inline-block"></div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div id="onglet-3">
-                                    <table><tr>
-                                            <td>
-                                                <div id="chart6" style="height:100%;width:100%; display: inline-block"></div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div> 
                         </td>
                     </tr>
                 </table>

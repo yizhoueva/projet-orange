@@ -45,7 +45,7 @@ public class Coeur extends ApplicationObjet implements Serializable {
      * @return
      */
     public String getHrPlot() throws ParseException {
-        String s = "[[";
+        String s = "[";
         for (int i = 0; i < hrs.length; i++) {
             HeartRate hr = hrs[i];
             s += "[" + hr.convertDateToPlottable(hr.getTimestamp()) + ", " + hrs[i].getValue() + "]";
@@ -54,7 +54,7 @@ public class Coeur extends ApplicationObjet implements Serializable {
             }
 
         }
-        s += "]]";
+        s += "]";
         System.out.println(s);
 
         return s;
