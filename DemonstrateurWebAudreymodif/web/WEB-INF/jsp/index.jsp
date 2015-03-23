@@ -38,7 +38,7 @@
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-                var plot1 = $.jqplot('chart1', ${Coeur.hrPlot}, {title: 'Frequences cardiaques',
+                var plot1 = $.jqplot('chart1', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Frequences cardiaques',
                     
                     series: [{color: '#5FAB78'}]
                 });

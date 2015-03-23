@@ -10,6 +10,9 @@ import agregateur.BloodPressure;
 import agregateur.HeartRate;
 import agregateur.Sleep;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -32,6 +35,13 @@ public class TestGson {
 //            System.out.println("Valeur n° " + (i + 1) + " :");
 //            System.out.println("  >userId : " + hr.getUserId());
 //            System.out.println("  >humanId : " + hr.getHumanId());
+                    DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+            String string1 = hr.getTimestamp();
+            Date result1 = df1.parse(string1);
+            int y = result1.getYear();
+            String s = res
+                    //2008-09-30 4:00PM
+            System.out.println(result1);
 //            System.out.println("  >timestamp : " + hr.getTimestamp());
 //            System.out.println("  >source : " + hr.getSource());
 //            System.out.println("  >value : " + hr.getValue());
