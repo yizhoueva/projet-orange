@@ -10,6 +10,7 @@ package Application;
  * @author Romeo
  */
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
 import java.net.MalformedURLException;
@@ -25,7 +26,7 @@ public class Activités implements Serializable {
 
     
     
-    public Activités()throws MalformedURLException {
+    public Activités()throws MalformedURLException, IOException {
         URL url = new URL("https://api.humanapi.co/v1/human/activities/summaries?access_token=demo");
         Parser p = new Parser(url);
 //        
