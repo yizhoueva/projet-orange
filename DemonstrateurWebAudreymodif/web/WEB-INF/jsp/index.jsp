@@ -325,7 +325,7 @@
                 <table cellpadding="15">
                     <tr>
                         <td>
-                            <img src = "<%=request.getContextPath()%>/images/profil_p.png" align="middle" /> email : 
+                            <img src = "<%=request.getContextPath()%>/images/profil_p.png" align="middle" /> email : <br>
                             <img src = "<%=request.getContextPath()%>/images/balance_p.png" align="middle" title="Poids" /> <br>
                             <img src = "<%=request.getContextPath()%>/images/taille_p.png" align="middle" title="Taille" /> <br>
                             <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /><br>
@@ -367,16 +367,12 @@
                                     <li><INPUT type="checkbox" name="buttonSource3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
-<<<<<<< HEAD
-
-=======
                             <br>
                             Selectionner une date :<br>
                             <input type="text" id="datepickerActivite">
                         </td>
                         <td valign="top">
                             
->>>>>>> d8285f9192b9cc4b4f4e1dc96d36ac1b04843509
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
                                     <li><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Durée</li>
