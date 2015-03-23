@@ -9,79 +9,54 @@ package Application;
  *
  * @author Romeo
  */
-
+import agregateur.Activity;
+import com.google.gson.GsonBuilder;
+import deserialiseur.ActivityDeserialiseur;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.net.URL;
 import java.net.MalformedURLException;
+import java.nio.charset.Charset;
 
-public class Activités implements Serializable {
-    
-    
-    private int duration;
-    private int distance;
-    private int steps;
-    private int calories;
-    private String source="source";
+public class Activités extends ApplicationObjet implements Serializable {
 
-    
-    
-    public Activités()throws MalformedURLException, IOException {
-        URL url = new URL("https://api.humanapi.co/v1/human/activities/summaries?access_token=demo");
-        Parser p = new Parser(url);
-//        
-//        this.duration=p.getValueInt("duration");
-//        this.calories=p.getValueInt("calories");
-        
-    }       
-    /**
-     * @return the duration
-     * @throws java.net.MalformedURLException
-     */
-    public int getDuration()  {
-       return duration;
-    }
-   
+    private Activity[] activites;
 
-   
-    
-  
+    public Activités() throws MalformedURLException, IOException {
 
-    /**
-     * @param distance the distance to set
-     */
-    public void setDistance(int distance) {
-        this.distance = distance ;
+        // Configuration de Gson
+        gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(Activity.class, new ActivityDeserialiseur());
+        gson = gsonBuilder.create();
+
+        //Connexion à l'agregateur
+        url = new URL("https://api.humanapi.co/v1/human/activities?access_token=demo");
+        con = url.openConnection();
+        input = con.getInputStream();
+
+        //lecture de la réponse
+        reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
+        line = "";
+        results = "";
+        while ((line = reader.readLine()) != null) {
+            results += line;
+        }
+
+        reader.close();
+
+        input.close();
+
+        //création de l'objet BloodPressure
+        Activity[] activites = gson.fromJson(results, Activity[].class);
+
+        this.activites = activites;
+
     }
 
-    /**
-     * @return the steps
-     */
-    public int getSteps() {
-        return steps;
+    public Activity[] getActivites() {
+        return activites;
     }
 
-    /**
-     * @param steps the steps to set
-     */
-    public void setSteps(int steps) {
-        this.steps = steps;
-    }
-
-    /**
-     * @return the calories
-     */
-    public int getCalories() {
-        
-        return calories;
-    }
-
-    /**
-     * @param calories the calories to set
-     */
-    public void setCalories(int calories) {
-        this.calories = calories;
-    }
-    
-    
 }

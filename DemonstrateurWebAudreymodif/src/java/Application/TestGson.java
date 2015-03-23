@@ -5,6 +5,7 @@
  */
 package Application;
 
+import agregateur.Activity;
 import agregateur.BloodPressure;
 import agregateur.HeartRate;
 import agregateur.Sleep;
@@ -23,23 +24,23 @@ public class TestGson {
     public static void main(String[] args) throws IOException {
 
         System.out.println("ca demarre");
-
-        Coeur c = new Coeur();
-        HeartRate[] hrs = c.getHrs();
-        for (int i = 0; i < hrs.length; i++) {
-            HeartRate hr = hrs[i];
-            System.out.println("Valeur n° " + (i + 1) + " :");
-            System.out.println("  >userId : " + hr.getUserId());
-            System.out.println("  >humanId : " + hr.getHumanId());
-            System.out.println("  >timestamp : " + hr.getTimestamp());
-            System.out.println("  >source : " + hr.getSource());
-            System.out.println("  >value : " + hr.getValue());
-            System.out.println("  >unit : " + hr.getUnit());
-            System.out.println("  >createdAt : " + hr.getCreatedAt());
-            System.out.println("  >id : " + hr.getId());
-            System.out.println("  >updatedAt : " + hr.getUpdatedAt());
-
-        }
+//
+//        Coeur c = new Coeur();
+//        HeartRate[] hrs = c.getHrs();
+//        for (int i = 0; i < hrs.length; i++) {
+//            HeartRate hr = hrs[i];
+//            System.out.println("Valeur n° " + (i + 1) + " :");
+//            System.out.println("  >userId : " + hr.getUserId());
+//            System.out.println("  >humanId : " + hr.getHumanId());
+//            System.out.println("  >timestamp : " + hr.getTimestamp());
+//            System.out.println("  >source : " + hr.getSource());
+//            System.out.println("  >value : " + hr.getValue());
+//            System.out.println("  >unit : " + hr.getUnit());
+//            System.out.println("  >createdAt : " + hr.getCreatedAt());
+//            System.out.println("  >id : " + hr.getId());
+//            System.out.println("  >updatedAt : " + hr.getUpdatedAt());
+//
+//        }
 
 //        Physiologie ph1 = new Physiologie();
 //        System.out.println("derniere valeur de glucose : "+ph1.bg.getValue());
@@ -86,6 +87,16 @@ public class TestGson {
 //        
 //        
 //        
+        
+        
+        Activités acs=new Activités();
+        Activity[] as = acs.getActivites();
+        for (int i = 0; i < as.length; i++) {
+            Activity a = as[i];
+            System.out.println("Valeur n° " + (i + 1) + " :");
+            System.out.println("  >calories : " + a.getCalories());
+
+        }
     }
 
 }

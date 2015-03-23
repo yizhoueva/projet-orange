@@ -32,6 +32,7 @@ public class BloodGlucoseDeserialiseur implements JsonDeserializer<BloodGlucose>
         final String source = jsonObject.get("source").getAsString();
         final String value = jsonObject.get("value").getAsString();
         final String unit = jsonObject.get("unit").getAsString();
+        
         if (jsonObject.get("notes") != null) {
             final String notes = jsonObject.get("notes").getAsString();
             bg.setNotes(notes);
