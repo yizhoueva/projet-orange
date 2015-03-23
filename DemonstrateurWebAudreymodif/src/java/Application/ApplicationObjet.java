@@ -17,6 +17,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
+import java.util.Calendar;
+import javax.xml.bind.DatatypeConverter;
 
 /**
  *
@@ -50,6 +52,11 @@ public class ApplicationObjet {
         input.close();
         return results;
     }
+    
+    public String convertirDate(String date){
+        Calendar c = javax.xml.bind.DatatypeConverter.parseDateTime(date);
+        return c.getTime().toString();
+    }
 
     public void setInput(InputStream input) {
         this.input = input;
@@ -59,4 +66,5 @@ public class ApplicationObjet {
         this.results = results;
     }
  
+    
 }
