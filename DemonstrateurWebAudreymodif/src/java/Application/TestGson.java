@@ -114,7 +114,7 @@ public class TestGson {
 //        
 //        
 
-        Activités acs = new Activités();
+        Activites acs = new Activites();
         Activity[] as = acs.getActivites();
         for (int i = 0; i < as.length; i++) {
             Activity a = as[i];
@@ -125,7 +125,7 @@ public class TestGson {
 
 //        
 //        
-//        Activités acs=new Activités();
+//        Activites acs=new Activites();
 //        Activity[] as = acs.getActivites();
 //        for (int i = 0; i < as.length; i++) {
 //            Activity a = as[i];

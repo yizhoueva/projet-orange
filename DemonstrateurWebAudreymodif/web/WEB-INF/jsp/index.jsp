@@ -423,17 +423,20 @@
                             <input type="text" id="datepickerActivite">
                             <br>
                             <br>
+                            Selectionnez une activité :
+                            <br>
+                            <jsp:useBean id="act" scope="session" class="Application.Activites" />
                             <select name="selectionActivite">
-                                <option>ski 23 Mars</option>
-                                <option>course 20 Mars</option>
-                                <option>bowling 31 février</option>
-                                <option>loul</option>
-                                <option>ski 23 Mars</option>
-                                <option>ski 23 Mars</option>
-                                <option>ski 23 Mars</option>
-                                <option>ski 23 Mars</option>
-                                <option>ski 23 Mars</option>
-                                <option>ski 23 Mars</option>
+                                <option>${act.act.get(1)}</option>
+                                <option>${act.act.get(2)}</option>
+                                <option>${act.act.get(3)}</option>
+                                <option>${act.act.get(4)}</option>
+                                <option>${act.act.get(5)}</option>
+                                <option>${act.act.get(6)}</option>
+                                <option>${act.act.get(7)}</option>
+                                <option>${act.act.get(8)}</option>
+                                <option>${act.act.get(9)}</option>
+                                <option>${act.act.get(10)}</option>
                             </select>
                            
                         </td>                 

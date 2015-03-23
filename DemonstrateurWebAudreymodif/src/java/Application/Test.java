@@ -34,21 +34,19 @@ public class Test {
         int b = test.getValueInt("value");
         System.out.println(b);
      
-        URL url3 = new URL("https://api.humanapi.co/v1/human/sleeps/summaries?access_token=demo");
         
-        int i =0;
+        URL url3 = new URL("https://api.humanapi.co/v1/human/activities?access_token=demo");
+        
         Parser p3 = new Parser(url3);
         System.out.println(p3.getTexte());
         
         JSONArray j = new JSONArray(p3.getTexte());
-        //JSONArray test1 = j.getJSONArray(i);
-        //ArrayList list = getJSONArray(i);
-        //JSONObject t = j.getJSONObject(i);
         for (int k = 0;k<j.length();k++){
-            System.out.println("time Asleep = " + j.getJSONObject(k).optString("timeAsleep"));
+            System.out.println("startTime = " + j.getJSONObject(k).optString("startTime") + " " +j.getJSONObject(k).optString("type"));
         }
-        //System.out.println("time Asleep = " + j.getJSONObject(i).optString("timeAsleep"));
-        //System.out.println("time Asleep = " + j.getJSONObject(i).getString("timeAwake"));
+
+        
+        
         
         
 //        URL url1 = new URL("https://api.humanapi.co/v1/human/activities/summaries?access_token=demo");
