@@ -37,11 +37,32 @@
             $(function () {
                 var plot0 = $.jqplot('chart0', [[[0, 68], [1, 73], [2, 67], [3, 65], [4, 71], [5, 80], [6, 86], [7, 73], [8, 58], [9, 69], [10, 85], [11, 81], [12, 78], [13, 70], [14, 53]]], {title: 'Heart Rates',
                     axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
+                    series: [{lineWidth: 4, markerOptions: {style: 'square'}}]
                 });
                 var plot1 = $.jqplot('chart1', ${Coeur.hrPlot}, {title: 'Frequences cardiaques',
-                    axes: {xaxis: {renderer: $.jqplot.DateAxisRenderer}},
-                    series: [{color: '#5FAB78'}]
+                    seriesDefaults: {
+                        renderer: $.jqplot.BarRenderer,
+                        rendererOptions: {
+                            // Put a 30 pixel margin between bars.
+                            barMargin: 5,
+                            // Highlight bars when mouse button pressed.
+                            // Disables default highlighting on mouse over.
+                            highlightMouseDown: true
+                        },
+                        pointLabels: {show: true}
+                    },
+                    axes: {
+                        xaxis: {
+                            renderer: $.jqplot.CategoryAxisRenderer
+                        },
+                        yaxis: {
+                            // Don't pad out the bottom of the data range.  By default,
+                            // axes scaled as if data extended 10% above and below the
+                            // actual range to prevent data points right on grid boundaries.
+                            // Don't want to do that here.
+                            padMin: 0
+                        }
+                    }
                 });
                 var plot2 = $.jqplot('chart2', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
                     axes: {yaxis: {min: -10, max: 240}},
@@ -425,13 +446,13 @@
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
                                     <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Frequence cardiaque<br>
-                                    
+
                                     <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><INPUT name="dataSeries" value="data2" type="radio" >Tension
-                                    
+
                                 </FORM>
                             </ul>
-                             
-                            
+
+
                         </td>
                         <td valign="top">
                             <div id="onglet1" >
@@ -445,7 +466,7 @@
                                     <input type="text" id="datepickerCoeur">
                                     <table ><tr>
                                             <td>
-                                                <div id="chart1" style="height:300px;width:600px; display: inline-block"></div>
+                                                <div id="chart1" style="height:300px;width:1000px; display: inline-block"></div>
                                             </td>
                                         </tr>
                                     </table>
