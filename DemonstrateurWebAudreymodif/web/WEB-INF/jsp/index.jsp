@@ -19,27 +19,35 @@
         <script type="text/javascript" src="jqplot.categoryAxisRenderer.min.js"></script>
         <script type="text/javascript" src="jqplot.pointLabels.min.js"></script>
         <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
-        
-        
-        <jsp:useBean id="Coeur" scope="session" class="Application.Coeur" />
 
+
+        <jsp:useBean id="coeur" scope="session" class="Application.Coeur" />
+        
+        <script>var test="essaye moi"</script>
+        <script>
+            var test = "Essaye moi"
+            </script>
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
-                $("#datepicker").datepicker();
+                $("#datepicker").datepicker({
+            onSelect: function(){
+            var currentDate = $( ".selector" ).datepicker( "getDate" );
+            }        
+                });
                 $("#datepickerActivite").datepicker();
                 $("#datepickerPhysiologie").datepicker();
                 $("#datepickerCoeur").datepicker();
                 $("#datepickerSommeil").datepicker();
                 $("#datepickerGenetique").datepicker();
-            });</script>
+            });
+        </script>
         <script>
             $(function () {
                 var plot0 = $.jqplot('chart0', [[[0, 68], [1, 73], [2, 67], [3, 65], [4, 71], [5, 80], [6, 86], [7, 73], [8, 58], [9, 69], [10, 85], [11, 81], [12, 78], [13, 70], [14, 53]]], {title: 'Heart Rates',
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-                var plot1 = $.jqplot('chart1', ${Coeur.hrPlot}, {title: 'Frequences cardiaques',
-                    
+                var plot1 = $.jqplot('chart1', ${coeur.hrPlot}, {title: 'Frequences cardiaques',
                     series: [{color: '#5FAB78'}]
                 });
                 var plot2 = $.jqplot('chart2', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
@@ -101,7 +109,6 @@
                         }
                     }
                 });
-
                 var plot9 = $.jqplot('chartSommeil13', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 240}},
                     seriesDefaults: {
@@ -116,7 +123,6 @@
                         pointLabels: {show: true}
                     }
                 });
-
 // graphiques activites - MOIS
                 var dataSet = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
@@ -137,7 +143,6 @@
                         }
                     }
                 };
-
                 var plotB = $.jqplot('myChart', [dataSet.data1], options);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -146,8 +151,6 @@
                     plotB.series[0].data = dataSet[val];
                     plotB.replot();
                 });
-
-
                 // Graphiques activités - SEMAINE
                 var dataSetS = {
                     data1: [[1, 1], [6, 4]],
@@ -168,7 +171,6 @@
                         }
                     }
                 };
-
                 var plotS = $.jqplot('myChartSemaine', [dataSetS.data1], optionsS);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -177,8 +179,6 @@
                     plotS.series[0].data = dataSet[valS];
                     plotS.replot();
                 });
-
-
                 // Graphiques activités  - JOUR
                 var dataSetJ = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
@@ -199,7 +199,6 @@
                         }
                     }
                 };
-
                 var plotJ = $.jqplot('myChartJour', [dataSetJ.data1], optionsJ);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -208,8 +207,6 @@
                     plotJ.series[0].data = dataSet[valJ];
                     plotJ.replot();
                 });
-
-
                 //Graphiques Physiologie - Jour
 
                 var dataSetPJ = {
@@ -231,7 +228,6 @@
                         }
                     }
                 };
-
                 var plotPJ = $.jqplot('myChartPJour', [dataSetPJ.data1], optionsPJ);
                 $("input[type=radio][name=dataSeriesP]").attr("checked", false);
                 $("input[type=radio][name=dataSeriesP][value=data1]").attr("checked", true);
@@ -240,7 +236,6 @@
                     plotPJ.series[0].data = dataSet[valPJ];
                     plotPJ.replot();
                 });
-
                 //Graphiques Physiologie - Semaine
                 var dataSetPS = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
@@ -261,7 +256,6 @@
                         }
                     }
                 };
-
                 var plotPS = $.jqplot('myChartPSemaine', [dataSetPS.data1], optionsPS);
                 $("input[type=radio][name=dataSeriesP]").attr("checked", false);
                 $("input[type=radio][name=dataSeriesP][value=data1]").attr("checked", true);
@@ -270,7 +264,6 @@
                     plotPS.series[0].data = dataSet[valPS];
                     plotPS.replot();
                 });
-
                 //graphiques physiologie - Mois
 
                 $("#tabs").tabs();
@@ -290,8 +283,7 @@
         </style>
 
 
-        <script type="text/javascript">
-        </script>
+
 
 
     </head>
@@ -299,14 +291,15 @@
     <body>
         <jsp:useBean id="profil" scope="session" class="Application.Profil" />
         <jsp:useBean id="date" scope="session" class="Application.Dates" />
-       
+
+
 
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h2>Bienvenue </h2>
                     <p>
                 </td>
                 <td>
-                    Dernière synchronisation le <jsp:setProperty name="date" property="date" value="now" /><jsp:getProperty name="date" property="date" />
+                    Dernière synchronisation le <jsp:setProperty name="date" property="date" value="now" />${date.date}
                 </td>
                 <td align="right">
                     <input type="button" onClick="javascript:window.history.go(0)" value="Rafraichir" />
@@ -347,9 +340,8 @@
                             </ul>
                             <br>
                             Selectionner une date :<br>
-                            <input type="text" id="datepicker">
-
-
+                            <input type="text" id="datepicker" name="datechoisie">
+                            Date selectionnee : ${test}
                         </td>
                     </tr>
                 </table>
@@ -372,7 +364,7 @@
                             <input type="text" id="datepickerActivite">
                         </td>
                         <td valign="top">
-                            
+
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
                                     <li><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Durée</li>
@@ -443,9 +435,9 @@
                                     <li><a href="#onglet-3">1 Mois</a></li>
                                 </ul>
                                 <div id="onglet-1">
-                            Selectionner une date :<br>
-                            <input type="text" id="datepickerCoeur">
-                            <table ><tr>
+                                    Selectionner une date :<br>
+                                    <input type="text" id="datepickerCoeur">
+                                    <table ><tr>
                                             <td>
                                                 <div id="chart1" style="height:100%;width:100%; display: inline-block"></div>
                                             </td>
@@ -525,7 +517,7 @@
                                     <li><INPUT name="dataSeriesP" value="data1" type="radio">Masse graisseuse :</li>
                                 </FORM>
                             </ul>
-                                <br>
+                            <br>
                             Selectionner une date :<br>
                             <input type="text" id="datepickerPhysiologie">
 

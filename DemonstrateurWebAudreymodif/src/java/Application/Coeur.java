@@ -34,8 +34,11 @@ public class Coeur extends ApplicationObjet implements Serializable {
     BloodPressure[] bps;
     String hrPlot;
     String bpPlot;
+    String test = "Valeur initiale";
 
-   
+    public String getTest() {
+        return "bloblo";
+    }
 
     /**
      *
@@ -45,7 +48,7 @@ public class Coeur extends ApplicationObjet implements Serializable {
         String s = "[[";
         for (int i = 0; i < hrs.length; i++) {
             HeartRate hr = hrs[i];
-            s += "[" + hr.convertDateToPlottable(hr.getTimestamp())+ ", " + hrs[i].getValue() + "]";
+            s += "[" + hr.convertDateToPlottable(hr.getTimestamp()) + ", " + hrs[i].getValue() + "]";
             if (i != hrs.length - 1) {
                 s += ",";
             }
@@ -62,8 +65,8 @@ public class Coeur extends ApplicationObjet implements Serializable {
         String s = "[[";
         for (int i = 0; i < bps.length; i++) {
             BloodPressure bp = bps[i];
-            int pressionMoyenne = (bp.getSystolic() + 2*bp.getDiastolic())/3;
-            s += "[" + i + ", " +pressionMoyenne + "]";
+            int pressionMoyenne = (bp.getSystolic() + 2 * bp.getDiastolic()) / 3;
+            s += "[" + i + ", " + pressionMoyenne + "]";
             if (i != hrs.length - 1) {
                 s += ",";
             }
@@ -83,7 +86,6 @@ public class Coeur extends ApplicationObjet implements Serializable {
     public BloodPressure[] getBps() {
         return bps;
     }
-
 
     /**
      *
