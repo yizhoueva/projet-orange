@@ -21,7 +21,7 @@
         <script type="text/javascript" src="jqplot.dateAxisRenderer.min.js"></script>
         <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
 
-        
+
         <jsp:useBean id="Coeur" scope="session" class="Application.Coeur" />
 
         <script type="text/javascript">
@@ -40,7 +40,7 @@
                     series: [{color: '#5FAB78'}]
                 });
                 var plot1 = $.jqplot('chart1', ${Coeur.hrPlot}, {title: 'Frequences cardiaques',
-                    axes:{xaxis:{renderer:$.jqplot.DateAxisRenderer}},
+                    axes: {xaxis: {renderer: $.jqplot.DateAxisRenderer}},
                     series: [{color: '#5FAB78'}]
                 });
                 var plot2 = $.jqplot('chart2', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
@@ -288,7 +288,7 @@
     <body>
         <jsp:useBean id="profil" scope="session" class="Application.Profil" />
         <jsp:useBean id="date" scope="session" class="Application.Dates" />
-       
+
 
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h2>Bienvenue </h2>
@@ -361,7 +361,7 @@
                             <input type="text" id="datepickerActivite">
                         </td>
                         <td valign="top">
-                            
+
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
                                     <li><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Durée</li>
@@ -422,9 +422,18 @@
                                     <li><INPUT type="checkbox" name="choix3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
+                            <ul style="list-style-type:none ; display: inline-block">
+                                <FORM>
+                                    <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Frequence cardiaque<br>
+                                    
+                                    <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><INPUT name="dataSeries" value="data2" type="radio" >Tension
+                                    
+                                </FORM>
+                            </ul>
+                             
+                            
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> 
                             <div id="onglet1" >
                                 <ul>
                                     <li><a href="#onglet-1">1 jour</a></li>
@@ -432,9 +441,9 @@
                                     <li><a href="#onglet-3">1 Mois</a></li>
                                 </ul>
                                 <div id="onglet-1">
-                            Selectionner une date :<br>
-                            <input type="text" id="datepickerCoeur">
-                            <table ><tr>
+                                    Selectionner une date :<br>
+                                    <input type="text" id="datepickerCoeur">
+                                    <table ><tr>
                                             <td>
                                                 <div id="chart1" style="height:300px;width:600px; display: inline-block"></div>
                                             </td>
@@ -460,40 +469,40 @@
                             </div>
 
                         </td>
-                       <!-- <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><br> 
-                            <div id="onglet2" >
-                                <ul>
-                                    <li><a href="#onglet-1">Aujourd'hui</a></li>
-                                    <li><a href="#onglet-2">Semaine</a></li>
-                                    <li><a href="#onglet-3">Mois</a></li>
-                                </ul>
-                                <div id="onglet-1">
-                                    <table><tr>
-                                            <td>
-                                                <div id="chart4" style="height:100%;width:100%; display: inline-block"></div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div id="onglet-2">
-                                    <table><tr>
-                                            <td>
-                                                <div id="chart5" style="height:100%;width:100%; display: inline-block"></div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div id="onglet-3">
-                                    <table><tr>
-                                            <td>
-                                                <div id="chart6" style="height:100%;width:100%; display: inline-block"></div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div> 
-                        </td>-->
+                        <!-- <td valign="top">
+                             <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><br> 
+                             <div id="onglet2" >
+                                 <ul>
+                                     <li><a href="#onglet-1">Aujourd'hui</a></li>
+                                     <li><a href="#onglet-2">Semaine</a></li>
+                                     <li><a href="#onglet-3">Mois</a></li>
+                                 </ul>
+                                 <div id="onglet-1">
+                                     <table><tr>
+                                             <td>
+                                                 <div id="chart4" style="height:100%;width:100%; display: inline-block"></div>
+                                             </td>
+                                         </tr>
+                                     </table>
+                                 </div>
+                                 <div id="onglet-2">
+                                     <table><tr>
+                                             <td>
+                                                 <div id="chart5" style="height:100%;width:100%; display: inline-block"></div>
+                                             </td>
+                                         </tr>
+                                     </table>
+                                 </div>
+                                 <div id="onglet-3">
+                                     <table><tr>
+                                             <td>
+                                                 <div id="chart6" style="height:100%;width:100%; display: inline-block"></div>
+                                             </td>
+                                         </tr>
+                                     </table>
+                                 </div>
+                             </div> 
+                         </td>-->
                     </tr>
                 </table>
 
@@ -514,7 +523,7 @@
                                     <li><INPUT name="dataSeriesP" value="data1" type="radio">Masse graisseuse :</li>
                                 </FORM>
                             </ul>
-                                <br>
+                            <br>
                             Selectionner une date :<br>
                             <input type="text" id="datepickerPhysiologie">
 
