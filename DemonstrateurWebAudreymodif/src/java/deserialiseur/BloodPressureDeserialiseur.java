@@ -33,8 +33,8 @@ public class BloodPressureDeserialiseur implements JsonDeserializer<BloodPressur
         final String humanId = jsonObject.get("humanId").getAsString();
         final String timestamp = jsonObject.get("timestamp").getAsString();
         final String source = jsonObject.get("source").getAsString();
-        final String systolic = jsonObject.get("systolic").getAsString();
-        final String diastolic = jsonObject.get("diastolic").getAsString();
+        final int systolic = jsonObject.get("systolic").getAsInt();
+        final int diastolic = jsonObject.get("diastolic").getAsInt();
         final String unit = jsonObject.get("unit").getAsString();
         final String heartRate = jsonObject.get("heartRate").getAsString();
         final String createdAt = jsonObject.get("createdAt").getAsString();

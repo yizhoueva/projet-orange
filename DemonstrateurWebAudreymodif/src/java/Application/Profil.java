@@ -10,20 +10,15 @@ package Application;
  * @author Romeo
  */
 import agregateur.*;
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import deserialiseur.*;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.net.URL;
 import java.net.MalformedURLException;
-import java.net.URLConnection;
 import java.nio.charset.Charset;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 public class Profil extends ApplicationObjet implements Serializable {
 
@@ -34,7 +29,6 @@ public class Profil extends ApplicationObjet implements Serializable {
     private BodyMassIndex bmi;
     private Weight w;
     private Height h;
-    private String test = "zorro";
 
     //Constructeur
     public Profil() throws MalformedURLException, IOException {
@@ -171,7 +165,6 @@ public class Profil extends ApplicationObjet implements Serializable {
         return bmi;
     }
 
-    @Bean (name="Poids")
     public Weight getW() {
         return w;
     }
@@ -179,12 +172,5 @@ public class Profil extends ApplicationObjet implements Serializable {
     public Height getH() {
         return h;
     }
-
-    
-    
-    public String getTest() {
-        return "toto";
-    }
-
 
 }

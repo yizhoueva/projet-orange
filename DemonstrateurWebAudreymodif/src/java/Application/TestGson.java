@@ -24,8 +24,9 @@ public class TestGson {
     public static void main(String[] args) throws IOException {
 
         System.out.println("ca demarre");
-//
+
 //        Coeur c = new Coeur();
+//        String u =c.getBpPlot();
 //        HeartRate[] hrs = c.getHrs();
 //        for (int i = 0; i < hrs.length; i++) {
 //            HeartRate hr = hrs[i];
@@ -87,16 +88,16 @@ public class TestGson {
 //        
 //        
 //        
-        
-        
-        Activités acs=new Activités();
-        Activity[] as = acs.getActivites();
-        for (int i = 0; i < as.length; i++) {
-            Activity a = as[i];
-            System.out.println("Valeur n° " + (i + 1) + " :");
-            System.out.println("  >calories : " + a.getCalories());
-
-        }
+//        
+//        
+//        Activités acs=new Activités();
+//        Activity[] as = acs.getActivites();
+//        for (int i = 0; i < as.length; i++) {
+//            Activity a = as[i];
+//            System.out.println("Valeur n° " + (i + 1) + " :");
+//            System.out.println("  >calories : " + a.getCalories());
+//
+//        }
     }
 
 }
