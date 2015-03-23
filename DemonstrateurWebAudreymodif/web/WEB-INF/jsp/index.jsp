@@ -306,10 +306,10 @@
                     <p>
                 </td>
                 <td>
-                    Dernière synchronisation le <jsp:getProperty name="date" property="date" />
+                    Dernière synchronisation le <jsp:setProperty name="date" property="date" value="now" /><jsp:getProperty name="date" property="date" />
                 </td>
                 <td align="right">
-                    <button id="button">Rafraichir</button>
+                    <input type="button" onClick="javascript:window.history.go(0)" value="Rafraichir" />
                 </td></tr></table>
 
         <div id="tabs" >
