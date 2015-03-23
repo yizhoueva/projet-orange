@@ -346,7 +346,7 @@
                             <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /> <jsp:getProperty name="IMC" property="IMC" /> <jsp:getProperty name="unitIMC" property="unitIMC" /><br>
                             <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="BPM" property="BPM" /> <jsp:getProperty name="unitBPM" property="unitBPM" /><br>
                             <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> <jsp:getProperty name="systolic" property="systolic" /> / <jsp:getProperty name="diastolic" property="diastolic" /> <jsp:getProperty name="tensionUnit" property="tensionUnit" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /><jsp:getProperty name="BO" property="BO" /> <jsp:getProperty name="unitBO" property="unitBO" /><br>
+                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /> <jsp:getProperty name="BO" property="BO" /> <jsp:getProperty name="unitBO" property="unitBO" /><br>
                             <img src = "<%=request.getContextPath()%>/images/sucre_p.png" align="middle" title="Glycemie" /> <jsp:getProperty name="BG" property="BG" /> <jsp:getProperty name="unitBG" property="unitBG" /><br>
                             <img src = "<%=request.getContextPath()%>/images/activité_p.png" align="middle" title="Activité sportive" /><br>
                             <img src = "<%=request.getContextPath()%>/images/sommeil_p.png" align="middle" title="Sommeil" /><br>
