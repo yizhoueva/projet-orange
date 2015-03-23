@@ -48,7 +48,7 @@ public class Coeur extends ApplicationObjet implements Serializable {
         String s = "[";
         for (int i = 0; i < hrs.length; i++) {
             HeartRate hr = hrs[i];
-            s += "[" + hr.convertDateToPlottable(hr.getTimestamp()) + ", " + hrs[i].getValue() + "]";
+            s += "[" +"'"+ hr.convertDateToPlottable(hr.getTimestamp())+"'" + ", " + hrs[i].getValue() + "]";
             if (i != hrs.length - 1) {
                 s += ",";
             }

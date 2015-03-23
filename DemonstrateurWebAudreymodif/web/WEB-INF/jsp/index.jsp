@@ -57,17 +57,9 @@
                     data2: ${Coeur.hrPlot}
                 };
                 var optionsCoeurJour = {
-                    gridPadding: {right: 35},
-                    axes: {
-                        xaxis: {
-                            renderer: $.jqplot.DateAxisRenderer,
-                            tickOptions: {formatString: '%b %#d, %y'}
-          
-                        }
-                    },
+                    axes: {xaxis: {renderer: $.jqplot.DateAxisRenderer}},
                     series: [{lineWidth: 4, markerOptions: {style: 'square'}}]
-                    };
-             
+                };
                 var plotCoeurJour = $.jqplot('CoeurJour', [dataSetCoeurJour.data1], optionsCoeurJour);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
