@@ -18,8 +18,9 @@
         <script type="text/javascript" src="jqplot.barRenderer.min.js"></script>
         <script type="text/javascript" src="jqplot.categoryAxisRenderer.min.js"></script>
         <script type="text/javascript" src="jqplot.pointLabels.min.js"></script>
+        <script type="text/javascript" src="jqplot.dateAxisRenderer.min.js"></script>
         <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
-        
+
         
         <jsp:useBean id="Coeur" scope="session" class="Application.Coeur" />
 
@@ -39,7 +40,7 @@
                     series: [{color: '#5FAB78'}]
                 });
                 var plot1 = $.jqplot('chart1', ${Coeur.hrPlot}, {title: 'Frequences cardiaques',
-                    
+                    axes:{xaxis:{renderer:$.jqplot.DateAxisRenderer}},
                     series: [{color: '#5FAB78'}]
                 });
                 var plot2 = $.jqplot('chart2', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
@@ -50,18 +51,7 @@
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-                var plot4 = $.jqplot('chart4', [[[1, 2], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
-                    axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
-                });
-                var plot5 = $.jqplot('chart5', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
-                    axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
-                });
-                var plot6 = $.jqplot('chart6', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
-                    axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
-                });
+
                 var plot7 = $.jqplot('chartSommeil1', [[[1, 6], [3, 7], [5, 8], [7, 5], [9, 9], [11, 10]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 20}},
                     seriesDefaults: {
@@ -276,7 +266,6 @@
                 $("#tabs").tabs();
                 $("#table").tabs();
                 $("#onglet1").tabs();
-                $("#onglet2").tabs();
                 $("#table4").tabs();
                 $("#tableSommeil").tabs();
             });</script>
@@ -447,7 +436,7 @@
                             <input type="text" id="datepickerCoeur">
                             <table ><tr>
                                             <td>
-                                                <div id="chart1" style="height:100%;width:100%; display: inline-block"></div>
+                                                <div id="chart1" style="height:300px;width:600px; display: inline-block"></div>
                                             </td>
                                         </tr>
                                     </table>
@@ -471,7 +460,7 @@
                             </div>
 
                         </td>
-                        <td valign="top">
+                       <!-- <td valign="top">
                             <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><br> 
                             <div id="onglet2" >
                                 <ul>
@@ -504,7 +493,7 @@
                                     </table>
                                 </div>
                             </div> 
-                        </td>
+                        </td>-->
                     </tr>
                 </table>
 

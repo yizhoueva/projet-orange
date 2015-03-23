@@ -40,7 +40,7 @@ public class AgregateurObjet {
         DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
         Date result1 = df1.parse(date);
-
+        
         return new SimpleDateFormat("yyyy-MM-dd", Locale.FRANCE).format(result1);
     }
 
