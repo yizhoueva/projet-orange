@@ -24,8 +24,6 @@ public class CoeurDeserialiseur implements JsonDeserializer<Coeur2> {
     public Coeur2 deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext jdc) throws JsonParseException {
 
         final JsonArray liste = json.getAsJsonArray();
-        
-        
         int value;
         int size=liste.size();
         int[] values = new int[size];

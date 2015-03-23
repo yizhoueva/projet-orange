@@ -9,8 +9,7 @@ package agregateur;
  *
  * @author Romeo
  */
-public class HeartRate extends AgregateurObjet {
-    
+public class BloodOxygen extends AgregateurObjet {
     private String value;
     private String unit;
 

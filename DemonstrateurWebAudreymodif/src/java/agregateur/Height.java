@@ -9,10 +9,9 @@ package agregateur;
  *
  * @author Romeo
  */
-public class HeartRate extends AgregateurObjet {
-    
-    private String value;
-    private String unit;
+public class Height extends AgregateurObjet{
+    String value;
+    String unit;
 
     public String getValue() {
         return value;
@@ -29,4 +28,5 @@ public class HeartRate extends AgregateurObjet {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+    
 }

@@ -5,10 +5,12 @@
  */
 package Application;
 
+import agregateur.BloodGlucose;
 import agregateur.BloodPressure;
 import agregateur.HeartRate;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import deserialiseur.BloodGlucoseDeserialiseur;
 import deserialiseur.BloodPressureDeserialiseur;
 import deserialiseur.CoeurDeserialiseur;
 import deserialiseur.HeartRateDeserialiseur;
@@ -29,6 +31,7 @@ public class Coeur2 {
 
     BloodPressure bp;
     HeartRate hr;
+    HeartRate[] hrs;
     
     private int freqcardio;
     private int systolic;
@@ -45,6 +48,11 @@ public class Coeur2 {
     
     private String systolique;
 
+    /**
+     *
+     * @throws MalformedURLException
+     * @throws IOException
+     */
     public Coeur2() throws MalformedURLException, IOException {
 
         // Configuration de Gson

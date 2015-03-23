@@ -9,18 +9,51 @@ package agregateur;
  *
  * @author Romeo
  */
-public class BloodGlucose {
-    private String id;
-    private String userId;
-    private String humanId;
-    private String timestamp;
-    private String source;
+public class BloodGlucose extends AgregateurObjet {
     private String value;
     private String unit;
     private String notes;
     private String mealTag;
     private String medicationTag;
-    private String createdAt;
-    private String updatedAt;
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public String getMealTag() {
+        return mealTag;
+    }
+
+    public void setMealTag(String mealTag) {
+        this.mealTag = mealTag;
+    }
+
+    public String getMedicationTag() {
+        return medicationTag;
+    }
+
+    public void setMedicationTag(String medicationTag) {
+        this.medicationTag = medicationTag;
+    }
     
 }
