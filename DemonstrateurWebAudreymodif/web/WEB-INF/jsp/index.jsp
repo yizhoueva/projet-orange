@@ -3,7 +3,7 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-    <head>
+    
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Demonstrateur</title>
 
@@ -22,6 +22,7 @@
 
 
         <jsp:useBean id="coeur" scope="session" class="Application.Coeur" />
+        <jsp:useBean id="physiologie" scope="session" class="Application.Physiologie" />
         
         <script>var test="essaye moi"</script>
         <script>
@@ -210,7 +211,7 @@
                 //Graphiques Physiologie - Jour
 
                 var dataSetPJ = {
-                    data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
+                    data1: ${physiologie.glycemiePlot(1)},
                     data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
                     data3: [[1, 5], [6, 9]],
                     data4: [[1, 7], [2, 8], [3, 9], [4, 11], [5, 10], [6, 11]]
@@ -238,7 +239,7 @@
                 });
                 //Graphiques Physiologie - Semaine
                 var dataSetPS = {
-                    data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
+                    data1: ${physiologie.glycemiePlot(1)},
                     data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
                     data3: [[1, 5], [6, 9]],
                     data4: [[1, 7], [2, 8], [3, 9], [4, 11], [5, 10], [6, 11]]
@@ -286,7 +287,7 @@
 
 
 
-    </head>
+    
 
     <body>
         <jsp:useBean id="profil" scope="session" class="Application.Profil" />
