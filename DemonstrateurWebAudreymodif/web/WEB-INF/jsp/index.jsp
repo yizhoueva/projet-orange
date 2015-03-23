@@ -273,10 +273,6 @@
 
                 //graphiques physiologie - Mois
 
-
-
-
-
                 $("#tabs").tabs();
                 $("#table").tabs();
                 $("#onglet1").tabs();
@@ -306,7 +302,7 @@
        
 
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
-                    <h2>Bienvenue ${profil.test}</h2>
+                    <h2>Bienvenue </h2>
                     <p>
                 </td>
                 <td>
@@ -329,14 +325,14 @@
                 <table cellpadding="15">
                     <tr>
                         <td>
-                            <img src = "<%=request.getContextPath()%>/images/profil_p.png" align="middle" /> email : <jsp:getProperty name="test" property="email" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/balance_p.png" align="middle" title="Poids" /> <jsp:getProperty name="poids" property="poids" /> <jsp:getProperty name="unitPoids" property="unitPoids" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/taille_p.png" align="middle" title="Taille" /> <jsp:getProperty name="taille" property="taille" /> <jsp:getProperty name="unitTaille" property="unitTaille" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /> <jsp:getProperty name="IMC" property="IMC" /> <jsp:getProperty name="unitIMC" property="unitIMC" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="BPM" property="BPM" /> <jsp:getProperty name="unitBPM" property="unitBPM" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> <jsp:getProperty name="systolic" property="systolic" /> / <jsp:getProperty name="diastolic" property="diastolic" /> <jsp:getProperty name="tensionUnit" property="tensionUnit" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /> <jsp:getProperty name="BO" property="BO" /> <jsp:getProperty name="unitBO" property="unitBO" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/sucre_p.png" align="middle" title="Glycemie" /> <jsp:getProperty name="BG" property="BG" /> <jsp:getProperty name="unitBG" property="unitBG" /><br>
+                            <img src = "<%=request.getContextPath()%>/images/profil_p.png" align="middle" /> email : 
+                            <img src = "<%=request.getContextPath()%>/images/balance_p.png" align="middle" title="Poids" /> <br>
+                            <img src = "<%=request.getContextPath()%>/images/taille_p.png" align="middle" title="Taille" /> <br>
+                            <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /><br>
+                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <br>
+                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> <br>
+                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /> <br>
+                            <img src = "<%=request.getContextPath()%>/images/sucre_p.png" align="middle" title="Glycemie" /> <br>
                             <img src = "<%=request.getContextPath()%>/images/activité_p.png" align="middle" title="Activité sportive" /><br>
                             <img src = "<%=request.getContextPath()%>/images/sommeil_p.png" align="middle" title="Sommeil" /><br>
                         </td>
@@ -525,12 +521,12 @@
                         <td valign="top">
                             <ul style="list-style-type:none">
                                 <FORM>
-                                    <li><INPUT name="dataSeriesP" value="data1" type="radio"   CHECKED>Glycémie : <jsp:getProperty name="onglet4" property="glycemie" /> g/L</li>
-                                    <li><INPUT name="dataSeriesP" value="data3" type="radio">Saturation O² : <jsp:getProperty name="onglet4" property="sat" />%</li>
-                                    <li><INPUT name="dataSeriesP" value="data2" type="radio">IMC : <jsp:getProperty name="onglet4" property="imc" /> kg/cm²</li>
-                                    <li><INPUT name="dataSeriesP" value="data1" type="radio">Poids : <jsp:getProperty name="onglet4" property="poids" /> kg</li>
-                                    <li><INPUT name="dataSeriesP" value="data2" type="radio">Taille : <jsp:getProperty name="onglet4" property="taille" /> mm</li>
-                                    <li><INPUT name="dataSeriesP" value="data1" type="radio">Masse graisseuse : <jsp:getProperty name="onglet4" property="graisse" />%</li>
+                                    <li><INPUT name="dataSeriesP" value="data1" type="radio"   CHECKED>Glycémie :</li>
+                                    <li><INPUT name="dataSeriesP" value="data3" type="radio">Saturation O² : </li>
+                                    <li><INPUT name="dataSeriesP" value="data2" type="radio">IMC :</li>
+                                    <li><INPUT name="dataSeriesP" value="data1" type="radio">Poids :</li>
+                                    <li><INPUT name="dataSeriesP" value="data2" type="radio">Taille :</li>
+                                    <li><INPUT name="dataSeriesP" value="data1" type="radio">Masse graisseuse :</li>
                                 </FORM>
                             </ul>
                                 <br>
