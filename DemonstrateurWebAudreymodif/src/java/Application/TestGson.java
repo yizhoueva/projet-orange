@@ -10,15 +10,12 @@ import agregateur.BloodPressure;
 import agregateur.HeartRate;
 import agregateur.Sleep;
 import java.io.IOException;
-<<<<<<< HEAD
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-=======
->>>>>>> 93967c1be9c1d14693b4d1cfbcc2041980e14a51
 
 /**
  *
@@ -33,7 +30,6 @@ public class TestGson {
     public static void main(String[] args) throws IOException, ParseException {
 
         System.out.println("ca demarre");
-<<<<<<< HEAD
 //
         Coeur c = new Coeur();
         HeartRate[] hrs = c.getHrs();
@@ -53,7 +49,7 @@ public class TestGson {
                     //2008-09-30 4:00PM
             System.out.println(lala);
             //System.out.println("  >timestamp : " + hr.getTimestamp().parse(string1);
-=======
+
 
 //        Coeur c = new Coeur();
 //        String u =c.getBpPlot();
@@ -64,7 +60,6 @@ public class TestGson {
 //            System.out.println("  >userId : " + hr.getUserId());
 //            System.out.println("  >humanId : " + hr.getHumanId());
 //            System.out.println("  >timestamp : " + hr.getTimestamp());
->>>>>>> 93967c1be9c1d14693b4d1cfbcc2041980e14a51
 //            System.out.println("  >source : " + hr.getSource());
 //            System.out.println("  >value : " + hr.getValue());
 //            System.out.println("  >unit : " + hr.getUnit());
@@ -119,7 +114,7 @@ public class TestGson {
 //        
 //        
 //        
-<<<<<<< HEAD
+
         Activités acs = new Activités();
         Activity[] as = acs.getActivites();
         for (int i = 0; i < as.length; i++) {
@@ -128,7 +123,7 @@ public class TestGson {
 //            System.out.println("  >calories : " + a.getCalories());
 
         }
-=======
+
 //        
 //        
 //        Activités acs=new Activités();
@@ -139,7 +134,6 @@ public class TestGson {
 //            System.out.println("  >calories : " + a.getCalories());
 //
 //        }
->>>>>>> 93967c1be9c1d14693b4d1cfbcc2041980e14a51
     }
 
 }

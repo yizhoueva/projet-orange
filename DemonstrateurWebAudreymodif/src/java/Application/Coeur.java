@@ -35,15 +35,13 @@ public class Coeur extends ApplicationObjet implements Serializable {
     String hrPlot;
     String bpPlot;
 
-<<<<<<< HEAD
-    public String getHrPlot() throws ParseException {
-=======
+   
+
     /**
      *
      * @return
      */
-    public String getHrPlot() {
->>>>>>> 93967c1be9c1d14693b4d1cfbcc2041980e14a51
+    public String getHrPlot() throws ParseException {
         String s = "[[";
         for (int i = 0; i < hrs.length; i++) {
             HeartRate hr = hrs[i];
