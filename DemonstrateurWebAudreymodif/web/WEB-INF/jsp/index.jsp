@@ -301,25 +301,6 @@
     </head>
 
     <body>
-        <jsp:useBean id="test" scope="session" class="Application.Utilisateur"/> 
-        <jsp:useBean id="onglet4" scope="session" class="Application.Physiologie"/>
-        <jsp:useBean id="coeur" scope="session" class="Application.Coeur"/>
-        <jsp:useBean id="poids" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="unitPoids" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="taille" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="unitTaille" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="IMC" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="unitIMC" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="BPM" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="unitBPM" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="systolic" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="diastolic" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="tensionUnit" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="BO" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="unitBO" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="BG" scope="session" class="Application.Utilisateur" />
-        <jsp:useBean id="unitBG" scope="session" class="Application.Utilisateur" />
-        
         <jsp:useBean id="profil" scope="session" class="Application.Profil" />
 
        
