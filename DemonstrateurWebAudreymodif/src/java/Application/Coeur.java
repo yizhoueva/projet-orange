@@ -35,7 +35,15 @@ public class Coeur extends ApplicationObjet implements Serializable {
     String hrPlot;
     String bpPlot;
 
+<<<<<<< HEAD
     public String getHrPlot() throws ParseException {
+=======
+    /**
+     *
+     * @return
+     */
+    public String getHrPlot() {
+>>>>>>> 93967c1be9c1d14693b4d1cfbcc2041980e14a51
         String s = "[[";
         for (int i = 0; i < hrs.length; i++) {
             HeartRate hr = hrs[i];
@@ -53,7 +61,21 @@ public class Coeur extends ApplicationObjet implements Serializable {
     }
 
     public String getBpPlot() {
-        return bpPlot;
+        String s = "[[";
+        for (int i = 0; i < bps.length; i++) {
+            BloodPressure bp = bps[i];
+            int pressionMoyenne = (bp.getSystolic() + 2*bp.getDiastolic())/3;
+            s += "[" + i + ", " +pressionMoyenne + "]";
+            if (i != hrs.length - 1) {
+                s += ",";
+            }
+
+        }
+        s += "]]";
+        System.out.println(s);
+
+        return s;
+
     }
 
     public HeartRate[] getHrs() {
@@ -64,8 +86,6 @@ public class Coeur extends ApplicationObjet implements Serializable {
         return bps;
     }
 
-    private String freqCardioPlot;
-    private String tensionPlot;
 
     /**
      *

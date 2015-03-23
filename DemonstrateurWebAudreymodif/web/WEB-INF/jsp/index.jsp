@@ -38,7 +38,7 @@
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-                var plot1 = $.jqplot('chart1', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Frequences cardiaques',
+                var plot1 = $.jqplot('chart1', ${Coeur.hrPlot}, {title: 'Frequences cardiaques',
                     
                     series: [{color: '#5FAB78'}]
                 });
@@ -298,7 +298,7 @@
 
     <body>
         <jsp:useBean id="profil" scope="session" class="Application.Profil" />
-
+        <jsp:useBean id="date" scope="session" class="Application.Dates" />
        
 
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
@@ -306,7 +306,7 @@
                     <p>
                 </td>
                 <td>
-                    Dernière synchronisation le 10/03/2015 à 9h05
+                    Dernière synchronisation le <jsp:getProperty name="date" property="date" />
                 </td>
                 <td align="right">
                     <button id="button">Rafraichir</button>

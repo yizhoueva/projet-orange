@@ -22,26 +22,26 @@ import java.nio.charset.Charset;
  * @author Romeo
  */
 public class BloodPressure extends AgregateurObjet {
-    private String systolic;
-    private String diastolic;
+    private int systolic;
+    private int diastolic;
     private String unit;
     private String heartRate;
     
 
 
-    public String getSystolic() {
+    public int getSystolic() {
         return systolic;
     }
 
-    public void setSystolic(String systolic) {
+    public void setSystolic(int systolic) {
         this.systolic = systolic;
     }
 
-    public String getDiastolic() {
+    public int getDiastolic() {
         return diastolic;
     }
 
-    public void setDiastolic(String diastolic) {
+    public void setDiastolic(int diastolic) {
         this.diastolic = diastolic;
     }
 
