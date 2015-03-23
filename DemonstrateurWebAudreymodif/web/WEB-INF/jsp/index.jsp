@@ -23,6 +23,8 @@
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker();
+                $("#datepickerActivite").datepicker();
+                $("#datepickerPhysiologie").datepicker();
                 $("#datepickerCoeur").datepicker();
                 $("#datepickerSommeil").datepicker();
                 $("#datepickerGenetique").datepicker();
@@ -380,6 +382,11 @@
                                     <li><INPUT type="checkbox" name="buttonSource3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
+                            <br>
+                            Selectionner une date :<br>
+                            <input type="text" id="datepickerActivite">
+                        </td>
+                        <td valign="top">
                             
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
@@ -534,6 +541,10 @@
                                     <li><INPUT name="dataSeriesP" value="data1" type="radio">Masse graisseuse : <jsp:getProperty name="onglet4" property="graisse" />%</li>
                                 </FORM>
                             </ul>
+                                <br>
+                            Selectionner une date :<br>
+                            <input type="text" id="datepickerPhysiologie">
+
                         </td>
                         <td valign="top"><div id="table4" >
                                 <ul><li><a href="#table4-1">Aujourd'hui</a></li>
