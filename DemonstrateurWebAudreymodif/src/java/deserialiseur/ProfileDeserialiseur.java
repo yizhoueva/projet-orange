@@ -5,6 +5,7 @@
  */
 package deserialiseur;
 
+import agregateur.Profile;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -14,36 +15,34 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Application.Profil;
 
 /**
  *
  * @author Romeo
  */
-public class ProfilDeserialiseur implements JsonDeserializer<Profil> {
+public class ProfileDeserialiseur implements JsonDeserializer<Profile> {
 
     @Override
-    public Profil deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext jdc) throws JsonParseException {
+    public Profile deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext jdc) throws JsonParseException {
 
         final JsonObject jsonObject = json.getAsJsonObject();
         
         final String userId = jsonObject.get("userId").getAsString();
-        final String createdAt = jsonObject.get("createdAt").getAsString();
-        final String email = jsonObject.get("email").getAsString();
         final String humanId = jsonObject.get("humanId").getAsString();
-        
+        final String email = jsonObject.get("email").getAsString();
+        final String createdAt = jsonObject.get("createdAt").getAsString();
         final JsonObject defaultTimeZone = jsonObject.get("defaultTimeZone").getAsJsonObject();
         final String namezone = defaultTimeZone.get("name").getAsString();
         System.out.println("namezone : "+namezone);
 
-        Profil profil = new Profil();
-        profil.setUserId(userId);
-        profil.setCreatedAt(createdAt);
-        profil.setHumanId(humanId);
-        profil.setEmail(email);
-        profil.setTimezone(namezone);
+        Profile p = new Profile();
+        p.setUserId(userId);
+        p.setCreatedAt(createdAt);
+        p.setHumanId(humanId);
+        p.setEmail(email);
+        p.setDefaultTimeZone(namezone);
         
-        return profil;
+        return p;
     }
 
 }

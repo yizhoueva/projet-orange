@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package deserialiseur;
+package Application;
 
 /**
  *
- * @author Romeo
+ * @author nicolascapon
  */
-public class HeartRatesDeserialiseur {
+public class TransformerArray {
     
 }

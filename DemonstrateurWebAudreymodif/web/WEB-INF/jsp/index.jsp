@@ -19,10 +19,15 @@
         <script type="text/javascript" src="jqplot.categoryAxisRenderer.min.js"></script>
         <script type="text/javascript" src="jqplot.pointLabels.min.js"></script>
         <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
+        
+        
+        <jsp:useBean id="Coeur" scope="session" class="Application.Coeur" />
 
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker();
+                $("#datepickerActivite").datepicker();
+                $("#datepickerPhysiologie").datepicker();
                 $("#datepickerCoeur").datepicker();
                 $("#datepickerSommeil").datepicker();
                 $("#datepickerGenetique").datepicker();
@@ -33,8 +38,8 @@
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-                var plot1 = $.jqplot('chart1', [[[1, 2], [3, 5.12], [5, 13.1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
-                    axes: {yaxis: {min: -10, max: 240}},
+                var plot1 = $.jqplot('chart1', ${Coeur.hrPlot}, {title: 'Frequences cardiaques',
+                    
                     series: [{color: '#5FAB78'}]
                 });
                 var plot2 = $.jqplot('chart2', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
@@ -96,7 +101,7 @@
                         }
                     }
                 });
-                
+
                 var plot9 = $.jqplot('chartSommeil13', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 240}},
                     seriesDefaults: {
@@ -141,14 +146,14 @@
                     plotB.series[0].data = dataSet[val];
                     plotB.replot();
                 });
-                
-                
+
+
                 // Graphiques activités - SEMAINE
                 var dataSetS = {
-                    data1: [[1, 1],  [6, 4]],
-                    data2: [[1, 3],  [5, 5], [6, 7]],
-                    data3: [[1, 5],  [4, 9], [5, 7], [6, 9]],
-                    data4: [[1, 7],  [5, 10], [6, 11]]
+                    data1: [[1, 1], [6, 4]],
+                    data2: [[1, 3], [5, 5], [6, 7]],
+                    data3: [[1, 5], [4, 9], [5, 7], [6, 9]],
+                    data4: [[1, 7], [5, 10], [6, 11]]
                 };
                 var optionsS = {
                     seriesDefaults: {
@@ -172,13 +177,13 @@
                     plotS.series[0].data = dataSet[valS];
                     plotS.replot();
                 });
-                
-                
+
+
                 // Graphiques activités  - JOUR
                 var dataSetJ = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
                     data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
-                    data3: [[1, 5],  [6, 9]],
+                    data3: [[1, 5], [6, 9]],
                     data4: [[1, 7], [2, 8], [3, 9], [4, 11], [5, 10], [6, 11]]
                 };
                 var optionsJ = {
@@ -203,14 +208,14 @@
                     plotJ.series[0].data = dataSet[valJ];
                     plotJ.replot();
                 });
-                
-                
+
+
                 //Graphiques Physiologie - Jour
-                
-                 var dataSetPJ = {
+
+                var dataSetPJ = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
                     data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
-                    data3: [[1, 5],  [6, 9]],
+                    data3: [[1, 5], [6, 9]],
                     data4: [[1, 7], [2, 8], [3, 9], [4, 11], [5, 10], [6, 11]]
                 };
                 var optionsPJ = {
@@ -235,12 +240,12 @@
                     plotPJ.series[0].data = dataSet[valPJ];
                     plotPJ.replot();
                 });
-                
+
                 //Graphiques Physiologie - Semaine
-                 var dataSetPS = {
+                var dataSetPS = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
                     data2: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]],
-                    data3: [[1, 5],  [6, 9]],
+                    data3: [[1, 5], [6, 9]],
                     data4: [[1, 7], [2, 8], [3, 9], [4, 11], [5, 10], [6, 11]]
                 };
                 var optionsPS = {
@@ -265,13 +270,13 @@
                     plotPS.series[0].data = dataSet[valPS];
                     plotPS.replot();
                 });
-                
+
                 //graphiques physiologie - Mois
-                
-                
-                              
-              
-                
+
+
+
+
+
                 $("#tabs").tabs();
                 $("#table").tabs();
                 $("#onglet1").tabs();
@@ -314,8 +319,13 @@
         <jsp:useBean id="unitBO" scope="session" class="Application.Utilisateur" />
         <jsp:useBean id="BG" scope="session" class="Application.Utilisateur" />
         <jsp:useBean id="unitBG" scope="session" class="Application.Utilisateur" />
+        
+        <jsp:useBean id="profil" scope="session" class="Application.Profil" />
+
+       
+
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
-                    <h2>Bienvenue</h2>
+                    <h2>Bienvenue ${profil.test}</h2>
                     <p>
                 </td>
                 <td>
@@ -344,7 +354,7 @@
                             <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /> <jsp:getProperty name="IMC" property="IMC" /> <jsp:getProperty name="unitIMC" property="unitIMC" /><br>
                             <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="BPM" property="BPM" /> <jsp:getProperty name="unitBPM" property="unitBPM" /><br>
                             <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> <jsp:getProperty name="systolic" property="systolic" /> / <jsp:getProperty name="diastolic" property="diastolic" /> <jsp:getProperty name="tensionUnit" property="tensionUnit" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /><jsp:getProperty name="BO" property="BO" /> <jsp:getProperty name="unitBO" property="unitBO" /><br>
+                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /> <jsp:getProperty name="BO" property="BO" /> <jsp:getProperty name="unitBO" property="unitBO" /><br>
                             <img src = "<%=request.getContextPath()%>/images/sucre_p.png" align="middle" title="Glycemie" /> <jsp:getProperty name="BG" property="BG" /> <jsp:getProperty name="unitBG" property="unitBG" /><br>
                             <img src = "<%=request.getContextPath()%>/images/activité_p.png" align="middle" title="Activité sportive" /><br>
                             <img src = "<%=request.getContextPath()%>/images/sommeil_p.png" align="middle" title="Sommeil" /><br>
@@ -380,7 +390,16 @@
                                     <li><INPUT type="checkbox" name="buttonSource3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
+<<<<<<< HEAD
+
+=======
+                            <br>
+                            Selectionner une date :<br>
+                            <input type="text" id="datepickerActivite">
+                        </td>
+                        <td valign="top">
                             
+>>>>>>> d8285f9192b9cc4b4f4e1dc96d36ac1b04843509
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
                                     <li><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Durée</li>
@@ -390,7 +409,7 @@
                                 </FORM>
                             </ul>
                         </td>
-                       
+
 
 
                         <td valign="top"><div id="table" >
@@ -400,7 +419,7 @@
                                     <li><a href="#table-2">Semaine</a></li>
                                     <li><a href="#table-3">Mois</a></li></ul>
                                 <div id="table-1">
-                                   
+
 
                                     <table><tr>
                                             <td>
@@ -421,7 +440,7 @@
                                             </td></tr></table></div>
 
                             </div>
-                          </td>
+                        </td>
                     </tr>
                 </table>
 
@@ -441,20 +460,19 @@
                                     <li><INPUT type="checkbox" name="choix3" value="3">Garmin Connect</li>
                                 </FORM>
                             </ul>
-                            <br>
-                            Selectionner une date :<br>
-                            <input type="text" id="datepickerCoeur">
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <jsp:getProperty name="coeur" property="freqcardio" /><jsp:getProperty name="coeur" property="unitHR" /><br>
+                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> 
                             <div id="onglet1" >
                                 <ul>
-                                    <li><a href="#onglet-1">Aujourd'hui</a></li>
-                                    <li><a href="#onglet-2">Semaine</a></li>
-                                    <li><a href="#onglet-3">Mois</a></li>
+                                    <li><a href="#onglet-1">1 jour</a></li>
+                                    <li><a href="#onglet-2">1 Semaine</a></li>
+                                    <li><a href="#onglet-3">1 Mois</a></li>
                                 </ul>
                                 <div id="onglet-1">
-                                    <table><tr>
+                            Selectionner une date :<br>
+                            <input type="text" id="datepickerCoeur">
+                            <table ><tr>
                                             <td>
                                                 <div id="chart1" style="height:100%;width:100%; display: inline-block"></div>
                                             </td>
@@ -481,7 +499,7 @@
 
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><jsp:getProperty name="coeur" property="systolic" />/<jsp:getProperty name="coeur" property="diastolic" /><jsp:getProperty name="coeur" property="unitTen" /><br> 
+                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><br> 
                             <div id="onglet2" >
                                 <ul>
                                     <li><a href="#onglet-1">Aujourd'hui</a></li>
@@ -534,12 +552,16 @@
                                     <li><INPUT name="dataSeriesP" value="data1" type="radio">Masse graisseuse : <jsp:getProperty name="onglet4" property="graisse" />%</li>
                                 </FORM>
                             </ul>
+                                <br>
+                            Selectionner une date :<br>
+                            <input type="text" id="datepickerPhysiologie">
+
                         </td>
                         <td valign="top"><div id="table4" >
                                 <ul><li><a href="#table4-1">Aujourd'hui</a></li>
                                     <li><a href="#table4-2">Semaine</a></li>
                                     <li><a href="#table4-3">Mois</a></li></ul>
-                                
+
                                 <div id="table4-1">
                                     <table><tr>
                                             <td>
