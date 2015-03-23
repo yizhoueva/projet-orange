@@ -26,12 +26,7 @@ public class Test {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
 
-        Calendar c = Calendar.getInstance(); // date du jour 
-//c.set(Calendar.YEAR, 2007); 
-//c.set(Calendar.MONTH, 7); 
-//c.set(Calendar.DATE, 26); 
-Date d = c.getTime(); 
-        System.out.println(d);
+        
         URL url = new URL("https://api.humanapi.co/v1/human/blood_glucose?access_token=demo");
         Parser test = new Parser(url);
         String a = test.getValueString("source");
