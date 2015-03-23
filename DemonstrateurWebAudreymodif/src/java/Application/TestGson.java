@@ -10,12 +10,14 @@ import agregateur.BloodPressure;
 import agregateur.HeartRate;
 import agregateur.Sleep;
 import java.io.IOException;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
 
 /**
  *
@@ -30,6 +32,7 @@ public class TestGson {
     public static void main(String[] args) throws IOException, ParseException {
 
         System.out.println("ca demarre");
+
 //
         Coeur c = new Coeur();
         HeartRate[] hrs = c.getHrs();
@@ -60,6 +63,7 @@ public class TestGson {
 //            System.out.println("  >userId : " + hr.getUserId());
 //            System.out.println("  >humanId : " + hr.getHumanId());
 //            System.out.println("  >timestamp : " + hr.getTimestamp());
+
 //            System.out.println("  >source : " + hr.getSource());
 //            System.out.println("  >value : " + hr.getValue());
 //            System.out.println("  >unit : " + hr.getUnit());
@@ -134,6 +138,7 @@ public class TestGson {
 //            System.out.println("  >calories : " + a.getCalories());
 //
 //        }
+
     }
 
 }

@@ -21,6 +21,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
 
 public class Physiologie extends ApplicationObjet implements Serializable {
 
@@ -38,7 +39,7 @@ public class Physiologie extends ApplicationObjet implements Serializable {
         gsonBuilder.registerTypeAdapter(BloodGlucose.class, new BloodGlucoseDeserialiseur());
         gson = gsonBuilder.create();
 
-        setInput(connexion("https://api.humanapi.co/v1/human/blood_glucose?access_token=demo"));
+        setInput(connexion("https://api.humanapi.co/v1/human/blood_glucose/readings?access_token=demo"));
         setResults(lecture(input));
         System.out.println("Glucose? " + results);
         //création de l'objet BloodGlucose
@@ -50,7 +51,7 @@ public class Physiologie extends ApplicationObjet implements Serializable {
         gsonBuilder.registerTypeAdapter(BloodOxygen.class, new BloodOxygenDeserialiseur());
         gson = gsonBuilder.create();
 
-        setInput(connexion("https://api.humanapi.co/v1/human/blood_oxygen?access_token=demo"));
+        setInput(connexion("https://api.humanapi.co/v1/human/blood_oxygen/readings?access_token=demo"));
         setResults(lecture(input));
         System.out.println("Blood Oxygen : " + results);
 
@@ -63,7 +64,7 @@ public class Physiologie extends ApplicationObjet implements Serializable {
         gsonBuilder.registerTypeAdapter(BodyMassIndex.class, new BodyMassIndexDeserialiseur());
         gson = gsonBuilder.create();
 
-        setInput(connexion("https://api.humanapi.co/v1/human/bmi?access_token=demo"));
+        setInput(connexion("https://api.humanapi.co/v1/human/bmi/readings?access_token=demo"));
         setResults(lecture(input));
         System.out.println("BodyMassIndex? " + results);
         //création de l'objet BloodGlucose
@@ -75,7 +76,7 @@ public class Physiologie extends ApplicationObjet implements Serializable {
         gsonBuilder.registerTypeAdapter(Weight.class, new WeightDeserialiseur());
         gson = gsonBuilder.create();
 
-        setInput(connexion("https://api.humanapi.co/v1/human/weight?access_token=demo"));
+        setInput(connexion("https://api.humanapi.co/v1/human/weight/readings?access_token=demo"));
         setResults(lecture(input));
         System.out.println("Weight? " + results);
         //création de l'objet BloodGlucose
@@ -88,7 +89,7 @@ public class Physiologie extends ApplicationObjet implements Serializable {
         gsonBuilder.registerTypeAdapter(Height.class, new HeightDeserialiseur());
         gson = gsonBuilder.create();
 
-        setInput(connexion("https://api.humanapi.co/v1/human/height?access_token=demo"));
+        setInput(connexion("https://api.humanapi.co/v1/human/height/readings?access_token=demo"));
         setResults(lecture(input));
         System.out.println("Height? " + results);
         //création de l'objet BloodGlucose
@@ -101,12 +102,28 @@ public class Physiologie extends ApplicationObjet implements Serializable {
         gsonBuilder.registerTypeAdapter(Height.class, new HeightDeserialiseur());
         gson = gsonBuilder.create();
 
-        setInput(connexion("https://api.humanapi.co/v1/human/body_fat?access_token=demo"));
+        setInput(connexion("https://api.humanapi.co/v1/human/body_fat/readings?access_token=demo"));
         setResults(lecture(input));
         System.out.println("BodyFat? " + results);
         //création de l'objet BloodGlucose
         BodyFat[] bf = gson.fromJson(results, BodyFat[].class);
         this.bf = bf;
+
+    }
+    public String glycemiePlot(int jours) throws ParseException {
+        String s = "[";
+        for (int i = 0; i < bg.length; i++) {
+            BloodGlucose bgi = bg[i];
+            s += "[" + bgi.convertDateToPlottable(bgi.getTimestamp()) + ", " + bgi.getValue() + "]";
+            if (i != bg.length - 1) {
+                s += ",";
+            }
+
+        }
+        s += "]";
+        System.out.println(s);
+
+        return s;
 
     }
 }
