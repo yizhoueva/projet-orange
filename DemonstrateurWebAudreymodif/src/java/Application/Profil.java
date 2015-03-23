@@ -20,7 +20,7 @@ import java.net.MalformedURLException;
 import java.net.URLConnection;
 
 public class Profil implements Serializable {
-
+    
     private String userId;
     private String createdAt;
     private String email;

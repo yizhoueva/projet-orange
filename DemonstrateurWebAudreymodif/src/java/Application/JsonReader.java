@@ -47,7 +47,7 @@ public class JsonReader {
         String str = json.toString();
         System.out.println("longueur du json : " + str.length());
         System.out.println(json.toString());
-
+        
     }
 
 }
