@@ -22,6 +22,9 @@
         <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
 
 
+
+        <jsp:useBean id="Coeur" scope="session" class="Application.Coeur" />
+
         <jsp:useBean id="coeur" scope="session" class="Application.Coeur" />
         <jsp:useBean id="physiologie" scope="session" class="Application.Physiologie" />
         
@@ -359,7 +362,6 @@
         <jsp:useBean id="date" scope="session" class="Application.Dates" />
 
 
-
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
                     <h2>Bienvenue </h2>
                     <p>
@@ -402,7 +404,7 @@
                                     <li><INPUT type="checkbox" name="choix1" value="1">FitBit</li>
                                     <li><INPUT type="checkbox" name="choix2" value="2">RunKeeper</li>
                                     <li><INPUT type="checkbox" name="choix3" value="3">Garmin Connect</li>
-                                </FORM>
+                                </FORM>                              
                             </ul>
                             <br>
                             Selectionner une date :<br>
@@ -426,9 +428,24 @@
                                 </FORM>
                             </ul>
                             <br>
-                            Selectionner une date :<br>
+                            Selectionnez une date :<br>
                             <input type="text" id="datepickerActivite">
-                        </td>
+                            <br>
+                            <br>
+                            <select name="selectionActivite">
+                                <option>ski 23 Mars</option>
+                                <option>course 20 Mars</option>
+                                <option>bowling 31 février</option>
+                                <option>loul</option>
+                                <option>ski 23 Mars</option>
+                                <option>ski 23 Mars</option>
+                                <option>ski 23 Mars</option>
+                                <option>ski 23 Mars</option>
+                                <option>ski 23 Mars</option>
+                                <option>ski 23 Mars</option>
+                            </select>
+                           
+                        </td>                 
                         <td valign="top">
 
                             <ul style="list-style-type:none ; display: inline-block">
