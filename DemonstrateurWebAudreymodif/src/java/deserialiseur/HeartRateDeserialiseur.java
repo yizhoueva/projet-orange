@@ -47,6 +47,7 @@ public class HeartRateDeserialiseur implements JsonDeserializer<HeartRate> {
         hr.setUpdatedAt(updatedAt);
         
         return hr;
+        
     }
     
 }

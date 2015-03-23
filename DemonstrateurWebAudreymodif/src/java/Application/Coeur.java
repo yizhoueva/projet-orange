@@ -5,72 +5,127 @@
  */
 package Application;
 
+import agregateur.BloodGlucose;
+import agregateur.BloodPressure;
+import agregateur.HeartRate;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import deserialiseur.BloodGlucoseDeserialiseur;
+import deserialiseur.BloodPressureDeserialiseur;
+import deserialiseur.HeartRateDeserialiseur;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Serializable;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.Charset;
+
 /**
  *
  * @author Romeo
  */
-import java.io.Serializable;
-import java.net.URL;
-import java.net.MalformedURLException;
+public class Coeur extends ApplicationObjet implements Serializable {
 
-public class Coeur implements Serializable {
+    HeartRate[] hrs;
+    BloodPressure[] bps;
+    String hrPlot;
+    String bpPlot;
 
-//    private String id;
-//    private String userId;
-//    private String timestamp;
-//    private int value;
-//    private String unit;
-//    private String source;
-//    private String sourceData;
-//    private String createdAt;
-//    private String updatedAt;
-//    private String humanId;
-    private int freqcardio;
-    private int systolic;
-    private int diastolic;
-    private String unitHR;
-    private String unitTen;
+    public String getHrPlot() {
+        String s = "[[";
+        for (int i = 0; i < hrs.length; i++) {
+            s += "[" + i + ", " + hrs[i].getValue() + "]";
+            if (i != hrs.length - 1) {
+                s += ",";
+            }
 
-    public Coeur() throws MalformedURLException {
-        URL url1 = new URL("https://api.humanapi.co/v1/human/heart_rate?access_token=demo");
-        Parser p1 = new Parser(url1);
-        this.freqcardio = p1.getValueInt("value");
+        }
+        s += "]]";
+        System.out.println(s);
 
-        URL urlUnitHR = new URL("https://api.humanapi.co/v1/human/heart_rate?access_token=demo");
-        Parser pUnitHR = new Parser(urlUnitHR);
-        this.unitHR = pUnitHR.getValueString("unit");
+        return s;
 
-        URL url2 = new URL("https://api.humanapi.co/v1/human/blood_pressure?access_token=demo");
-        Parser p2 = new Parser(url2);
-        this.systolic = p2.getValueInt("systolic");
-
-        URL url3 = new URL("https://api.humanapi.co/v1/human/blood_pressure?access_token=demo");
-        Parser p3 = new Parser(url3);
-        this.diastolic = p2.getValueInt("diastolic");
-        
-        URL urlUnitTen = new URL("https://api.humanapi.co/v1/human/blood_pressure?access_token=demo");
-        Parser pUnitTen = new Parser(urlUnitTen);
-        this.unitTen = pUnitTen.getValueString("unit");
     }
 
-    public int getFreqcardio() {
-        return freqcardio;
+    public String getBpPlot() {
+        return bpPlot;
     }
 
-    public int getSystolic() {
-        return systolic;
+    public HeartRate[] getHrs() {
+        return hrs;
     }
 
-    public int getDiastolic() {
-        return diastolic;
+    public BloodPressure[] getBps() {
+        return bps;
     }
 
-    public String getUnitHR() {
-        return unitHR;
-    }
+    private String freqCardioPlot;
+    private String tensionPlot;
 
-    public String getUnitTen() {
-        return unitTen;
+    /**
+     *
+     * @throws MalformedURLException
+     * @throws IOException
+     */
+    public Coeur() throws MalformedURLException, IOException {
+
+        // Configuration de Gson
+        gsonBuilder = new GsonBuilder();
+        gsonBuilder
+                .registerTypeAdapter(BloodPressure.class, new BloodPressureDeserialiseur());
+        gson = gsonBuilder.create();
+
+        //Connexion à l'agregateur
+        url = new URL("https://api.humanapi.co/v1/human/blood_pressure/readings?access_token=demo");
+        con = url.openConnection();
+        input = con.getInputStream();
+
+        //lecture de la réponse
+        reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
+        line = "";
+        results = "";
+        while ((line = reader.readLine()) != null) {
+            results += line;
+        }
+
+        reader.close();
+
+        input.close();
+
+        //création de l'objet BloodPressure
+        BloodPressure[] bps = gson.fromJson(results, BloodPressure[].class);
+
+        this.bps = bps;
+
+        // Configuration de Gson
+        gsonBuilder.registerTypeAdapter(HeartRate.class, new HeartRateDeserialiseur());
+        gson = gsonBuilder.create();
+
+        //Connexion à l'agregateur
+        url = new URL("https://api.humanapi.co/v1/human/heart_rate/readings?access_token=demo");
+        con = url.openConnection();
+        input = con.getInputStream();
+
+        //lecture de la réponse
+        reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
+        line = "";
+        results = "";
+        while ((line = reader.readLine()) != null) {
+            results += line;
+        }
+
+        reader.close();
+
+        input.close();
+
+        //création de l'objet BloodPressure
+        HeartRate[] hrs = gson.fromJson(results, HeartRate[].class);
+
+        this.hrs = hrs;
+
     }
 
 }
