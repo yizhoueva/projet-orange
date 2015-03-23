@@ -22,6 +22,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
+import java.text.ParseException;
 
 /**
  *
@@ -34,10 +35,11 @@ public class Coeur extends ApplicationObjet implements Serializable {
     String hrPlot;
     String bpPlot;
 
-    public String getHrPlot() {
+    public String getHrPlot() throws ParseException {
         String s = "[[";
         for (int i = 0; i < hrs.length; i++) {
-            s += "[" + i + ", " + hrs[i].getValue() + "]";
+            HeartRate hr = hrs[i];
+            s += "[" + hr.convertDateToPlottable(hr.getTimestamp())+ ", " + hrs[i].getValue() + "]";
             if (i != hrs.length - 1) {
                 s += ",";
             }

@@ -11,8 +11,11 @@ import agregateur.HeartRate;
 import agregateur.Sleep;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  *
@@ -24,25 +27,28 @@ public class TestGson {
      * @param args the command line arguments
      * @throws java.io.IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
 
         System.out.println("ca demarre");
 //
-//        Coeur c = new Coeur();
-//        HeartRate[] hrs = c.getHrs();
-//        for (int i = 0; i < hrs.length; i++) {
-//            HeartRate hr = hrs[i];
+        Coeur c = new Coeur();
+        HeartRate[] hrs = c.getHrs();
+        for (int i = 0; i < hrs.length; i++) {
+            HeartRate hr = hrs[i];
 //            System.out.println("Valeur n° " + (i + 1) + " :");
 //            System.out.println("  >userId : " + hr.getUserId());
 //            System.out.println("  >humanId : " + hr.getHumanId());
-                    DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+            DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
             String string1 = hr.getTimestamp();
             Date result1 = df1.parse(string1);
-            int y = result1.getYear();
-            String s = res
+//          Calendar rightNow = Calendar.getInstance();
+
+
+            String lala = new SimpleDateFormat( "yyyy-MM-dd", Locale.FRANCE).format(result1);
+    
                     //2008-09-30 4:00PM
-            System.out.println(result1);
-//            System.out.println("  >timestamp : " + hr.getTimestamp());
+            System.out.println(lala);
+            //System.out.println("  >timestamp : " + hr.getTimestamp().parse(string1);
 //            System.out.println("  >source : " + hr.getSource());
 //            System.out.println("  >value : " + hr.getValue());
 //            System.out.println("  >unit : " + hr.getUnit());
@@ -50,7 +56,7 @@ public class TestGson {
 //            System.out.println("  >id : " + hr.getId());
 //            System.out.println("  >updatedAt : " + hr.getUpdatedAt());
 //
-//        }
+        }
 
 //        Physiologie ph1 = new Physiologie();
 //        System.out.println("derniere valeur de glucose : "+ph1.bg.getValue());
@@ -97,14 +103,12 @@ public class TestGson {
 //        
 //        
 //        
-        
-        
-        Activités acs=new Activités();
+        Activités acs = new Activités();
         Activity[] as = acs.getActivites();
         for (int i = 0; i < as.length; i++) {
             Activity a = as[i];
-            System.out.println("Valeur n° " + (i + 1) + " :");
-            System.out.println("  >calories : " + a.getCalories());
+//            System.out.println("Valeur n° " + (i + 1) + " :");
+//            System.out.println("  >calories : " + a.getCalories());
 
         }
     }

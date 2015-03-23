@@ -16,13 +16,18 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  *
  * @author Romeo
  */
 public class AgregateurObjet {
-    
+
     private String id;
     private String userId;
     private String humanId;
@@ -30,6 +35,14 @@ public class AgregateurObjet {
     private String source;
     private String createdAt;
     private String updatedAt;
+
+    public String convertDateToPlottable(String date) throws ParseException {
+        DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+
+        Date result1 = df1.parse(date);
+
+        return new SimpleDateFormat("yyyy-MM-dd", Locale.FRANCE).format(result1);
+    }
 
     public String getId() {
         return id;
@@ -86,6 +99,5 @@ public class AgregateurObjet {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
-    
-    
+
 }
