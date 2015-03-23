@@ -39,8 +39,15 @@
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{lineWidth: 4, markerOptions: {style: 'square'}}]
                 });
-                var plot1 = $.jqplot('chart1', ${Coeur.hrPlot}, {title: 'Frequences cardiaques',
+
+                //granphique Coeur jour 
+                var dataSetCoeurJour = {
+                    dataJourFreqcardio: ${Coeur.hrPlot},
+                    dataJourTension: [[1, 3], [2, 4], [3, 5], [4, 6], [5, 5], [6, 7]]
+                };
+                var optionsCoeurJour = {
                     seriesDefaults: {
+                         showMarker: false,
                         renderer: $.jqplot.BarRenderer,
                         rendererOptions: {
                             // Put a 30 pixel margin between bars.
@@ -63,7 +70,18 @@
                             padMin: 0
                         }
                     }
+                };
+
+                var plotCoeurJour = $.jqplot('CoeurJour', [dataSetCoeurJour.dataJourFreqcardio], optionsCoeurJour);
+                $("input[type=radio][name=dataSeries]").attr("checked", false);
+                $("input[type=radio][name=dataSeries][value=dataJourFreqcardio]").attr("checked", true);
+                $("input[type=radio][name=dataSeries]").change(function () {
+                    var valCoeurJour = $(this).val();
+                    plotCoeurJour.series[0].data = dataSet[valCoeurJour];
+                    plotCoeurJour.replot();
                 });
+
+
                 var plot2 = $.jqplot('chart2', [[[1, 4], [3, 8], [5, 1], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Exponential Line',
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
@@ -445,14 +463,12 @@
                             </ul>
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
-                                    <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Frequence cardiaque<br>
+                                    <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /><INPUT name="dataSeries" value="dataJourFreqcardio" type="radio"   CHECKED>Frequence cardiaque<br>
 
-                                    <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><INPUT name="dataSeries" value="data2" type="radio" >Tension
+                                    <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><INPUT name="dataSeries" value="dataJourTension" type="radio" >Tension
 
                                 </FORM>
                             </ul>
-
-
                         </td>
                         <td valign="top">
                             <div id="onglet1" >
@@ -464,9 +480,9 @@
                                 <div id="onglet-1">
                                     Selectionner une date :<br>
                                     <input type="text" id="datepickerCoeur">
-                                    <table ><tr>
+                                    <table><tr>
                                             <td>
-                                                <div id="chart1" style="height:300px;width:1000px; display: inline-block"></div>
+                                                <div id="CoeurJour" style="height:300px;width:800px; display: inline-block"></div>
                                             </td>
                                         </tr>
                                     </table>
