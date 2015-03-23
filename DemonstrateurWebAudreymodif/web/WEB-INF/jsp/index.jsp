@@ -27,42 +27,47 @@
 
         <jsp:useBean id="coeur" scope="session" class="Application.Coeur" />
         <jsp:useBean id="physiologie" scope="session" class="Application.Physiologie" />
-        
-        <script>var test="essaye moi"</script>
+
+        <script>var test = "essaye moi"</script>
         <script>
             var test = "Essaye moi"
-            </script>
+        </script>
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker({
-            onSelect: function(){
-            var currentDate = $( ".selector" ).datepicker( "getDate" );
-            }        
+                    onSelect: function () {
+                        var currentDate = $(".selector").datepicker("getDate");
+                    }
                 });
                 $("#datepickerActivite").datepicker();
                 $("#datepickerPhysiologie").datepicker();
                 $("#datepickerCoeur").datepicker();
                 $("#datepickerSommeil").datepicker();
                 $("#datepickerGenetique").datepicker();
-            });
-        </script>
+            });</script>
         <script>
             $(function () {
                 var plot0 = $.jqplot('chart0', [[[0, 68], [1, 73], [2, 67], [3, 65], [4, 71], [5, 80], [6, 86], [7, 73], [8, 58], [9, 69], [10, 85], [11, 81], [12, 78], [13, 70], [14, 53]]], {title: 'Heart Rates',
                     axes: {yaxis: {min: -10, max: 240}},
                     series: [{color: '#5FAB78'}]
                 });
-
                 //granphique Coeur jour 
                 var dataSetCoeurJour = {
                     data1: ${Coeur.hrPlot},
                     data2: ${Coeur.hrPlot}
                 };
                 var optionsCoeurJour = {
-                    series: [{lineWidth: 4, markerOptions: {style: 'square'}}],
-                    axes: {xaxis: {renderer: $.jqplot.DateAxisRenderer}}
-                };
-
+                    gridPadding: {right: 35},
+                    axes: {
+                        xaxis: {
+                            renderer: $.jqplot.DateAxisRenderer,
+                            tickOptions: {formatString: '%b %#d, %y'}
+          
+                        }
+                    },
+                    series: [{lineWidth: 4, markerOptions: {style: 'square'}}]
+                    };
+             
                 var plotCoeurJour = $.jqplot('CoeurJour', [dataSetCoeurJour.data1], optionsCoeurJour);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -71,7 +76,6 @@
                     plotCoeurJour.series[0].data = dataSet[valCoeurJour];
                     plotCoeurJour.replot();
                 });
-
                 // Graphiques Coeur Semaine
                 var dataSetCoeurSemaine = {
                     data1: [[1, 1], [6, 4]],
@@ -90,7 +94,6 @@
                         }
                     }
                 };
-
                 var plotCoeurSemaine = $.jqplot('CoeurSemaine', [dataSetCoeurSemaine.data1], optionsCoeurSemaine);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -99,8 +102,6 @@
                     plotCoeurSemaine.series[0].data = dataSet[valCoeurSemaine];
                     plotCoeurSemaine.replot();
                 });
-
-
                 // Graphiques Coeur Mois
                 var dataSetCoeurMois = {
                     data1: [[1, 1], [6, 4]],
@@ -127,8 +128,6 @@
                     plotCoeurMois.series[0].data = dataSet[valCoeurMois];
                     plotCoeurMois.replot();
                 });
-
-
                 var plot7 = $.jqplot('chartSommeil1', [[[1, 6], [3, 7], [5, 8], [7, 5], [9, 9], [11, 10]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 20}},
                     seriesDefaults: {
@@ -168,7 +167,6 @@
                         }
                     }
                 });
-
                 var plot9 = $.jqplot('chartSommeil13', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 240}},
                     seriesDefaults: {
@@ -183,7 +181,6 @@
                         pointLabels: {show: true}
                     }
                 });
-
 // graphiques activites - MOIS
                 var dataSet = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
@@ -204,7 +201,6 @@
                         }
                     }
                 };
-
                 var plotB = $.jqplot('myChart', [dataSet.data1], options);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -213,8 +209,6 @@
                     plotB.series[0].data = dataSet[val];
                     plotB.replot();
                 });
-
-
                 // Graphiques activités - SEMAINE
                 var dataSetS = {
                     data1: [[1, 1], [6, 4]],
@@ -235,7 +229,6 @@
                         }
                     }
                 };
-
                 var plotS = $.jqplot('myChartSemaine', [dataSetS.data1], optionsS);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -244,8 +237,6 @@
                     plotS.series[0].data = dataSet[valS];
                     plotS.replot();
                 });
-
-
                 // Graphiques activités  - JOUR
                 var dataSetJ = {
                     data1: [[1, 1], [2, 2], [3, 3], [4, 2], [5, 3], [6, 4]],
@@ -266,7 +257,6 @@
                         }
                     }
                 };
-
                 var plotJ = $.jqplot('myChartJour', [dataSetJ.data1], optionsJ);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
@@ -275,8 +265,6 @@
                     plotJ.series[0].data = dataSet[valJ];
                     plotJ.replot();
                 });
-
-
                 //Graphiques Physiologie - Jour
 
                 var dataSetPJ = {
@@ -355,7 +343,7 @@
 
 
 
-    
+
 
     <body>
         <jsp:useBean id="profil" scope="session" class="Application.Profil" />
@@ -444,7 +432,7 @@
                                 <option>ski 23 Mars</option>
                                 <option>ski 23 Mars</option>
                             </select>
-                           
+
                         </td>                 
                         <td valign="top">
 

@@ -55,7 +55,7 @@ public class Coeur extends ApplicationObjet implements Serializable {
 
         }
         s += "]";
-        System.out.println(s);
+        System.out.println("dddddddddddd :"+s);
 
         return s;
 
