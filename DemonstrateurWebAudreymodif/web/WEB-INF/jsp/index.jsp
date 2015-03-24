@@ -160,7 +160,7 @@
                     }
                 });
 
-                var plot9 = $.jqplot('chartSommeil13', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Hours Asleep Per Day',
+                var plot9 = $.jqplot('chartSommeil13', [[[1, 8], [3, 9], [5, 7], [7, 8], [9, 5], [11, 12]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 240}},
                     seriesDefaults: {
                         renderer: $.jqplot.BarRenderer,
