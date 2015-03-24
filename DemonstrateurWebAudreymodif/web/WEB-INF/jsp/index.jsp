@@ -159,13 +159,9 @@
                     }
                 });
 
-<<<<<<< HEAD
                 var plot9 = $.jqplot('chartSommeil13', [[[1, 8], [3, 9], [5, 7], [7, 8], [9, 5], [11, 12]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 20}},
-=======
-                var plot9 = $.jqplot('chartSommeil13', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Hours Asleep Per Day',
-                    axes: {yaxis: {min: -10, max: 240}},
->>>>>>> origin
+
                     seriesDefaults: {
                         renderer: $.jqplot.BarRenderer,
                         rendererOptions: {
@@ -618,9 +614,9 @@
                             
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/Description.png" align="middle" title="Description" /><br> 
-                            <img src = "<%=request.getContextPath()%>/images/science25.png" align="middle" title="Trait" /><br> 
-                            <img src = "<%=request.getContextPath()%>/images/list.png" align="middle" title="Traits possibles" /><br> 
+                            <img src = "<%=request.getContextPath()%>/images/Description.png" align="middle" title="Description" /><p>Hair Curl</p><br> 
+                            <img src = "<%=request.getContextPath()%>/images/science25.png" align="middle" title="Trait" /><p>Straighter Hair on Average</p><br> 
+                            <img src = "<%=request.getContextPath()%>/images/list.png" align="middle" title="Traits possibles" /><p>"Slightly Curlier Hair on Average","Straighter Hair on Average"</p><br> 
                         </td>
                     </tr>
                 </table>
