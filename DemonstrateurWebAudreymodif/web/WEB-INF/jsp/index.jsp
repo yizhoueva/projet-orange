@@ -56,6 +56,7 @@
                 };
 
                 var plotCoeurJour = $.jqplot('CoeurJour', [dataSetCoeurJour.data1], optionsCoeur);
+                $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
                 $("input[type=radio][name=dataSeries]").change(function () {
                     var valCoeurJour = $(this).val();
