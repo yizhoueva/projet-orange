@@ -614,9 +614,9 @@
                             
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/Description.png" align="middle" title="Description" /><p>Hair Curl</p><br> 
-                            <img src = "<%=request.getContextPath()%>/images/science25.png" align="middle" title="Trait" /><p>Straighter Hair on Average</p><br> 
-                            <img src = "<%=request.getContextPath()%>/images/list.png" align="middle" title="Traits possibles" /><p>"Slightly Curlier Hair on Average","Straighter Hair on Average"</p><br> 
+                            <img src = "<%=request.getContextPath()%>/images/Description.png" align="middle" title="Description" />Hair Curl<br> 
+                            <img src = "<%=request.getContextPath()%>/images/science25.png" align="middle" title="Trait" />Straighter Hair on Average<br> 
+                            <img src = "<%=request.getContextPath()%>/images/list.png" align="middle" title="Traits possibles" />Slightly Curlier Hair on Average, Straighter Hair on Average<br> 
                         </td>
                     </tr>
                 </table>
