@@ -33,12 +33,12 @@ public class TestGson {
 
         System.out.println("ca demarre");
 
-//
-        Coeur c = new Coeur();
-        BloodPressure[] bps = c.getBps();
-        HeartRate[] hrs = c.getHrs();
-        for (int i = 0; i < bps.length; i++) {
-            BloodPressure bp = bps[i];
+////
+//        Coeur c = new Coeur();
+//        BloodPressure[] bps = c.getBps();
+//        HeartRate[] hrs = c.getHrs();
+//        for (int i = 0; i < bps.length; i++) {
+//            BloodPressure bp = bps[i];
 //            System.out.println("Valeur n° " + (i + 1) + " :");
 //            System.out.println("  >userId : " + hr.getUserId());
 //            System.out.println("  >humanId : " + hr.getHumanId());
@@ -46,7 +46,7 @@ public class TestGson {
 
     
              //2008-09-30 4:00PM
-            System.out.println("  >timestamp : " + bp.convertDateToPlottable(bp.getTimestamp()));
+//            System.out.println("  >timestamp : " + bp.convertDateToPlottable(bp.getTimestamp()));
 
 
 //        Coeur c = new Coeur();
@@ -66,13 +66,14 @@ public class TestGson {
 //            System.out.println("  >id : " + hr.getId());
 //            System.out.println("  >updatedAt : " + hr.getUpdatedAt());
 //
-        }
+//        }
 
 //        Physiologie ph1 = new Physiologie();
 //        System.out.println("derniere valeur de glucose : "+ph1.bg.getValue());
 //        
-//        Genetique g1 = new Genetique();
-//        
+        Genetique g1 = new Genetique();
+        g1.selectionTrait();
+        
 //        System.out.println("genetics numero 0 :");
 //        System.out.println("userId : "+g1.getG()[0].getUserId());
 //        System.out.println("humanId : "+g1.getG()[0].getHumanId());
@@ -114,14 +115,14 @@ public class TestGson {
 //        
 //        
 
-        Activites acs = new Activites();
-        Activity[] as = acs.getActivites();
-        for (int i = 0; i < as.length; i++) {
-            Activity a = as[i];
+//        Activites acs = new Activites();
+//        Activity[] as = acs.getActivites();
+//        for (int i = 0; i < as.length; i++) {
+//            Activity a = as[i];
 //            System.out.println("Valeur n° " + (i + 1) + " :");
 //            System.out.println("  >calories : " + a.getCalories());
 
-        }
+//        }
 
 //        
 //        
