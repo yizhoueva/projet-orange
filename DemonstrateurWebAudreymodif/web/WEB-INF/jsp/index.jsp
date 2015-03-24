@@ -608,7 +608,7 @@
                                 </FORM>
                             </ul>
                             <br>
-                            Selectionner une date :<br>
+                            Selectionner un trait de caractère :<br>
                             <input type="text" id="datepickerGenetique">
                         </td>
                         <td valign="top">
