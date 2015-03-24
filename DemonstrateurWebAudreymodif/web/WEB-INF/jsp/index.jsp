@@ -610,7 +610,6 @@
                             </ul>
                             <br>
                             Selectionner un trait :<br>
-                            ${genetics.selectionTrait}
                             
                         </td>
                         <td valign="top">
