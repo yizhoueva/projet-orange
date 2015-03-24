@@ -595,6 +595,8 @@
                 </table>
             </div>
             <div id="tabs-5">
+                
+                            <jsp:useBean id="genetics" scope="session" class="Application.Genetique" />
                 <table cellpadding="15">
                     <tr>
                         <td valign="top">
@@ -607,13 +609,14 @@
                                 </FORM>
                             </ul>
                             <br>
-                            Selectionner un trait de caractère :<br>
-                            <input type="text" id="datepickerGenetique">
+                            Selectionner un trait :<br>
+                            ${genetics.selectionTrait}
+                            
                         </td>
                         <td valign="top">
-                            <img src = "<%=request.getContextPath()%>/images/Description.png" align="middle" title="Frequence cardiaque" /><br> 
-                            <img src = "<%=request.getContextPath()%>/images/science25.png" align="middle" title="Frequence cardiaque" /><br> 
-                            <img src = "<%=request.getContextPath()%>/images/list.png" align="middle" title="Frequence cardiaque" /><br> 
+                            <img src = "<%=request.getContextPath()%>/images/Description.png" align="middle" title="Description" /><br> 
+                            <img src = "<%=request.getContextPath()%>/images/science25.png" align="middle" title="Trait" /><br> 
+                            <img src = "<%=request.getContextPath()%>/images/list.png" align="middle" title="Traits possibles" /><br> 
                         </td>
                     </tr>
                 </table>
