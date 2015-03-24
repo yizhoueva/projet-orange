@@ -44,23 +44,18 @@
         </script>
         <script>
             $(function () {
-                var plot0 = $.jqplot('chart0', [[[0, 68], [1, 73], [2, 67], [3, 65], [4, 71], [5, 80], [6, 86], [7, 73], [8, 58], [9, 69], [10, 85], [11, 81], [12, 78], [13, 70], [14, 53]]], {title: 'Heart Rates',
-                    axes: {yaxis: {min: -10, max: 240}},
-                    series: [{color: '#5FAB78'}]
-                });
 
-                //granphique Coeur jour 
+                //graphique Coeur jour 
                 var dataSetCoeurJour = {
                     data1: ${Coeur.hrPlot},
                     data2: ${Coeur.hrPlot}
                 };
-                var optionsCoeurJour = {
+                var optionsCoeur = {
                     series: [{lineWidth: 4, markerOptions: {style: 'square'}}],
                     axes: {xaxis: {renderer: $.jqplot.DateAxisRenderer}}
                 };
 
-                var plotCoeurJour = $.jqplot('CoeurJour', [dataSetCoeurJour.data1], optionsCoeurJour);
-                $("input[type=radio][name=dataSeries]").attr("checked", false);
+                var plotCoeurJour = $.jqplot('CoeurJour', [dataSetCoeurJour.data1], optionsCoeur);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
                 $("input[type=radio][name=dataSeries]").change(function () {
                     var valCoeurJour = $(this).val();
@@ -87,7 +82,7 @@
                     }
                 };
 
-                var plotCoeurSemaine = $.jqplot('CoeurSemaine', [dataSetCoeurSemaine.data1], optionsCoeurSemaine);
+                var plotCoeurSemaine = $.jqplot('CoeurSemaine', [dataSetCoeurSemaine.data1], optionsCoeur);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
                 $("input[type=radio][name=dataSeries]").change(function () {
@@ -99,8 +94,7 @@
 
                 // Graphiques Coeur Mois
                 var dataSetCoeurMois = {
-                    data1: [[1, 1], [6, 4]],
-                    data2: [[1, 3], [5, 5], [6, 7]]
+                    data1: [[1, 1], [6, 4]]
                 };
                 var optionsCoeurMois = {
                     seriesDefaults: {
@@ -115,7 +109,7 @@
                         }
                     }
                 };
-                var plotCoeurMois = $.jqplot('CoeurMois', [dataSetCoeurMois.data1], optionsCoeurMois);
+                var plotCoeurMois = $.jqplot('CoeurMois', [dataSetCoeurMois.data1], optionsCoeur);
                 $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
                 $("input[type=radio][name=dataSeries]").change(function () {
@@ -504,7 +498,7 @@
                             </ul>
                             <ul style="list-style-type:none ; display: inline-block">
                                 <FORM>
-                                    <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /><INPUT name="dataSeries" value="data1" type="radio"   CHECKED>Frequence cardiaque<br>
+                                    <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /><INPUT name="dataSeries" value="data1" type="radio" checked>Frequence cardiaque<br>
 
                                     <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /><INPUT name="dataSeries" value="data2" type="radio" >Tension
 
