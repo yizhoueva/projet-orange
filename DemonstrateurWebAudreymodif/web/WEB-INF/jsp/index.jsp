@@ -346,10 +346,11 @@
     <body>
         <jsp:useBean id="profil" scope="session" class="Application.Profil" />
         <jsp:useBean id="date" scope="session" class="Application.Dates" />
+        <jsp:useBean id="sommeil" scope="session" class="Application.Sommeil" />
 
 
         <table width="800" cellpadding="20" align="middle" border="0"><tr><td>
-                    <h2>Bienvenue </h2>
+                    <h2>Bienvenue ${profil.p.userId}</h2>
                     <p>
                 </td>
                 <td>
@@ -375,8 +376,8 @@
                             <img src = "<%=request.getContextPath()%>/images/profil_p.png" align="middle" /> email : ${profil.p.email}<br>
                             <img src = "<%=request.getContextPath()%>/images/balance_p.png" align="middle" title="Poids" />${profil.w.value} ${profil.w.unit}<br>
                             <img src = "<%=request.getContextPath()%>/images/taille_p.png" align="middle" title="Taille" />${profil.h.value} ${profil.h.unit}<br>
-                            <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" />${profil.h.value} ${profil.h.unit} <br>
-                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" />${profil.bmi.value} ${profil.bmi.unit}<br>
+                            <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" />${profil.bmi.value} ${profil.bmi.unit} <br>
+                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" />58 bpm<br>
                             <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" />${profil.bp.systolic}/${profil.bp.diastolic} ${profil.h.unit}<br>
                             <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" />${profil.bo.value} ${profil.bo.unit}<br>
                             <img src = "<%=request.getContextPath()%>/images/sucre_p.png" align="middle" title="Glycemie" />${profil.bg.value} ${profil.bg.unit}<br>
@@ -391,10 +392,7 @@
                                     <li><INPUT type="checkbox" name="choix3" value="3">Garmin Connect</li>
                                 </FORM>                              
                             </ul>
-                            <br>
-                            Selectionner une date :<br>
-                            <input type="text" id="datepicker" name="datechoisie">
-                            Date selectionnee : ${test}
+                            
                         </td>
                     </tr>
                 </table>
@@ -603,9 +601,7 @@
                             Montrer les données de :
                             <ul style="list-style-type:none">
                                 <FORM>
-                                    <li><INPUT type="checkbox" name="choix1" value="1">FitBit</li>
-                                    <li><INPUT type="checkbox" name="choix2" value="2">RunKeeper</li>
-                                    <li><INPUT type="checkbox" name="choix3" value="3">Garmin Connect</li>
+                                    <li><INPUT type="checkbox" name="choix1" value="1" checked>23 and Me</li>
                                 </FORM>
                             </ul>
                             <br>
