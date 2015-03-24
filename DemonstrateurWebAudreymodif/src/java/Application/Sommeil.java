@@ -39,11 +39,6 @@ public class Sommeil extends ApplicationObjet implements Serializable {
         return sleeps;
     }
     
-    public Sleep getLast(){
-        return sleeps[sleeps.length-1];
-    }
-    
-    
     
     
 }

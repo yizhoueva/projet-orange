@@ -40,7 +40,7 @@ public class Genetique extends ApplicationObjet implements Serializable {
     }
     
     public String selectionTrait(){
-        String s = "<select >";
+        String s = "<select name=\"selectionGenetics\">";
         for (int i = 0; i < g.length; i++) {
             s += "<option>";
                    s += g[i].getDescription();
