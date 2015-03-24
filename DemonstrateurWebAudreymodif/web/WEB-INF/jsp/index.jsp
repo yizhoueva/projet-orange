@@ -52,7 +52,7 @@
                 //granphique Coeur jour 
                 var dataSetCoeurJour = {
                     data1: ${Coeur.hrPlot},
-                    data2: ${Coeur.hrPlot}
+                    data2: ${Coeur.bpPlot}
                 };
                 var optionsCoeurJour = {
                     series: [{lineWidth: 4, markerOptions: {style: 'square'}}],
@@ -106,7 +106,7 @@
                     seriesDefaults: {
                         showMarker: false
                     },
-                    title: 'Semaine',
+                    title: 'Mois',
                     axes: {
                         xaxis: {},
                         yaxis: {
