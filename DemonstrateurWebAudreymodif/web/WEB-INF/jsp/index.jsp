@@ -27,13 +27,13 @@
 
         <jsp:useBean id="coeur" scope="session" class="Application.Coeur" />
         <jsp:useBean id="physiologie" scope="session" class="Application.Physiologie" />
-
+        
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("#datepicker").datepicker({
-                    onSelect: function () {
-                        var currentDate = $(".selector").datepicker("getDate");
-                    }
+            onSelect: function(){
+            var currentDate = $( ".selector" ).datepicker( "getDate" );
+            }        
                 });
                 $("#datepickerActivite").datepicker();
                 $("#datepickerPhysiologie").datepicker();
@@ -47,8 +47,8 @@
 
                 //graphique Coeur jour 
                 var dataSetCoeurJour = {
-                    data1: [['2015-03-19', 66], ['2015-03-19', 70], ['2015-03-16', 68], ['2015-03-09', 73], ['2015-03-06', 67], ['2015-03-02', 65], ['2015-02-26', 71], ['2015-02-25', 80], ['2015-02-25', 86], ['2015-02-24', 73], ['2015-02-24', 58], ['2015-02-23', 69], ['2015-02-23', 85], ['2015-02-21', 81], ['2015-02-20', 78], ['2015-02-15', 70], ['2015-02-11', 53], ['2015-02-11', 70], ['2015-02-11', 76], ['2015-02-10', 64], ['2015-02-10', 84], ['2015-02-10', 84], ['2015-02-09', 62], ['2015-02-09', 61], ['2015-02-06', 107], ['2015-02-04', 72], ['2015-02-03', 74], ['2015-02-03', 98], ['2015-02-03', 65], ['2015-02-01', 65], ['2015-02-01', 70], ['2015-01-30', 67], ['2015-01-29', 65], ['2015-01-28', 71], ['2015-01-27', 71], ['2015-01-27', 72], ['2015-01-26', 86], ['2015-01-25', 64], ['2015-01-25', 60], ['2015-01-24', 69], ['2015-01-23', 71], ['2015-01-23', 73], ['2015-01-23', 72], ['2015-01-17', 65], ['2015-01-14', 60], ['2015-01-13', 67], ['2015-01-09', 112], ['2015-01-09', 51], ['2015-01-04', 73], ['2015-01-02', 78]],
-                    data2: [['2015-03-19', 89], ['2015-03-19', 90], ['2015-03-16', 94], ['2015-03-09', 89], ['2015-03-06', 92], ['2015-03-02', 88], ['2015-02-26', 92], ['2015-02-25', 118], ['2015-02-24', 96], ['2015-02-23', 107], ['2015-02-21', 105], ['2015-02-20', 89], ['2015-02-15', 85], ['2015-02-11', 91], ['2015-02-11', 110], ['2015-02-10', 104], ['2015-02-09', 105], ['2015-02-04', 109], ['2015-02-03', 106], ['2015-02-03', 92], ['2015-02-01', 96], ['2015-02-01', 101], ['2015-01-30', 97], ['2015-01-29', 85], ['2015-01-28', 108], ['2015-01-27', 106], ['2015-01-27', 103], ['2015-01-25', 95], ['2015-01-25', 101], ['2015-01-24', 101], ['2015-01-23', 84], ['2015-01-23', 82], ['2015-01-23', 103], ['2015-01-17', 88], ['2015-01-14', 113], ['2015-01-13', 103], ['2015-01-09', 84], ['2015-01-02', 91], ['2015-01-01', 101], ['2014-12-25', 100], ['2014-12-24', 102], ['2014-12-22', 95], ['2014-12-18', 92], ['2014-12-15', 89], ['2014-12-13', 100], ['2014-12-13', 104], ['2014-12-11', 94], ['2014-12-09', 92], ['2014-12-04', 88]]
+                    data1: ${Coeur.hrPlot},
+                    data2: ${Coeur.hrPlot}
                 };
                 var optionsCoeur = {
                     series: [{lineWidth: 4, markerOptions: {style: 'square'}}],
@@ -56,7 +56,6 @@
                 };
 
                 var plotCoeurJour = $.jqplot('CoeurJour', [dataSetCoeurJour.data1], optionsCoeur);
-                $("input[type=radio][name=dataSeries]").attr("checked", false);
                 $("input[type=radio][name=dataSeries][value=data1]").attr("checked", true);
                 $("input[type=radio][name=dataSeries]").change(function () {
                     var valCoeurJour = $(this).val();
@@ -66,7 +65,7 @@
 
                 // Graphiques Coeur Semaine
                 var dataSetCoeurSemaine = {
-                    data1: [['2015-03-19', 89], ['2015-03-19', 90], ['2015-03-16', 94], ['2015-03-09', 89], ['2015-03-06', 92], ['2015-03-02', 88], ['2015-02-26', 92], ['2015-02-25', 118], ['2015-02-24', 96], ['2015-02-23', 107], ['2015-02-21', 105], ['2015-02-20', 89], ['2015-02-15', 85], ['2015-02-11', 91], ['2015-02-11', 110], ['2015-02-10', 104], ['2015-02-09', 105], ['2015-02-04', 109], ['2015-02-03', 106], ['2015-02-03', 92], ['2015-02-01', 96], ['2015-02-01', 101], ['2015-01-30', 97], ['2015-01-29', 85], ['2015-01-28', 108], ['2015-01-27', 106], ['2015-01-27', 103], ['2015-01-25', 95], ['2015-01-25', 101], ['2015-01-24', 101], ['2015-01-23', 84], ['2015-01-23', 82], ['2015-01-23', 103], ['2015-01-17', 88], ['2015-01-14', 113], ['2015-01-13', 103], ['2015-01-09', 84], ['2015-01-02', 91], ['2015-01-01', 101], ['2014-12-25', 100], ['2014-12-24', 102], ['2014-12-22', 95], ['2014-12-18', 92], ['2014-12-15', 89], ['2014-12-13', 100], ['2014-12-13', 104], ['2014-12-11', 94], ['2014-12-09', 92], ['2014-12-04', 88]],
+                    data1: [[1, 1], [6, 4]],
                     data2: [[1, 3], [5, 5], [6, 7]]
                 };
                 var optionsCoeurSemaine = {
@@ -95,13 +94,13 @@
 
                 // Graphiques Coeur Mois
                 var dataSetCoeurMois = {
-                    data1: [['2015-03-19', 66], ['2015-03-19', 70], ['2015-03-16', 68], ['2015-03-09', 73], ['2015-03-06', 67], ['2015-03-02', 65], ['2015-02-26', 71], ['2015-02-25', 80], ['2015-02-25', 86], ['2015-02-24', 73], ['2015-02-24', 58], ['2015-02-23', 69], ['2015-02-23', 85], ['2015-02-21', 81], ['2015-02-20', 78], ['2015-02-15', 70], ['2015-02-11', 53], ['2015-02-11', 70], ['2015-02-11', 76], ['2015-02-10', 64], ['2015-02-10', 84], ['2015-02-10', 84], ['2015-02-09', 62], ['2015-02-09', 61], ['2015-02-06', 107], ['2015-02-04', 72], ['2015-02-03', 74], ['2015-02-03', 98], ['2015-02-03', 65], ['2015-02-01', 65], ['2015-02-01', 70], ['2015-01-30', 67], ['2015-01-29', 65], ['2015-01-28', 71], ['2015-01-27', 71], ['2015-01-27', 72], ['2015-01-26', 86], ['2015-01-25', 64], ['2015-01-25', 60], ['2015-01-24', 69], ['2015-01-23', 71], ['2015-01-23', 73], ['2015-01-23', 72], ['2015-01-17', 65], ['2015-01-14', 60], ['2015-01-13', 67], ['2015-01-09', 112], ['2015-01-09', 51], ['2015-01-04', 73], ['2015-01-02', 78]],
-                    data2: [[1, 3], [5, 5], [6, 7]]};
+                    data1: [[1, 1], [6, 4]]
+                };
                 var optionsCoeurMois = {
                     seriesDefaults: {
                         showMarker: false
                     },
-                    title: 'Mois',
+                    title: 'Semaine',
                     axes: {
                         xaxis: {},
                         yaxis: {
@@ -160,8 +159,13 @@
                     }
                 });
 
+<<<<<<< HEAD
                 var plot9 = $.jqplot('chartSommeil13', [[[1, 8], [3, 9], [5, 7], [7, 8], [9, 5], [11, 12]]], {title: 'Hours Asleep Per Day',
                     axes: {yaxis: {min: -10, max: 20}},
+=======
+                var plot9 = $.jqplot('chartSommeil13', [[[1, 27], [3, 5.12], [5, 2], [7, 33.6], [9, 85.9], [11, 219.9]]], {title: 'Hours Asleep Per Day',
+                    axes: {yaxis: {min: -10, max: 240}},
+>>>>>>> origin
                     seriesDefaults: {
                         renderer: $.jqplot.BarRenderer,
                         rendererOptions: {
@@ -341,7 +345,7 @@
 
 
 
-
+    
 
     <body>
         <jsp:useBean id="profil" scope="session" class="Application.Profil" />
@@ -372,16 +376,15 @@
                 <table cellpadding="15">
                     <tr>
                         <td>
-                            <img src = "<%=request.getContextPath()%>/images/profil_p.png" align="middle" /> email : <br>
-                            <img src = "<%=request.getContextPath()%>/images/balance_p.png" align="middle" title="Poids" /> <br>
-                            <img src = "<%=request.getContextPath()%>/images/taille_p.png" align="middle" title="Taille" /> <br>
-                            <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" /> <br>
-                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" /> <br>
-                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" /> <br>
-                            <img src = "<%=request.getContextPath()%>/images/sucre_p.png" align="middle" title="Glycemie" /> <br>
-                            <img src = "<%=request.getContextPath()%>/images/activité_p.png" align="middle" title="Activité sportive" /><br>
-                            <img src = "<%=request.getContextPath()%>/images/sommeil_p.png" align="middle" title="Sommeil" /><br>
+                            <img src = "<%=request.getContextPath()%>/images/profil_p.png" align="middle" /> email : ${profil.p.email}<br>
+                            <img src = "<%=request.getContextPath()%>/images/balance_p.png" align="middle" title="Poids" />${profil.w.value} ${profil.w.unit}<br>
+                            <img src = "<%=request.getContextPath()%>/images/taille_p.png" align="middle" title="Taille" />${profil.h.value} ${profil.h.unit}<br>
+                            <img src = "<%=request.getContextPath()%>/images/silhouette_p.png" align="middle" title="IMC" />${profil.h.value} ${profil.h.unit} <br>
+                            <img src = "<%=request.getContextPath()%>/images/coeur_p.png" align="middle" title="Frequence cardiaque" />${profil.bmi.value} ${profil.bmi.unit}<br>
+                            <img src = "<%=request.getContextPath()%>/images/pression_p.png" align="middle" title="Tension" />${profil.bp.systolic}/${profil.bp.diastolic} ${profil.h.unit}<br>
+                            <img src = "<%=request.getContextPath()%>/images/oxygene_p.png" align="middle" title="Saturation O2" />${profil.bo.value} ${profil.bo.unit}<br>
+                            <img src = "<%=request.getContextPath()%>/images/sucre_p.png" align="middle" title="Glycemie" />${profil.bg.value} ${profil.bg.unit}<br>
+                            <img src = "<%=request.getContextPath()%>/images/sommeil_p.png" align="middle" title="Sommeil" />${sommeil.last.timeAsleep} minutes<br>
                         </td>
                         <td valign="top">
                             Montrer les données de :
@@ -433,7 +436,7 @@
                                 <option>${act.act.get(9)}</option>
                                 <option>${act.act.get(10)}</option>
                             </select>
-
+                           
                         </td>                 
                         <td valign="top">
 
@@ -596,8 +599,8 @@
                 </table>
             </div>
             <div id="tabs-5">
-
-                <jsp:useBean id="genetics" scope="session" class="Application.Genetique" />
+                
+                            <jsp:useBean id="genetics" scope="session" class="Application.Genetique" />
                 <table cellpadding="15">
                     <tr>
                         <td valign="top">
@@ -611,7 +614,8 @@
                             </ul>
                             <br>
                             Selectionner un trait :<br>
-
+                            ${genetics.selectionTrait()}
+                            
                         </td>
                         <td valign="top">
                             <img src = "<%=request.getContextPath()%>/images/Description.png" align="middle" title="Description" /><br> 
